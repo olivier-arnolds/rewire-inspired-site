@@ -1,25 +1,318 @@
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import Layout from "@/components/Layout";
+import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const services = [
+    {
+      title: "Data & AI Strategy",
+      description: "Our artificial intelligence strategies aren't about keeping up with your competition. We operationalize data and AI opportunities to make you the pacesetter.",
+      icon: <Brain className="w-8 h-8 text-primary" />,
+      image: "/images/service-strategy.jpg"
+    },
+    {
+      title: "Customized AI",
+      description: "We build bespoke AI solutions tailored to your specific business challenges, leveraging cutting-edge models and architectures.",
+      icon: <Code className="w-8 h-8 text-secondary" />,
+      image: "/images/service-genai.jpg"
+    },
+    {
+      title: "Data Management",
+      description: "Build a solid foundation for your AI initiatives with robust data governance, quality, and architecture frameworks.",
+      icon: <Database className="w-8 h-8 text-accent" />,
+      image: "/images/bg-texture.jpg"
+    },
+    {
+      title: "ML Ops",
+      description: "Streamline your machine learning lifecycle from development to deployment and monitoring with industry-standard MLOps practices.",
+      icon: <Cpu className="w-8 h-8 text-chart-3" />,
+      image: "/images/bg-texture.jpg"
+    },
+    {
+      title: "Generative AI",
+      description: "Unlock new creative and productive potentials with state-of-the-art Generative AI implementation and fine-tuning.",
+      icon: <Network className="w-8 h-8 text-chart-4" />,
+      image: "/images/service-genai.jpg"
+    }
+  ];
+
+  const sectors = [
+    "Manufacturing & Industrial", "Agriculture & Food", "Telecommunications", 
+    "Utilities & Energy", "Transport", "Ecommerce & Retail", 
+    "Finance", "Consumer Goods", "Life Sciences"
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero-main.jpg" 
+            alt="AI Neural Network" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
+        </div>
+
+        <div className="container relative z-10">
+          <motion.div 
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
+            <motion.div variants={fadeIn} className="mb-6 flex items-center gap-3">
+              <div className="h-[1px] w-12 bg-primary" />
+              <span className="text-primary font-medium tracking-wider uppercase text-sm">Data & AI Consulting</span>
+            </motion.div>
+            
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white">
+              We use AI to answer <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-pulse">"what if?"</span> <br />
+              with <span className="text-white">"we can".</span>
+            </motion.h1>
+            
+            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+              Rewire operationalizes every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
+            </motion.p>
+            
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
+              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,201,240,0.5)]">
+                Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all">
+                View Case Studies
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{ delay: 1, duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2"
+        >
+          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
+        </motion.div>
+      </section>
+
+      {/* Sector Navigation Bar */}
+      <div className="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-x-auto">
+        <div className="container">
+          <div className="flex whitespace-nowrap">
+            {sectors.map((sector, index) => (
+              <a 
+                key={index} 
+                href="#" 
+                className="px-6 py-4 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/5 transition-colors border-r border-white/5 last:border-r-0"
+              >
+                {sector}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Mission Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/bg-texture.jpg')] bg-cover bg-center opacity-20" />
+        <div className="container relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-8">Impossible no more</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
+              We fuse AI into the DNA of your organization, creating and scaling self-learning systems that reinvent the very core of how you think, operate and innovate.
+            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
+              By combining the strengths of Human and Artificial Intelligence, we enable your teams to continually advance performance to new, previously impossible horizons.
+            </p>
+            <a href="#" className="inline-flex items-center text-primary text-lg font-semibold hover:gap-4 transition-all gap-2 group">
+              Learn more about our mission <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Client Logos */}
+      <section className="py-20 bg-white/5">
+        <div className="container">
+          <p className="text-center text-xl font-medium mb-12 text-white/80">We are Data & AI partner to the leaders of tomorrow.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Placeholder logos using text for now, would be images in production */}
+            {["Eneco", "ASML", "Booking.com", "Roche", "Bol.com", "Philips"].map((client, i) => (
+              <div key={i} className="h-16 flex items-center justify-center border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
+                <span className="font-bold text-lg group-hover:text-primary transition-colors">{client}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-32 relative">
+        <div className="container">
+          <div className="mb-20 max-w-3xl">
+            <span className="text-primary font-medium tracking-wider uppercase text-sm block mb-4">Data & AI Services</span>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              Create exponential value through new, AI-powered revenue streams and business models.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* Service Navigation */}
+            <div className="lg:col-span-4 space-y-2">
+              {services.map((service, index) => (
+                <div 
+                  key={index}
+                  className={`p-6 rounded-xl cursor-pointer transition-all duration-300 border ${index === 0 ? 'bg-white/10 border-primary/50 shadow-[0_0_30px_rgba(76,201,240,0.1)]' : 'bg-transparent border-transparent hover:bg-white/5'}`}
+                >
+                  <div className="flex items-center gap-4">
+                    {index === 0 && <div className="text-primary">{service.icon}</div>}
+                    <h3 className={`text-xl font-bold ${index === 0 ? 'text-white' : 'text-muted-foreground'}`}>{service.title}</h3>
+                    {index === 0 && <ArrowRight className="ml-auto w-5 h-5 text-primary" />}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Active Service Content */}
+            <div className="lg:col-span-8">
+              <div className="relative rounded-3xl overflow-hidden aspect-video group">
+                <img 
+                  src={services[0].image} 
+                  alt={services[0].title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                
+                <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+                  <div className="mb-6 p-4 bg-background/30 backdrop-blur-md rounded-2xl inline-block border border-white/10">
+                    {services[0].icon}
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6">{services[0].title}</h3>
+                  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                    {services[0].description}
+                  </p>
+                  <Button className="rounded-full bg-white text-black hover:bg-white/90 font-bold px-8">
+                    More about {services[0].title} <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study / Impact Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/hero-main.jpg" alt="Background" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        </div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-3xl">
+            <span className="text-secondary font-medium tracking-wider uppercase text-sm block mb-4">AI in Supply Chain</span>
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              What if we could use AI to reduce working capital by <span className="text-secondary">18%</span>?
+            </h2>
+            <div className="flex items-end gap-4">
+              <h3 className="text-4xl font-bold text-white">We Can.</h3>
+              <a href="#" className="text-secondary hover:text-white transition-colors flex items-center gap-2 mb-1">
+                Explore Supply Chain Optimization Engine <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="py-32 bg-background">
+        <div className="container">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="text-3xl font-bold">Upcoming events</h2>
+            <a href="#" className="text-primary hover:text-white transition-colors flex items-center gap-2">
+              View all events <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Featured Event */}
+            <div className="group cursor-pointer">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl mb-6">
+                <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-all" />
+                <img 
+                  src="/images/service-strategy.jpg" 
+                  alt="Event" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-white/10">
+                  Event
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                AI that actually works: proven strategies from leading companies
+              </h3>
+              <div className="flex items-center gap-4 text-muted-foreground text-sm">
+                <span>Frankfurt, March 5, 2026</span>
+                <span className="w-1 h-1 bg-white/30 rounded-full" />
+                <span className="text-white font-medium border-b border-white/30 pb-0.5 group-hover:border-primary transition-colors">Read</span>
+              </div>
+            </div>
+
+            {/* Secondary Events */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { title: "Data Leadership Roundtables", date: "Amsterdam, Feb 5, 2026", image: "/images/bg-texture.jpg" },
+                { title: "Leading with AI: Essential Training", date: "Amsterdam, Nov 24, 2025", image: "/images/service-genai.jpg" }
+              ].map((event, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-4">
+                    <img 
+                      src={event.image} 
+                      alt={event.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-white/10">
+                      Event
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
+                    {event.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{event.date}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 }
