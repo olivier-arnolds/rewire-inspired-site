@@ -91,7 +91,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-              Rewire operationalizes every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
+              Eclectik operationalizes every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">

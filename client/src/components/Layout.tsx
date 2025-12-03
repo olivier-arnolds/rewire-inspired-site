@@ -41,15 +41,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-2 group">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-md group-hover:bg-primary/40 transition-all duration-500" />
-                <div className="relative w-8 h-8 border-2 border-primary rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-500" />
-                <div className="absolute w-2 h-2 bg-white rounded-full" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl tracking-wider leading-none">REWIRE</span>
-                <span className="text-[0.6rem] tracking-[0.2em] text-muted-foreground uppercase">Impossible No More</span>
+            <a className="flex items-center gap-3 group">
+              <img src="/images/logo-eclectik.svg" alt="Eclectik" className="h-12 w-auto" />
+              <div className="flex flex-col justify-center h-12">
+                <span className="text-[0.6rem] tracking-[0.1em] text-muted-foreground uppercase font-medium leading-tight pt-1">
+                  INSIGHTS THAT GENERATE<br/>AI TRANSFORMATION
+                </span>
               </div>
             </a>
           </Link>
@@ -103,8 +100,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 border-2 border-primary rounded-sm rotate-45" />
-                <span className="font-heading font-bold text-xl tracking-wider">REWIRE</span>
+                <img src="/images/logo-eclectik.svg" alt="Eclectik" className="h-8 w-auto" />
               </div>
               <p className="text-muted-foreground max-w-xs">
                 We operationalize every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
@@ -148,7 +144,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>&copy; 2025 Rewire Data & AI Consultancy. All rights reserved.</p>
+            <p>&copy; 2025 Eclectik Data & AI Consultancy. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
