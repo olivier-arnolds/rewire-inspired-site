@@ -43,9 +43,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/">
             <a className="flex items-center gap-4 group">
               <img src="/images/logo-icon.png" alt="Eclectik Icon" className="h-10 w-auto" />
-              <div className="flex flex-col items-start">
-                <img src="/images/logo-wordmark.png" alt="Eclectik" className="h-6 w-auto mb-1" />
-                <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none pl-[2px]">
+              <div className="flex flex-col items-start w-fit">
+                <img src="/images/logo-wordmark.png" alt="Eclectik" className="w-0 min-w-full h-auto mb-1" />
+                <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none whitespace-nowrap">
                   INSIGHTS THAT GENERATE AI TRANSFORMATION
                 </span>
               </div>
