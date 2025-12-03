@@ -41,14 +41,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-4 group">
-              <img src="/images/logo-icon.png" alt="Eclectik Icon" className="h-10 w-auto" />
-              <div className="flex flex-col items-start w-fit">
-                <img src="/images/logo-wordmark.png" alt="Eclectik" className="w-0 min-w-full h-auto mb-1" />
-                <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none whitespace-nowrap">
-                  INSIGHTS THAT GENERATE AI TRANSFORMATION
-                </span>
-              </div>
+            <a className="flex items-center group">
+              <img src="/images/logo-combined.png" alt="Eclectik - Insights that accelerate AI Transformation" className="h-12 w-auto" />
             </a>
           </Link>
 
@@ -100,9 +94,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <img src="/images/logo-icon.png" alt="Eclectik" className="h-8 w-auto" />
-                <img src="/images/logo-wordmark.png" alt="Eclectik" className="h-5 w-auto" />
+              <div className="flex items-center">
+                <img src="/images/logo-combined.png" alt="Eclectik" className="h-10 w-auto" />
               </div>
               <p className="text-muted-foreground max-w-xs">
                 We operationalize every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
