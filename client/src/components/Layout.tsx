@@ -41,13 +41,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-3 group">
-              <img src="/images/logo-eclectik.svg" alt="Eclectik" className="h-12 w-auto" />
-              <div className="flex flex-col justify-center h-12">
-                <span className="text-[0.6rem] tracking-[0.1em] text-muted-foreground uppercase font-medium leading-tight pt-1">
-                  INSIGHTS THAT GENERATE<br/>AI TRANSFORMATION
-                </span>
-              </div>
+            <a className="flex flex-col items-start gap-1 group">
+              <img src="/images/logo-eclectik.svg" alt="Eclectik" className="h-9 w-auto" />
+              <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none pl-11">
+                INSIGHTS THAT GENERATE AI TRANSFORMATION
+              </span>
             </a>
           </Link>
 
