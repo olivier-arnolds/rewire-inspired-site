@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/">
             <a className="flex flex-col items-start gap-1 group">
               <img src="/images/logo-eclectik.svg" alt="Eclectik" className="h-9 w-auto" />
-              <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none pl-11">
+              <span className="text-[0.5rem] tracking-[0.05em] text-muted-foreground uppercase font-medium leading-none pl-[3.25rem]">
                 INSIGHTS THAT GENERATE AI TRANSFORMATION
               </span>
             </a>
