@@ -22,8 +22,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, [location]);
 
   const navLinks = [
-    { name: "Data & AI Consulting", href: "/consulting" },
-    { name: "AI Training", href: "/training" },
+    { name: "Consulting", href: "/consulting" },
+    { name: "Training", href: "/training" },
     { name: "Solutions", href: "/solutions" },
     { name: "Sectors", href: "/sectors" },
     { name: "Resources", href: "/resources" },
@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+              <Link key={link.name} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group" style={{fontSize: '16px'}}>
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
