@@ -156,9 +156,9 @@ export default function Home() {
           className="absolute bottom-20 right-0 z-20 hidden lg:block"
         >
           <img 
-            src="/images/main-composite-small.png" 
+            src="/images/main-composite-final.png" 
             alt="Eclectik AI Transformation" 
-            className="w-[400px] h-auto object-contain"
+            className="w-[600px] h-auto object-contain"
           />
         </motion.div>
 
