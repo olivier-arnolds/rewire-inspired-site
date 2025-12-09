@@ -30,7 +30,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       href: "#",
       dropdown: [
         { name: "Resources", href: "/resources" },
-        { name: "Case Study: Copilot", href: "/case-study-copilot" },
+        { name: "Case Study: Copilot", href: "/case-studies/copilot-impact" },
+        { name: "Case Study: Glint & Insights", href: "/case-studies/glint-insights" },
         { name: "White Papers", href: "/resources/white-papers" },
       ]
     },
