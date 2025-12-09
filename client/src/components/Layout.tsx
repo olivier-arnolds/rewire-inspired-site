@@ -30,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: "Training Overview", href: "/training" },
         { name: "People Success Academy", href: "/training/people-success-academy" },
         { name: "Training & Enablement", href: "/training/enablement" },
+        { name: "Executive Coaching", href: "/training/executive-coaching" },
       ]
     },
     { name: "Solutions", href: "/solutions" },
@@ -161,7 +162,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-heading font-bold text-lg mb-6">Company</h4>
               <ul className="space-y-4">
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
+                <li><Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Events</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
               </ul>

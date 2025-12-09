@@ -16,8 +16,10 @@ import CustomerSuccess from "@/pages/CustomerSuccess";
 import ChangeManagement from "@/pages/ChangeManagement";
 import PeopleSuccessAcademy from "@/pages/PeopleSuccessAcademy";
 import TrainingEnablement from "@/pages/TrainingEnablement";
+import ExecutiveCoaching from "@/pages/ExecutiveCoaching";
 import Sectors from "./pages/Sectors";
 import WhitePapers from "./pages/WhitePapers";
+import Careers from "./pages/Careers";
 
 
 function Router() {
@@ -35,8 +37,10 @@ function Router() {
       <Route path="/services/change-management" component={ChangeManagement} />
       <Route path="/training/people-success-academy" component={PeopleSuccessAcademy} />
       <Route path="/training/enablement" component={TrainingEnablement} />
+      <Route path="/training/executive-coaching" component={ExecutiveCoaching} />
       <Route path={"/sectors"} component={Sectors} />
       <Route path="/resources/white-papers" component={WhitePapers} />
+      <Route path="/careers" component={Careers} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
