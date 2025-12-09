@@ -177,8 +177,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>&copy; 2025 Eclectik Data & AI Consultancy. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
               <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
             </div>
           </div>

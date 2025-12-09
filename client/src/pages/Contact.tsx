@@ -139,8 +139,47 @@ export default function Contact() {
                   </div>
                 </div>
 
-
-
+                <div className="space-y-4 pt-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Software/Platforms</h3>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/copilot.png" alt="Copilot" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Copilot</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/fabric.png" alt="Fabric" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Fabric</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/viva-insights.svg" alt="Viva Insights" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Insights</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/viva-engage.svg" alt="Viva Engage" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Engage</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/glint.svg" alt="Viva Glint" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Glint</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/pulse.png" alt="Viva Pulse" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Pulse</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/onelake.png" alt="OneLake" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">OneLake</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/data-factory.png" alt="Data Factory" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Data Factory</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/databases.png" alt="Databases" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Databases</span>
+                    </div>
+                  </div>
+                </div>
                 
               </div>
             </div>

@@ -9,6 +9,8 @@ import Consulting from "./pages/Consulting";
 import Training from "./pages/Training";
 import Solutions from "@/pages/Solutions";
 import Contact from "@/pages/Contact";
+import TermsOfService from "@/pages/TermsOfService";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CustomerSuccess from "@/pages/CustomerSuccess";
 import Sectors from "./pages/Sectors";
@@ -23,7 +25,9 @@ function Router() {
       <Route path={"/training"} component={Training} />
       <Route path="/solutions" component={Solutions} />
       <Route path="/contact" component={Contact} />
-      <Route path="/case-study/copilot-impact" component={CaseStudyCopilot} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/case-studies/copilot-impact" component={CaseStudyCopilot} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
       <Route path={"/sectors"} component={Sectors} />
       <Route path="/resources/white-papers" component={WhitePapers} />
