@@ -135,6 +135,13 @@ export default function Contact() {
                   </div>
                 </div>
 
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Software/Platforms</h3>
+                  <div className="flex gap-8 items-center flex-wrap">
+                    <img src="/images/viva-glint-logo.png" alt="Microsoft Viva Glint" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+
                 <div className="space-y-4 mt-8">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
                   <div className="flex gap-8 items-center flex-wrap">
