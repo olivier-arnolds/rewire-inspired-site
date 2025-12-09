@@ -230,11 +230,18 @@ export default function CaseStudyCopilot() {
                     </p>
                   </div>
 
-                  <Button className="w-full gap-2" asChild>
-                    <a href="/contact">
-                      Start Your Transformation <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
+                  <div className="space-y-3">
+                    <Button className="w-full gap-2" asChild>
+                      <a href="/contact">
+                        Schedule a Copilot Consultation <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    <Button variant="outline" className="w-full gap-2" asChild>
+                      <a href="/contact">
+                        Download Full Report <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
