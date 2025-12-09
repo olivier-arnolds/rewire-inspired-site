@@ -22,8 +22,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, [location]);
 
   const navLinks = [
-    { name: "Consulting", href: "/consulting" },
-    { name: "Training", href: "/training" },
+    { 
+      name: "Services", 
+      href: "#",
+      dropdown: [
+        { name: "Consulting", href: "/consulting" },
+        { name: "Training", href: "/training" },
+        { name: "Customer Success", href: "/services/customer-success" },
+      ]
+    },
     { name: "Solutions", href: "/solutions" },
     { name: "Sectors", href: "/sectors" },
     { name: "Resources", href: "/resources" },
@@ -47,10 +54,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group" style={{fontSize: '16px'}}>
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
+              link.dropdown ? (
+                <div key={link.name} className="relative group">
+                  <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1" style={{fontSize: '16px'}}>
+                    {link.name}
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-background/95 backdrop-blur-md border border-white/10 rounded-md shadow-lg overflow-hidden p-2 flex flex-col gap-1">
+                      {link.dropdown.map((item) => (
+                        <Link key={item.name} href={item.href} className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-white/5 rounded-sm transition-colors">
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.name} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group" style={{fontSize: '16px'}}>
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )
             ))}
           </nav>
 
@@ -72,9 +96,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         {navLinks.map((link) => (
-          <Link key={link.name} href={link.href} className="text-2xl font-heading font-bold hover:text-primary transition-colors">
+          link.dropdown ? (
+            <div key={link.name} className="flex flex-col items-center gap-4">
+              <span className="text-2xl font-heading font-bold text-muted-foreground">{link.name}</span>
+              {link.dropdown.map((item) => (
+                <Link key={item.name} href={item.href} className="text-xl font-heading font-medium hover:text-primary transition-colors">
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <Link key={link.name} href={link.href} className="text-2xl font-heading font-bold hover:text-primary transition-colors">
               {link.name}
             </Link>
+          )
         ))}
       </div>
 
