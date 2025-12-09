@@ -13,6 +13,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CustomerSuccess from "@/pages/CustomerSuccess";
+import ChangeManagement from "@/pages/ChangeManagement";
 import Sectors from "./pages/Sectors";
 import WhitePapers from "./pages/WhitePapers";
 
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/case-studies/copilot-impact" component={CaseStudyCopilot} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
+      <Route path="/services/change-management" component={ChangeManagement} />
       <Route path={"/sectors"} component={Sectors} />
       <Route path="/resources/white-papers" component={WhitePapers} />
       <Route path={"/404"} component={NotFound} />
