@@ -81,7 +81,7 @@ export default function Home() {
           >
             <motion.div variants={fadeIn} className="mb-6 flex items-center gap-3">
               <div className="h-[1px] w-12 bg-primary" />
-              <span className="text-primary font-medium tracking-wider uppercase text-sm">Data & AI Consulting</span>
+              <span className="text-primary font-medium tracking-wider uppercase text-sm">Workplace Signals & AI Transformation</span>
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white">
