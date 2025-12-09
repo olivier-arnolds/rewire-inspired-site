@@ -23,16 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { name: "Consulting", href: "/consulting" },
-    { 
-      name: "Training", 
-      href: "#",
-      dropdown: [
-        { name: "Training Overview", href: "/training" },
-        { name: "People Success Academy", href: "/training/people-success-academy" },
-        { name: "Training & Enablement", href: "/training/enablement" },
-        { name: "Executive Coaching", href: "/training/executive-coaching" },
-      ]
-    },
+    { name: "Training", href: "/training" },
     { name: "Solutions", href: "/solutions" },
     { 
       name: "Resources", 
@@ -49,6 +40,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       dropdown: [
         { name: "Customer Success", href: "/services/customer-success" },
         { name: "Change Management", href: "/services/change-management" },
+        { name: "People Success Academy", href: "/training/people-success-academy" },
+        { name: "Training & Enablement", href: "/training/enablement" },
+        { name: "Executive Coaching", href: "/training/executive-coaching" },
       ]
     },
     { name: "Contact", href: "/contact" },
