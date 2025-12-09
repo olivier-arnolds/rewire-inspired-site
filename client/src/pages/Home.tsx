@@ -80,8 +80,8 @@ export default function Home() {
             className="max-w-4xl"
           >
             <motion.div variants={fadeIn} className="mb-6 flex items-center gap-3">
-              <div className="h-[1px] w-12 bg-[var(--brand-teal)]" />
-              <span className="text-[var(--brand-teal)] font-medium tracking-wider uppercase text-sm">Data & AI Consulting</span>
+              <div className="h-[1px] w-12 bg-primary" />
+              <span className="text-primary font-medium tracking-wider uppercase text-sm">Data & AI Consulting</span>
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white">
@@ -95,10 +95,10 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 rounded-full btn-pulse font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(213,47,8,0.5)]">
+              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,201,240,0.5)]">
                 Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all hover:border-[var(--brand-teal)]">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all">
                 View Case Studies
               </Button>
             </motion.div>
@@ -145,7 +145,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8"><span className="text-outline-thick text-white/20 block md:inline">Impossible</span> no more</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8">Impossible no more</h2>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
               We fuse AI into the DNA of your organization, creating and scaling self-learning systems that reinvent the very core of how you think, operate and innovate.
             </p>
@@ -180,7 +180,7 @@ export default function Home() {
           <div className="mb-20 max-w-3xl">
             <span className="text-primary font-medium tracking-wider uppercase text-sm block mb-4">Data & AI Services</span>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Create <span className="text-[var(--brand-teal)]">exponential value</span> through new, AI-powered revenue streams and business models.
+              Create exponential value through new, AI-powered revenue streams and business models.
             </h2>
           </div>
 
