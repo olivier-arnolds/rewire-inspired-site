@@ -45,7 +45,7 @@ export default function Contact() {
             >
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">
                 The information to <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">fuel reinvention.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">accelerate transformation.</span>
               </h1>
               
               <p className="text-xl text-muted-foreground mb-12">
