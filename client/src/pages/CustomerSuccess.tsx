@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, BarChart3, Users, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Layout from "@/components/Layout";
 
 export default function CustomerSuccess() {
   return (
-    <div className="min-h-screen bg-background text-foreground pt-20">
+    <Layout>
+      <div className="min-h-screen bg-background text-foreground pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
@@ -128,6 +130,7 @@ export default function CustomerSuccess() {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </Layout>
   );
 }
