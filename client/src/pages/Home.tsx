@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight, LineChart, Target, Zap, Users } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const fadeIn = {
@@ -17,6 +18,48 @@ export default function Home() {
       }
     }
   };
+
+  const whatIfs = [
+    {
+      question: "What if we could see the ROI of AI before we scale?",
+      answer: "We can: model value with real collaboration telemetry and Copilot usage to predict ROI/TCO and guide rollout.",
+      icon: <LineChart className="w-12 h-12 text-primary mb-6" />,
+      color: "text-primary"
+    },
+    {
+      question: "What if we knew which roles unlock disproportionate AI value?",
+      answer: "We can: cluster signals (meeting load, authoring, cross-team work) to find 'value pockets' and prioritize investments.",
+      icon: <Target className="w-12 h-12 text-secondary mb-6" />,
+      color: "text-secondary"
+    },
+    {
+      question: "What if we pinpointed productivity bottlenecks undermining transformation?",
+      answer: "We can: surface friction (after-hours spikes, long meetings, handoff delays) and design targeted fixes.",
+      icon: <Zap className="w-12 h-12 text-accent mb-6" />,
+      color: "text-accent"
+    },
+    {
+      question: "What if we could forecast adoption trajectory for the next wave?",
+      answer: "We can: use leading indicators (trial usage, feature breadth, prompt diversity) to predict curves and focus enablement.",
+      icon: <BarChart3 className="w-12 h-12 text-chart-4 mb-6" />,
+      color: "text-chart-4"
+    },
+    {
+      question: "What if we could connect sentiment to measurable business outcomes?",
+      answer: "We can: link engagement drivers to observable behavior changes (cycle-time, rework, focus time).",
+      icon: <Users className="w-12 h-12 text-primary mb-6" />,
+      color: "text-primary"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % whatIfs.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   const services = [
     {
@@ -134,28 +177,61 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Mission Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/bg-texture.jpg')] bg-cover bg-center opacity-20" />
-        <div className="container relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">Impossible no more</h2>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
-              We fuse AI into the DNA of your organization, creating and scaling self-learning systems that reinvent the very core of how you think, operate and innovate.
-            </p>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
-              By combining the strengths of Human and Artificial Intelligence, we enable your teams to continually advance performance to new, previously impossible horizons.
-            </p>
-            <a href="#" className="inline-flex items-center text-primary text-lg font-semibold hover:gap-4 transition-all gap-2 group">
-              Learn more about our mission <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
+      {/* Dynamic What If Carousel Section */}
+      <section className="py-32 relative overflow-hidden bg-white/5">
+        <div className="absolute inset-0 bg-[url('/images/bg-texture.jpg')] bg-cover bg-center opacity-10" />
+        <div className="container relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Asking the right questions</h2>
+              <p className="text-xl text-muted-foreground">Turning uncertainty into actionable strategy.</p>
+            </div>
+
+            <div className="relative min-h-[400px] flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="w-full"
+                >
+                  <div className="bg-background/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-16 text-center shadow-2xl">
+                    <div className="flex justify-center">
+                      {whatIfs[currentIndex].icon}
+                    </div>
+                    
+                    <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                      "{whatIfs[currentIndex].question}"
+                    </h3>
+                    
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-8" />
+                    
+                    <p className={`text-xl md:text-3xl font-medium leading-relaxed ${whatIfs[currentIndex].color}`}>
+                      {whatIfs[currentIndex].answer}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Dots */}
+              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
+                {whatIfs.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentIndex 
+                        ? "bg-primary w-8" 
+                        : "bg-white/20 hover:bg-white/40"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
