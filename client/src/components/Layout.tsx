@@ -29,6 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       dropdown: [
         { name: "Training Overview", href: "/training" },
         { name: "People Success Academy", href: "/training/people-success-academy" },
+        { name: "Training & Enablement", href: "/training/enablement" },
       ]
     },
     { name: "Solutions", href: "/solutions" },
