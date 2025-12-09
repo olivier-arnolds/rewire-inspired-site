@@ -141,6 +141,9 @@ export default function Contact() {
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Software/Platforms</h3>
                   <div className="flex gap-8 items-center flex-wrap">
                     <img src="/images/viva-glint-logo.png" alt="Microsoft Viva Glint" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/microsoft-fabric-logo.png" alt="Microsoft Fabric" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/azure-logo.svg" alt="Microsoft Azure" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/viva-insights-logo.png" alt="Microsoft Viva Insights" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
 
