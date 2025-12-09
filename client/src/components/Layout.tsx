@@ -23,7 +23,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { name: "Consulting", href: "/consulting" },
-    { name: "Training", href: "/training" },
+    { 
+      name: "Training", 
+      href: "#",
+      dropdown: [
+        { name: "Training Overview", href: "/training" },
+        { name: "People Success Academy", href: "/training/people-success-academy" },
+      ]
+    },
     { name: "Solutions", href: "/solutions" },
     { 
       name: "Resources", 
