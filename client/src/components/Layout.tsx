@@ -26,18 +26,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: "Training", href: "/training" },
     { name: "Solutions", href: "/solutions" },
     { 
-      name: "Services", 
-      href: "#",
-      dropdown: [
-        { name: "Customer Success", href: "/services/customer-success" },
-      ]
-    },
-    { 
       name: "Resources", 
       href: "#",
       dropdown: [
         { name: "Resources", href: "/resources" },
         { name: "Case Study: Copilot", href: "/case-study-copilot" },
+        { name: "White Papers", href: "/resources/white-papers" },
+      ]
+    },
+    { 
+      name: "Services", 
+      href: "#",
+      dropdown: [
+        { name: "Customer Success", href: "/services/customer-success" },
       ]
     },
     { name: "Contact", href: "/contact" },
