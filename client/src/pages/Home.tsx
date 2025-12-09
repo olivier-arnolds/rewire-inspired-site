@@ -64,9 +64,9 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/Maincomposite.png" 
-            alt="Eclectik Team and Vision" 
-            className="w-full h-full object-cover opacity-60"
+            src="/images/hero-abstract-ai.png" 
+            alt="AI Neural Network Background" 
+            className="w-full h-full object-cover opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
