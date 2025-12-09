@@ -116,6 +116,32 @@ export default function CustomerSuccess() {
         </div>
       </section>
 
+      {/* Testimonial Section */}
+      <section className="py-20 bg-black/20">
+        <div className="container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="absolute -top-10 -left-10 text-primary/20">
+              <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M30 60 C30 40 40 30 50 20 L40 10 C20 20 10 40 10 70 L30 70 L30 90 L50 90 L50 60 L30 60 Z M80 60 C80 40 90 30 100 20 L90 10 C70 20 60 40 60 70 L80 70 L80 90 L100 90 L100 60 L80 60 Z" />
+              </svg>
+            </div>
+            <blockquote className="text-2xl md:text-3xl font-medium text-center leading-relaxed relative z-10">
+              "Their thoughtfulness, responsiveness, and creative problem-solving were truly off the charts. We hit several unexpected snags, and their deep expertise and proactive support were absolutely critical, we would have been lost without it."
+            </blockquote>
+            <div className="mt-8 text-center">
+              <cite className="not-italic font-semibold text-primary text-lg block mb-1">Communication Director</cite>
+              <span className="text-muted-foreground">Fintech Organization</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-primary/5 border-y border-primary/10">
         <div className="container text-center max-w-2xl">
