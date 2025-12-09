@@ -91,7 +91,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-              Eclectik operationalizes every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
+              Eclectik operationalizes Workplace Signals end-to-end, combining objective telemetry with subjective sentiment to build actionable roadmaps that deliver measurable impact.
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
