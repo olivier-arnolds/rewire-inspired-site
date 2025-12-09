@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { ArrowRight, Package, BarChart, Shield, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 export default function Solutions() {
   const fadeIn = {
@@ -74,6 +75,10 @@ export default function Solutions() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Solutions | Eclectik</title>
+        <meta name="description" content="Accelerate your transformation with ARR-ready licenses and packaged solutions. Glint Engage Fast-Track, Copilot Impact Kit, and AI Readiness Audit." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0 bg-background/50">

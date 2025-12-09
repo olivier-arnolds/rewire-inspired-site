@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { ArrowRight, BarChart3, Users, Zap, Target, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 export default function Consulting() {
   const fadeIn = {
@@ -48,6 +49,10 @@ export default function Consulting() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Consulting | Eclectik</title>
+        <meta name="description" content="Operationalize Workplace Signals to answer 'what if?' with 'we can'. Our consulting services include AI ROI modelling, value pockets mapping, and change architecture." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0 bg-background/50">

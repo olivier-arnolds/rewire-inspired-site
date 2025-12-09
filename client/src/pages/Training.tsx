@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { ArrowRight, MessageSquare, Users, Bell, FileText, Activity } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 export default function Training() {
   const fadeIn = {
@@ -48,6 +49,10 @@ export default function Training() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Training | Eclectik</title>
+        <meta name="description" content="Upskill leaders, managers, and HR teams to interpret signals confidently. Training in Glint results conversations, narrative intelligence, and smart alerts operations." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0 bg-background/50">
