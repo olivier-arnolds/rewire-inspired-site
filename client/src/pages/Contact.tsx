@@ -129,7 +129,17 @@ export default function Contact() {
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Partners</h3>
                   <div className="flex gap-8 items-center flex-wrap">
                     <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-32 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <span className="text-lg font-bold border border-white/20 px-4 py-2 rounded">ISO Certified</span>
+                    <img src="/images/ipsos-logo-final.png" alt="Ipsos" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/softwareone-logo-final.png" alt="SoftwareOne" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+
+                <div className="space-y-4 mt-8">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
+                  <div className="flex gap-8 items-center flex-wrap">
+                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
               </div>
