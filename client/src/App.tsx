@@ -12,6 +12,7 @@ import Contact from "@/pages/Contact";
 import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CustomerSuccess from "@/pages/CustomerSuccess";
 import Sectors from "./pages/Sectors";
+import WhitePapers from "./pages/WhitePapers";
 
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/case-study/copilot-impact" component={CaseStudyCopilot} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
       <Route path={"/sectors"} component={Sectors} />
+      <Route path="/resources/white-papers" component={WhitePapers} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

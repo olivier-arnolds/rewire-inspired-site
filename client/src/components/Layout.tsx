@@ -24,6 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { name: "Consulting", href: "/consulting" },
     { name: "Training", href: "/training" },
+    { name: "Solutions", href: "/solutions" },
     { 
       name: "Services", 
       href: "#",
@@ -31,9 +32,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: "Customer Success", href: "/services/customer-success" },
       ]
     },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Sectors", href: "/sectors" },
-    { name: "Resources", href: "/resources" },
+    { 
+      name: "Resources", 
+      href: "#",
+      dropdown: [
+        { name: "Resources", href: "/resources" },
+        { name: "Case Study: Copilot", href: "/case-study-copilot" },
+      ]
+    },
     { name: "Contact", href: "/contact" },
   ];
 
