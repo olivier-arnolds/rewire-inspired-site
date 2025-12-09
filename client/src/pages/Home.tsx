@@ -85,7 +85,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white">
-              We use AI to answer <br />
+              We use Workplace Signals to answer <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-pulse">"what if?"</span> <br />
               with <span className="text-white">"we can".</span>
             </motion.h1>
