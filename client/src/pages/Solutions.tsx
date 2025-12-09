@@ -76,14 +76,8 @@ export default function Solutions() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/Maincomposite_red1.png" 
-            alt="Solutions" 
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
+        <div className="absolute inset-0 z-0 bg-background/50">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>
 
         <div className="container relative z-10">
