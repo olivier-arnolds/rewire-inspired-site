@@ -158,7 +158,7 @@ export default function Home() {
           <img 
             src="/images/main-composite-final.png" 
             alt="Eclectik AI Transformation" 
-            className="w-[600px] h-auto object-contain"
+            className="w-[240px] h-auto object-contain"
           />
         </motion.div>
 
