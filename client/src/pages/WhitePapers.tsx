@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText, Download } from "lucide-react";
+import { FileText, Download } from "lucide-react";
+import DownloadGate from "@/components/DownloadGate";
 
 export default function WhitePapers() {
   const fadeIn = {
@@ -13,22 +14,22 @@ export default function WhitePapers() {
 
   const whitePapers = [
     {
-      title: "The Future of AI in Enterprise",
-      description: "A comprehensive guide to how AI is reshaping business operations and strategy in 2025 and beyond.",
-      date: "October 2024",
-      readTime: "15 min read"
+      title: "The Role of the Employee Experience Platform in Enterprise AI Transformation",
+      description: "Discover how EX platforms are becoming the critical infrastructure for successful AI adoption and workforce transformation.",
+      date: "February 2025",
+      readTime: "15 min read",
+      image: "/images/whitepapers/ex-platform-ai-cover.png",
+      fileUrl: "/documents/ex-platform-ai-report.pdf",
+      fileName: "ex-platform-ai-transformation-report.pdf"
     },
     {
-      title: "Workplace Signals: Decoding Employee Sentiment",
-      description: "Learn how to leverage objective telemetry and subjective sentiment to build actionable roadmaps.",
-      date: "September 2024",
-      readTime: "12 min read"
-    },
-    {
-      title: "AI Governance Frameworks",
-      description: "Best practices for implementing secure, ethical, and compliant AI systems in large organizations.",
-      date: "August 2024",
-      readTime: "20 min read"
+      title: "The State of AI Change Readiness",
+      description: "Accelerating AI transformation through the employee experience. A comprehensive eBook on organizational readiness for AI.",
+      date: "2024",
+      readTime: "20 min read",
+      image: "/images/whitepapers/state-of-ai-readiness-cover.png",
+      fileUrl: "/documents/state-of-ai-readiness-ebook.pdf",
+      fileName: "state-of-ai-change-readiness-ebook.pdf"
     }
   ];
 
@@ -50,7 +51,7 @@ export default function WhitePapers() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {whitePapers.map((paper, index) => (
               <motion.div
                 key={index}
@@ -58,9 +59,18 @@ export default function WhitePapers() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:border-primary/50 transition-all duration-300 group">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:border-primary/50 transition-all duration-300 group flex flex-col overflow-hidden">
+                  <div className="relative h-64 w-full overflow-hidden bg-black/20">
+                    <img 
+                      src={paper.image} 
+                      alt={paper.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  </div>
+                  
+                  <CardHeader className="flex-grow relative z-10 -mt-12">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors backdrop-blur-md border border-white/10">
                       <FileText className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
@@ -68,17 +78,25 @@ export default function WhitePapers() {
                       <span>•</span>
                       <span>{paper.readTime}</span>
                     </div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors line-clamp-2">
                       {paper.title}
                     </CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base line-clamp-3">
                       {paper.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
-                      Download PDF <Download className="w-4 h-4" />
-                    </Button>
+                  
+                  <CardContent className="mt-auto">
+                    <DownloadGate 
+                      title={paper.title}
+                      fileName={paper.fileName}
+                      fileUrl={paper.fileUrl}
+                      trigger={
+                        <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                          Download PDF <Download className="w-4 h-4" />
+                        </Button>
+                      }
+                    />
                   </CardContent>
                 </Card>
               </motion.div>
