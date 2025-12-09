@@ -133,7 +133,7 @@ export default function Contact() {
                     <img src="/images/softwareone-logo-final.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/hibob-logo.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/perceptyx-logo.png" alt="Perceptyx" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+
                   </div>
                 </div>
 
