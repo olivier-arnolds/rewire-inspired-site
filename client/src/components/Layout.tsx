@@ -40,20 +40,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center group">
-              <img src="/images/logo-combined.png" alt="Eclectik - Insights that accelerate AI Transformation" className="h-12 w-auto" />
-            </a>
+          <Link href="/" className="flex items-center group">
+            <img src="/images/logo-combined.png" alt="Eclectik - Insights that accelerate AI Transformation" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </a>
+              <Link key={link.name} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -76,11 +72,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         {navLinks.map((link) => (
-          <Link key={link.name} href={link.href}>
-            <a className="text-2xl font-heading font-bold hover:text-primary transition-colors">
+          <Link key={link.name} href={link.href} className="text-2xl font-heading font-bold hover:text-primary transition-colors">
               {link.name}
-            </a>
-          </Link>
+            </Link>
         ))}
       </div>
 
