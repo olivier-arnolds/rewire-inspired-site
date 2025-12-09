@@ -218,14 +218,14 @@ export default function Home() {
                       {whatIfs[currentIndex].icon}
                     </div>
                     
-                    <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                      "{whatIfs[currentIndex].question}"
+                    <h3 className="text-3xl md:text-5xl mb-8 leading-tight">
+                      <span className="font-bold">"What if</span> {whatIfs[currentIndex].question.replace("What if ", "").replace('"', '')}"
                     </h3>
                     
                     <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-8" />
                     
-                    <p className={`text-xl md:text-3xl font-medium leading-relaxed ${whatIfs[currentIndex].color}`}>
-                      {whatIfs[currentIndex].answer}
+                    <p className={`text-xl md:text-3xl leading-relaxed ${whatIfs[currentIndex].color}`}>
+                      <span className="font-bold">We can</span> {whatIfs[currentIndex].answer.replace("We can: ", "").replace("We can ", "")}
                     </p>
                   </div>
                 </motion.div>
