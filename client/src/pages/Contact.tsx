@@ -121,7 +121,7 @@ export default function Contact() {
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
                   <div className="flex gap-8 items-center flex-wrap">
                     <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
                 
@@ -129,10 +129,10 @@ export default function Contact() {
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Partners</h3>
                   <div className="flex gap-6 items-center flex-wrap">
                     <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/ipsos-logo.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/softwareone-logo-final.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/ipsos-logo-white.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/softwareone-logo-white.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/hibob-logo.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-hibob-logo.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
 
                   </div>
                 </div>
@@ -140,10 +140,10 @@ export default function Contact() {
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Software/Platforms</h3>
                   <div className="flex gap-8 items-center flex-wrap">
-                    <img src="/images/viva-glint-logo.png" alt="Microsoft Viva Glint" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/microsoft-fabric-logo.png" alt="Microsoft Fabric" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/azure-logo.svg" alt="Microsoft Azure" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/viva-insights-logo.png" alt="Microsoft Viva Insights" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-viva-glint-logo.png" alt="Microsoft Viva Glint" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-microsoft-fabric-logo.png" alt="Microsoft Fabric" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/azure-logo.svg" alt="Microsoft Azure" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity invert brightness-0 invert" />
+                    <img src="/images/white-viva-insights-logo.png" alt="Microsoft Viva Insights" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
 
