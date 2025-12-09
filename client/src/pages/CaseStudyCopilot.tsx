@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Target, Zap, CheckCircle2, TrendingUp, Network, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Layout from "@/components/Layout";
 
 export default function CaseStudyCopilot() {
   return (
+    <Layout>
     <div className="min-h-screen bg-background text-foreground pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -240,5 +242,6 @@ export default function CaseStudyCopilot() {
         </div>
       </section>
     </div>
+    </Layout>
   );
 }
