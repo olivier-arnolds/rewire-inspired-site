@@ -132,7 +132,7 @@ export default function Contact() {
                     <img src="/images/ipsos-logo-white.svg" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/softwareone-logo-white.svg" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/white-hibob-logo.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/hibob-logo-white.svg" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
 
                   </div>
                 </div>
