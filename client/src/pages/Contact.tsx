@@ -119,19 +119,21 @@ export default function Contact() {
               <div className="space-y-12 opacity-70">
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
-                  <div className="flex gap-8 items-center">
-                    <img src="/images/isae-logo.png" alt="ISAE 3402" className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/tisax-logo.png" alt="TISAX" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  <div className="flex gap-8 items-center flex-wrap">
+                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Partners</h3>
-                  <div className="flex gap-8 items-center flex-wrap">
-                    <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-32 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/ipsos-logo.png" alt="Ipsos" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/softwareone-logo-final.png" alt="SoftwareOne" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  <div className="flex gap-6 items-center flex-wrap">
+                    <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/ipsos-logo.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/softwareone-logo-final.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/hibob-logo.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/perceptyx-logo.png" alt="Perceptyx" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
 
@@ -142,13 +144,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="space-y-4 mt-8">
-                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
-                  <div className="flex gap-8 items-center flex-wrap">
-                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                  </div>
-                </div>
+                
               </div>
             </div>
 
