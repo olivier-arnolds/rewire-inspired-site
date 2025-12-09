@@ -156,7 +156,7 @@ export default function Home() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="absolute bottom-20 right-0 z-20 hidden lg:block"
+          className="absolute bottom-20 right-10 z-20 hidden lg:block"
         >
           <img 
             src="/images/main-composite-final.png" 
