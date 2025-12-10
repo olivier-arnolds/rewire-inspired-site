@@ -177,7 +177,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Right Column: Certifications & Partners (Visual Balance) */}
-            <div className="hidden lg:flex flex-col justify-start pt-20 h-full min-h-[600px] pl-20 border-l border-white/5">
+            <div className="hidden lg:flex flex-col justify-start pt-48 h-full min-h-[600px] pl-20 border-l border-white/5">
               <div className="space-y-12 opacity-70">
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
