@@ -134,8 +134,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="bg-black border-t border-white/10 pt-20 pb-10">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
+            <div className="space-y-6 lg:col-span-1">
               <div className="flex items-center">
                 <img src="/images/logo-combined.png" alt="Eclectik" className="h-10 w-auto" />
               </div>
@@ -144,7 +144,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </p>
             </div>
             
-            <div>
+            <div className="lg:pl-8">
               <h4 className="font-heading font-bold text-lg mb-6">Services</h4>
               <ul className="space-y-4">
                 <li><Link href="/consulting" className="text-muted-foreground hover:text-primary transition-colors">Consulting</Link></li>
@@ -153,7 +153,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
 
-            <div>
+            <div className="lg:pl-4">
               <h4 className="font-heading font-bold text-lg mb-6">HR Tech Services</h4>
               <ul className="space-y-4">
                 <li><Link href="/services/customer-success" className="text-muted-foreground hover:text-primary transition-colors">Customer Success</Link></li>
