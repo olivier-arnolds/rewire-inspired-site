@@ -53,28 +53,81 @@ export default function Contact() {
               </p>
 
               <form className="space-y-8 mb-16">
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
-                    Email*
-                  </label>
-                  <div className="relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label htmlFor="firstName" className="text-sm font-medium text-muted-foreground">
+                      First Name*
+                    </label>
                     <Input 
-                      type="email" 
-                      id="email" 
-                      placeholder="your@email.com" 
-                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-6 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                      type="text" 
+                      id="firstName" 
+                      placeholder="John" 
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                     />
-                    <Button 
-                      type="submit" 
-                      variant="ghost" 
-                      className="absolute right-0 top-1/2 -translate-y-1/2 hover:bg-transparent hover:text-primary p-0 flex items-center gap-2 font-medium"
-                    >
-                      Submit <ArrowRight className="w-4 h-4" />
-                    </Button>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="lastName" className="text-sm font-medium text-muted-foreground">
+                      Last Name*
+                    </label>
+                    <Input 
+                      type="text" 
+                      id="lastName" 
+                      placeholder="Doe" 
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                    />
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                <div className="space-y-2">
+                  <label htmlFor="company" className="text-sm font-medium text-muted-foreground">
+                    Company Name*
+                  </label>
+                  <Input 
+                    type="text" 
+                    id="company" 
+                    placeholder="Your Company Ltd." 
+                    className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
+                      Email Address*
+                    </label>
+                    <Input 
+                      type="email" 
+                      id="email" 
+                      placeholder="john@company.com" 
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium text-muted-foreground">
+                      Mobile Phone
+                    </label>
+                    <Input 
+                      type="tel" 
+                      id="phone" 
+                      placeholder="+1 (555) 000-0000" 
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-muted-foreground">
+                    Message
+                  </label>
+                  <textarea 
+                    id="message" 
+                    rows={4}
+                    placeholder="How can we help you accelerate your AI transformation?" 
+                    className="w-full bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors resize-none focus:outline-none text-white placeholder:text-muted-foreground/50"
+                  />
+                </div>
+
+                <div className="flex items-start gap-3 pt-4">
                   <Checkbox id="consent" className="mt-1 border-white/20 data-[state=checked]:bg-primary data-[state=checked]:border-primary" />
                   <div className="grid gap-1.5 leading-none">
                     <label
@@ -86,9 +139,18 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <p className="text-xs text-muted-foreground/60 leading-relaxed">
-                  You can unsubscribe from these communications at any time. For more information on how we are committed to protecting your privacy, please review our <a href="#" className="underline hover:text-primary">Privacy Policy</a>.
-                </p>
+                <div className="flex items-center justify-between pt-4">
+                  <p className="text-xs text-muted-foreground/60 leading-relaxed max-w-xs">
+                    Protected by reCAPTCHA and the Google <a href="#" className="underline hover:text-primary">Privacy Policy</a> and <a href="#" className="underline hover:text-primary">Terms of Service</a> apply.
+                  </p>
+                  <Button 
+                    type="submit" 
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-background font-bold px-8 rounded-full"
+                  >
+                    Send Message <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
               </form>
 
               <div className="space-y-6">
