@@ -1,42 +1,65 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Calendar, Newspaper } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import NewsModal from "./NewsModal";
 
 export default function AINews() {
+  const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const newsItems = [
     {
       title: "AI Adoption Surges in Enterprise",
       source: "AWS Research",
       date: "Nov 28, 2025",
       summary: "Research shows that between 2024 and 2025, 50% of businesses will have adopted AI solutions, marking a significant shift in operational strategy.",
-      category: "Adoption"
+      fullContent: "New research from AWS indicates a tipping point in enterprise AI adoption. The study reveals that 50% of businesses are projected to have fully integrated AI solutions into their core operations by the end of 2025. This surge is driven by the need for operational efficiency, personalized customer experiences, and data-driven decision-making. Companies that fail to adapt risk falling behind in an increasingly competitive landscape.",
+      category: "Adoption",
+      url: "https://aws.amazon.com/ai/"
     },
     {
       title: "Agentic AI Systems on the Rise",
       source: "StartUs Insights",
       date: "Nov 13, 2025",
       summary: "Agentic AI is expected to expand from near-zero adoption in 2024 to influencing 15% of enterprise decisions by 2028.",
-      category: "Technology"
+      fullContent: "StartUs Insights reports a rapid emergence of Agentic AI systems—autonomous agents capable of planning and executing complex tasks with minimal human intervention. While adoption was near-zero in 2024, projections suggest these systems will influence 15% of all enterprise decisions by 2028. This shift represents a move from passive AI tools to active, decision-making partners in the workplace.",
+      category: "Technology",
+      url: "https://www.startus-insights.com/"
     },
     {
       title: "Generative AI: Beyond the Hype",
       source: "Menlo Ventures",
       date: "Dec 9, 2025",
       summary: "AI is spreading across enterprises at a pace with no precedent in modern software history, moving from experimentation to core business value.",
-      category: "Strategy"
+      fullContent: "Menlo Ventures' latest report highlights that Generative AI has moved beyond the initial hype cycle and is now delivering tangible business value. The adoption rate is unprecedented in the history of modern software, with enterprises moving quickly from experimental pilots to full-scale production deployments. Key areas of impact include coding assistance, content generation, and customer support automation.",
+      category: "Strategy",
+      url: "https://menlovc.com/"
     },
     {
       title: "AI as a True Partner",
       source: "Microsoft",
       date: "Dec 8, 2025",
       summary: "Emerging trends suggest AI will become a true partner by 2026—boosting teamwork, security, and infrastructure efficiency.",
-      category: "Future of Work"
+      fullContent: "Microsoft's vision for the future of work positions AI not just as a tool, but as a collaborative partner. By 2026, AI agents are expected to work alongside human teams to enhance creativity, bolster security postures, and optimize infrastructure efficiency. This partnership model aims to augment human capabilities rather than replace them, fostering a more productive and innovative work environment.",
+      category: "Future of Work",
+      url: "https://www.microsoft.com/en-us/worklab"
     }
   ];
 
+  const handleNewsClick = (item: any) => {
+    setSelectedNews(item);
+    setIsModalOpen(true);
+  };
+
   return (
     <section className="py-24 bg-white/5 relative overflow-hidden">
+      <NewsModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        newsItem={selectedNews} 
+      />
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <motion.div
@@ -77,7 +100,10 @@ export default function AINews() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group cursor-pointer">
+              <Card 
+                className="h-full bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group cursor-pointer hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/10"
+                onClick={() => handleNewsClick(item)}
+              >
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex justify-between items-start mb-4">
                     <Badge variant="secondary" className="text-xs font-normal">
