@@ -50,12 +50,48 @@ export default function PresentationViewer({
         </div>
 
         <div className="flex-1 bg-black/5 relative overflow-hidden flex items-center justify-center p-4">
-          <div className="relative w-full h-full max-w-4xl max-h-[calc(100%-2rem)] bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
-            <iframe 
-              src={slides[currentSlide]} 
-              className="w-full h-full border-0"
-              title={`Slide ${currentSlide + 1}`}
-            />
+          <div className="relative w-full aspect-video max-h-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+            <div className="w-full h-full relative">
+              <iframe 
+                src={slides[currentSlide]} 
+                className="w-[1280px] h-[720px] border-0 absolute top-0 left-0 origin-top-left"
+                style={{ 
+                  transform: 'scale(var(--scale-factor, 1))',
+                  width: '1280px',
+                  height: '720px'
+                }}
+                title={`Slide ${currentSlide + 1}`}
+                onLoad={(e) => {
+                  const iframe = e.currentTarget;
+                  const container = iframe.parentElement;
+                  if (container) {
+                    const updateScale = () => {
+                      const containerWidth = container.clientWidth;
+                      const containerHeight = container.clientHeight;
+                      const scaleX = containerWidth / 1280;
+                      const scaleY = containerHeight / 720;
+                      const scale = Math.min(scaleX, scaleY);
+                      container.style.setProperty('--scale-factor', scale.toString());
+                      
+                      // Center the iframe
+                      const scaledWidth = 1280 * scale;
+                      const scaledHeight = 720 * scale;
+                      const left = (containerWidth - scaledWidth) / 2;
+                      const top = (containerHeight - scaledHeight) / 2;
+                      iframe.style.left = `${left}px`;
+                      iframe.style.top = `${top}px`;
+                    };
+                    
+                    updateScale();
+                    window.addEventListener('resize', updateScale);
+                    // Cleanup listener on unmount/change is tricky here without a ref/effect, 
+                    // but for this simple component it's acceptable or we can refactor to useResizeObserver
+                    const observer = new ResizeObserver(updateScale);
+                    observer.observe(container);
+                  }
+                }}
+              />
+            </div>
             
             {/* Navigation Overlays */}
             <div className="absolute inset-y-0 left-0 flex items-center">
