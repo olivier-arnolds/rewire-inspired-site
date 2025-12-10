@@ -29,7 +29,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       name: "Resources", 
       href: "#",
       dropdown: [
-        { name: "Resources", href: "/resources" },
         { name: "Case Study: Copilot ROI", href: "/case-studies/copilot-impact" },
         { name: "Case Study: Copilot Adoption", href: "/case-studies/copilot-adoption" },
         { name: "Case Study: Glint & Insights", href: "/case-studies/glint-insights" },
