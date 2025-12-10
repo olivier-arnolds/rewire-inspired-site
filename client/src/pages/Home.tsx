@@ -7,6 +7,8 @@ import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import ServicePillars from "@/components/ServicePillars";
+import ServicesOverview from "@/components/ServicesOverview";
+import AINews from "@/components/AINews";
 
 export default function Home() {
   const fadeIn = {
@@ -442,93 +444,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <ServicePillars />
+      {/* Section 6: Services Overview */}
+      <ServicesOverview />
 
-      {/* Case Study / Impact Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/images/hero-main.jpg" alt="Background" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        </div>
-        
-        <div className="container relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-secondary font-medium tracking-wider uppercase text-sm block mb-4">AI in Supply Chain</span>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight" style={{fontSize: '60px'}}>
-              What if we could use AI to reduce working capital by <span className="text-secondary">18%</span>?
-            </h2>
-            <div className="flex items-end gap-4">
-              <h3 className="text-4xl font-bold text-white">We Can.</h3>
-              <a href="#" className="text-secondary hover:text-white transition-colors flex items-center gap-2 mb-1">
-                Explore Supply Chain Optimization Engine <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="py-32 bg-background">
-        <div className="container">
-          <div className="flex justify-between items-end mb-12">
-            <h2 className="text-3xl font-bold">Upcoming events</h2>
-            <a href="#" className="text-primary hover:text-white transition-colors flex items-center gap-2">
-              View all events <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Featured Event */}
-            <div className="group cursor-pointer">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl mb-6">
-                <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-all" />
-                <img 
-                  src="/images/service-strategy.jpg" 
-                  alt="Event" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-white/10">
-                  Event
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                AI that actually works: proven strategies from leading companies
-              </h3>
-              <div className="flex items-center gap-4 text-muted-foreground text-sm">
-                <span>Frankfurt, March 5, 2026</span>
-                <span className="w-1 h-1 bg-white/30 rounded-full" />
-                <span className="text-white font-medium border-b border-white/30 pb-0.5 group-hover:border-primary transition-colors">Read</span>
-              </div>
-            </div>
-
-            {/* Secondary Events */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { title: "Data Leadership Roundtables", date: "Amsterdam, Feb 5, 2026", image: "/images/bg-texture.jpg" },
-                { title: "Leading with AI: Essential Training", date: "Amsterdam, Nov 24, 2025", image: "/images/service-genai.jpg" }
-              ].map((event, i) => (
-                <div key={i} className="group cursor-pointer">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-4">
-                    <img 
-                      src={event.image} 
-                      alt={event.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-white/10">
-                      Event
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
-                    {event.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{event.date}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section 7: AI News */}
+      <AINews />
     </Layout>
   );
 }
