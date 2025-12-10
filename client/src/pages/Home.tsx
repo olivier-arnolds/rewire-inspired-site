@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import ServicePillars from "@/components/ServicePillars";
 import ServicesOverview from "@/components/ServicesOverview";
 import AINews from "@/components/AINews";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -457,6 +458,9 @@ export default function Home() {
 
       {/* Section 7: AI News */}
       <AINews />
+
+      {/* Section 8: FAQ */}
+      <FAQ />
     </Layout>
   );
 }
