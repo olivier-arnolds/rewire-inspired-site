@@ -433,15 +433,15 @@ export default function Home() {
               { name: "Syngenta", src: "/images/clients/syngenta.png" },
               { name: "Warburtons", src: "/images/clients/warburtons.png" },
               { name: "Westfalen", src: "/images/clients/westfalen.png" },
-              { name: "Sage", src: "/images/clients/sage.png" },
-              { name: "Breitling", src: "/images/clients/breitling.png" },
+              { name: "Sage", src: "/images/clients/sage.png", className: "scale-125" },
+              { name: "Breitling", src: "/images/clients/breitling.png", className: "scale-125" },
               { name: "Chugai", src: "/images/clients/chugai.png" }
             ].map((client, i) => (
               <div key={i} className="h-20 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
                 <img 
                   src={client.src} 
                   alt={client.name} 
-                  className="max-w-full max-h-full object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                  className={`max-w-full max-h-full object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 ${client.className || ''}`}
                 />
               </div>
             ))}
