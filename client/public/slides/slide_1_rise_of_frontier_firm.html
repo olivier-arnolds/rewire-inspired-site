@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rise of the Frontier Firm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F2F2;
+            color: #1A1A1A;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Left Content Area */
+        .content-area {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #E0E0E0;
+        }
+        
+        .eyebrow {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0052CC;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #0052CC;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+        
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .point {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .point-icon {
+            min-width: 40px;
+            height: 40px;
+            background-color: #1A1A1A;
+            color: #F2F2F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .point-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        
+        .point-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        /* Right Image Area */
+        .image-area {
+            position: relative;
+            background-color: #0052CC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            mix-blend-mode: multiply;
+            filter: grayscale(100%) contrast(120%);
+        }
+        
+        .stat-box {
+            position: absolute;
+            bottom: 60px;
+            left: -40px;
+            background-color: #1A1A1A;
+            color: #F2F2F2;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #0052CC;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Decorative Elements */
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines"></div>
+        
+        <div class="content-area">
+            <div class="eyebrow">2025 Outlook</div>
+            <h1>The Rise of the<br>Frontier Firm</h1>
+            
+            <div class="key-points">
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-brain"></i></div>
+                    <div class="point-content">
+                        <h3>Intelligence on Tap</h3>
+                        <p>A new organizational model defined by human-agent collaboration and AI as a scalable utility.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-battery-empty"></i></div>
+                    <div class="point-content">
+                        <h3>The Capacity Gap</h3>
+                        <p>Business demands outpace human capacity. 80% of the workforce lacks time/energy to meet rising goals.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-robot"></i></div>
+                    <div class="point-content">
+                        <h3>Digital Labor Solution</h3>
+                        <p>AI agents scale workforce capacity on demand. 81% of leaders expect extensive agent integration in 12-18 months.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-area">
+            <img src="/images/slides/frontier-firm-cover-slide.webp" alt="Report Cover">
+            <div class="stat-box">
+                <div class="stat-number">71%</div>
+                <div class="stat-label">of Frontier Firm leaders report success, compared to just 39% globally.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

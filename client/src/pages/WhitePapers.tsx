@@ -38,9 +38,9 @@ export default function WhitePapers() {
       isExternal: true,
       hasPresentation: true,
       slides: [
-        "/images/slides/slide_1_rise_of_frontier_firm.png",
-        "/images/slides/slide_2_three_phases_ai.png",
-        "/images/slides/slide_3_new_org_blueprint.png"
+        "/slides/slide_1_rise_of_frontier_firm.html",
+        "/slides/slide_2_three_phases_ai.html",
+        "/slides/slide_3_new_org_blueprint.html"
       ]
     },
     {
