@@ -53,7 +53,7 @@ export default function ServicesOverview() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Services</span>
+              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">HR Tech Services</span>
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               We support you to help leaders cut through the complexity. By turning employee insight into clear, actionable direction we enable your organization to build momentum, strengthen culture, and perform at its best.
