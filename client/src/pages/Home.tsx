@@ -444,6 +444,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section 5: Service Pillars */}
+      <ServicePillars />
+
       {/* Section 6: Services Overview */}
       <ServicesOverview />
 
