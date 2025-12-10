@@ -130,7 +130,7 @@ export default function Home() {
               <span className="text-primary font-medium tracking-wider uppercase text-sm">Workplace Signals & AI Transformation</span>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white" style={{fontSize: '70px'}}>
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white" style={{fontSize: '60px'}}>
               We use Workplace Signals to answer <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-pulse">"what if?"</span> <br />
               with <span className="text-white">"we can".</span>
