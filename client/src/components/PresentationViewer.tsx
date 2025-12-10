@@ -66,6 +66,7 @@ export default function PresentationViewer({
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent 
         className="flex flex-col p-0 gap-0 transition-all duration-200 ease-in-out"
+        showCloseButton={false}
         style={{ 
           width: `${dimensions.width}px`, 
           maxWidth: '95vw',
