@@ -16,6 +16,7 @@ import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CaseStudyGlint from "./pages/CaseStudyGlint";
 import CaseStudyAdoption from "./pages/CaseStudyAdoption";
 import CustomerSuccess from "@/pages/CustomerSuccess";
+import PeopleScience from "@/pages/PeopleScience";
 import ChangeManagement from "@/pages/ChangeManagement";
 import PeopleSuccessAcademy from "@/pages/PeopleSuccessAcademy";
 import TrainingEnablement from "@/pages/TrainingEnablement";
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/case-studies/glint-insights" component={CaseStudyGlint} />
       <Route path="/case-studies/copilot-adoption" component={CaseStudyAdoption} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
+      <Route path="/services/people-science" component={PeopleScience} />
       <Route path="/services/change-management" component={ChangeManagement} />
       <Route path="/training/people-success-academy" component={PeopleSuccessAcademy} />
       <Route path="/training/enablement" component={TrainingEnablement} />
