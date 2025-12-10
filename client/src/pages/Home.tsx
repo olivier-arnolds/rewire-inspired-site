@@ -496,7 +496,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="text-secondary font-medium tracking-wider uppercase text-sm block mb-4">AI in Supply Chain</span>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight" style={{fontSize: '60px'}}>
               What if we could use AI to reduce working capital by <span className="text-secondary">18%</span>?
             </h2>
             <div className="flex items-end gap-4">
