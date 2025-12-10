@@ -419,7 +419,7 @@ export default function Home() {
       {/* Client Logos */}
       <section className="py-20 bg-white/5">
         <div className="container">
-          <p className="text-center text-xl font-medium mb-12 text-white/80">We are Data & AI partner to the leaders of tomorrow.</p>
+          <p className="text-center text-xl font-medium mb-12 text-white/80">We are proud Workplace & AI Transformation partner for</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Placeholder logos using text for now, would be images in production */}
             {["Eneco", "ASML", "Booking.com", "Roche", "Bol.com", "Philips"].map((client, i) => (
