@@ -34,7 +34,7 @@ export default function PresentationViewer({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-5xl w-[95vw] h-[90vh] flex flex-col p-0 gap-0">
+      <DialogContent className="max-w-[95vw] w-[95vw] h-[90vh] flex flex-col p-0 gap-0">
         <div className="flex items-center justify-between p-4 border-b">
           <DialogTitle className="text-xl font-bold truncate flex-1 mr-4">{title}</DialogTitle>
           <div className="flex items-center gap-2">
@@ -50,7 +50,7 @@ export default function PresentationViewer({
         </div>
 
         <div className="flex-1 bg-black/5 relative overflow-hidden flex items-center justify-center p-4">
-          <div className="relative w-full aspect-video max-h-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+          <div className="relative w-full h-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
             <div className="w-full h-full relative">
               <iframe 
                 src={slides[currentSlide]} 
