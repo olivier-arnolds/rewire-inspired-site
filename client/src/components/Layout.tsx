@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       ]
     },
     { 
-      name: "Services", 
+      name: "HR Tech Services", 
       href: "#",
       dropdown: [
         { name: "Customer Success", href: "/services/customer-success" },
@@ -147,10 +147,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-heading font-bold text-lg mb-6">Services</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Data & AI Strategy</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Customized AI</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Data Management</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">ML Ops</a></li>
+                <li><Link href="/consulting" className="text-muted-foreground hover:text-primary transition-colors">Consulting</Link></li>
+                <li><Link href="/training" className="text-muted-foreground hover:text-primary transition-colors">Training</Link></li>
+                <li><Link href="/solutions" className="text-muted-foreground hover:text-primary transition-colors">Solutions</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-heading font-bold text-lg mb-6">HR Tech Services</h4>
+              <ul className="space-y-4">
+                <li><Link href="/services/customer-success" className="text-muted-foreground hover:text-primary transition-colors">Customer Success</Link></li>
+                <li><Link href="/services/people-science" className="text-muted-foreground hover:text-primary transition-colors">People Science</Link></li>
+                <li><Link href="/services/change-management" className="text-muted-foreground hover:text-primary transition-colors">Change Management</Link></li>
+                <li><Link href="/training/people-success-academy" className="text-muted-foreground hover:text-primary transition-colors">People Success Academy</Link></li>
+                <li><Link href="/training/enablement" className="text-muted-foreground hover:text-primary transition-colors">Training & Enablement</Link></li>
+                <li><Link href="/training/executive-coaching" className="text-muted-foreground hover:text-primary transition-colors">Executive Coaching</Link></li>
               </ul>
             </div>
             
@@ -159,8 +170,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4">
                 <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
                 <li><Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Events</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                <li><Link href="/resources/white-papers" className="text-muted-foreground hover:text-primary transition-colors">Resources</Link></li>
+                <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
               </ul>
             </div>
             
@@ -185,7 +196,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
+              <Link href="/cookie-settings" className="hover:text-white transition-colors">Cookie Settings</Link>
             </div>
           </div>
         </div>
