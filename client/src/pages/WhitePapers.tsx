@@ -2,14 +2,10 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, ExternalLink } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 import DownloadGate from "@/components/DownloadGate";
-import PresentationViewer from "@/components/PresentationViewer";
-import { useState } from "react";
 
 export default function WhitePapers() {
-  const [presentationOpen, setPresentationOpen] = useState(false);
-  const [activePresentation, setActivePresentation] = useState<{title: string, slides: string[], reportUrl: string} | null>(null);
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -17,32 +13,6 @@ export default function WhitePapers() {
   };
 
   const whitePapers = [
-    {
-      title: "State of AI in Business 2025",
-      description: "A comprehensive analysis of the GenAI divide and the state of AI adoption in business for 2025. This report explores how organizations are moving from experimentation to value realization, highlighting key trends, challenges, and opportunities in the enterprise AI landscape.",
-      date: "2025",
-      readTime: "20 min read",
-      image: "/images/whitepapers/state-of-ai-2025-cover.png",
-      fileUrl: "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-      fileName: "state-of-ai-business-2025.pdf",
-      isExternal: true
-    },
-    {
-      title: "2025: The Year the Frontier Firm Is Born",
-      description: "2025 will go down as the year the Frontier Firm was born—the moment when companies moved beyond experimenting with AI and began rebuilding around it. Like the digital-native companies of a generation ago, they understand the power of pairing irreplaceable human insight with AI and agents to unlock outsize value.",
-      date: "April 2025",
-      readTime: "25 min read",
-      image: "/images/whitepapers/frontier-firm-cover.webp",
-      fileUrl: "https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born",
-      fileName: "2025-frontier-firm-report.pdf",
-      isExternal: true,
-      hasPresentation: true,
-      slides: [
-        "/slides/slide_1_rise_of_frontier_firm.html",
-        "/slides/slide_2_three_phases_ai.html",
-        "/slides/slide_3_new_org_blueprint.html"
-      ]
-    },
     {
       title: "The Role of the Employee Experience Platform in Enterprise AI Transformation",
       description: "Discover how EX platforms are becoming the critical infrastructure for successful AI adoption and workforce transformation.",
@@ -53,13 +23,13 @@ export default function WhitePapers() {
       fileName: "ex-platform-ai-transformation-report.pdf"
     },
     {
-      title: "The State of AI Change Readiness",
-      description: "Accelerating AI transformation through the employee experience. A comprehensive eBook on organizational readiness for AI.",
-      date: "2024",
+      title: "The State of Enterprise AI 2025 Report",
+      description: "A comprehensive analysis of the current state of AI adoption in business for 2025, exploring how organizations are moving from pilot to production.",
+      date: "2025",
       readTime: "20 min read",
-      image: "/images/whitepapers/state-of-ai-readiness-cover.png",
-      fileUrl: "/documents/state-of-ai-readiness-ebook.pdf",
-      fileName: "state-of-ai-change-readiness-ebook.pdf"
+      image: "/images/whitepapers/enterprise-ai-2025-cover.png",
+      fileUrl: "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
+      fileName: "the-state-of-enterprise-ai_2025-report.pdf"
     }
   ];
 
@@ -121,26 +91,9 @@ export default function WhitePapers() {
                       title={paper.title}
                       fileName={paper.fileName}
                       fileUrl={paper.fileUrl}
-                      isExternal={paper.isExternal}
-                      onComplete={
-                        // @ts-ignore
-                        paper.hasPresentation ? () => {
-                          setActivePresentation({
-                            title: paper.title,
-                            // @ts-ignore
-                            slides: paper.slides,
-                            reportUrl: paper.fileUrl
-                          });
-                          setPresentationOpen(true);
-                        } : undefined
-                      }
                       trigger={
                         <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
-                          {paper.isExternal ? (
-                            <>Read Report <ExternalLink className="w-4 h-4" /></>
-                          ) : (
-                            <>Download PDF <Download className="w-4 h-4" /></>
-                          )}
+                          Download PDF <Download className="w-4 h-4" />
                         </Button>
                       }
                     />
@@ -148,18 +101,8 @@ export default function WhitePapers() {
                 </Card>
               </motion.div>
             ))}
+          </div>
         </div>
-      </div>
-
-      {activePresentation && (
-        <PresentationViewer
-          isOpen={presentationOpen}
-          onClose={() => setPresentationOpen(false)}
-          title={activePresentation.title}
-          slides={activePresentation.slides}
-          reportUrl={activePresentation.reportUrl}
-        />
-      )}
       </div>
     </Layout>
   );

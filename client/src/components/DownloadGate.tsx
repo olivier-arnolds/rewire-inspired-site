@@ -12,8 +12,6 @@ interface DownloadGateProps {
   fileUrl: string;
   trigger?: React.ReactNode;
   onDownloadStart?: () => void;
-  isExternal?: boolean;
-  onComplete?: () => void; // New prop for custom completion logic
 }
 
 export default function DownloadGate({ 
@@ -21,9 +19,7 @@ export default function DownloadGate({
   fileName, 
   fileUrl, 
   trigger,
-  onDownloadStart,
-  isExternal = false,
-  onComplete
+  onDownloadStart 
 }: DownloadGateProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<'prompt' | 'form' | 'downloading'>('prompt');
@@ -39,7 +35,7 @@ export default function DownloadGate({
   const handleDirectDownload = () => {
     startDownload();
     setIsOpen(false);
-    toast.success(isExternal ? "Opening report..." : "Download started!");
+    toast.success("Download started!");
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -52,28 +48,19 @@ export default function DownloadGate({
     setIsSubmitting(false);
     startDownload();
     setIsOpen(false);
-    toast.success(isExternal ? "Thanks for subscribing! Opening report..." : "Thanks for subscribing! Download started.");
+    toast.success("Thanks for subscribing! Download started.");
   };
 
   const startDownload = () => {
     if (onDownloadStart) onDownloadStart();
     
-    if (onComplete) {
-      onComplete();
-      return;
-    }
-
-    if (isExternal) {
-      window.open(fileUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      // Create a temporary link to trigger download
-      const link = document.createElement('a');
-      link.href = fileUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+    // Create a temporary link to trigger download
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -89,7 +76,7 @@ export default function DownloadGate({
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>{isExternal ? "Read Report" : "Download White Paper"}</DialogTitle>
+            <DialogTitle>Download White Paper</DialogTitle>
             <DialogDescription>
               {title}
             </DialogDescription>
@@ -105,7 +92,7 @@ export default function DownloadGate({
                   Yes, keep me informed
                 </Button>
                 <Button variant="ghost" onClick={handleDirectDownload} className="w-full">
-                  {isExternal ? "No thanks, just read report" : "No thanks, just download"}
+                  No thanks, just download
                 </Button>
               </div>
             </div>
@@ -145,7 +132,7 @@ export default function DownloadGate({
                       Processing
                     </>
                   ) : (
-                    isExternal ? "Submit & Read" : "Submit & Download"
+                    "Submit & Download"
                   )}
                 </Button>
               </DialogFooter>
