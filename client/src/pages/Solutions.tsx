@@ -85,6 +85,21 @@ export default function Solutions() {
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>
 
+        {/* Top Right Image */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="absolute top-0 right-0 z-0 hidden lg:block opacity-100 h-full w-1/2"
+        >
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/20 to-background z-10"></div>
+          <img 
+            src="/images/Maincomposite_red.png" 
+            alt="Solutions Visual" 
+            className="w-full h-full object-cover object-left"
+          />
+        </motion.div>
+
         <div className="container relative z-10">
           <motion.div 
             initial="initial"
