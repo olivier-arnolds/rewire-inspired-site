@@ -191,7 +191,7 @@ export default function PeopleScience() {
               "I want to express my appreciation for the exceptional support provided by the team. Their attentiveness, reliable follow up, and timely communication have had a clear positive effect on our workflow. Their commitment to delivering on every detail has been highly valuable to our team."
             </blockquote>
             <div className="mt-8 text-center">
-              <span className="text-muted-foreground">Satisfied Client</span>
+              <span className="text-muted-foreground">Fintech - HR Director</span>
             </div>
           </motion.div>
         </div>
