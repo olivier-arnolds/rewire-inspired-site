@@ -12,7 +12,8 @@ import Contact from "@/pages/Contact";
 import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
-import CaseStudyGlint from "@/pages/CaseStudyGlint";
+import CaseStudyGlint from "./pages/CaseStudyGlint";
+import CaseStudyAdoption from "./pages/CaseStudyAdoption";
 import CustomerSuccess from "@/pages/CustomerSuccess";
 import ChangeManagement from "@/pages/ChangeManagement";
 import PeopleSuccessAcademy from "@/pages/PeopleSuccessAcademy";
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/case-studies/copilot-impact" component={CaseStudyCopilot} />
       <Route path="/case-studies/glint-insights" component={CaseStudyGlint} />
+      <Route path="/case-studies/copilot-adoption" component={CaseStudyAdoption} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
       <Route path="/services/change-management" component={ChangeManagement} />
       <Route path="/training/people-success-academy" component={PeopleSuccessAcademy} />
