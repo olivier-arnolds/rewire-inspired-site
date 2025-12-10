@@ -49,7 +49,7 @@ export default function Contact() {
               </h1>
               
               <p className="text-xl text-muted-foreground mb-12">
-                Subscribe to Eclectik's newsletter and get the insights that matter.
+                Leave your contact details and a message behind and we will contact you soon.
               </p>
 
               <form className="space-y-8 mb-16">
