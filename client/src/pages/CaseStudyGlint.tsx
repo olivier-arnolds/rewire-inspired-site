@@ -52,6 +52,13 @@ export default function CaseStudyGlint() {
                   <Target className="w-8 h-8 text-primary" />
                   The Challenge
                 </h2>
+                <div className="mb-8 rounded-xl overflow-hidden border border-border/50 shadow-lg">
+                  <img 
+                    src="/images/glint-manager-report.png" 
+                    alt="Viva Glint Manager Report Dashboard" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed">
                   <p className="mb-4">
                     For a global business operating in a hybrid world, keeping a finger on the pulse of organizational culture can be a challenge. Sage needed a way to maintain their people-focused, supportive workplace culture across a distributed workforce.
@@ -87,6 +94,13 @@ export default function CaseStudyGlint() {
                   <Zap className="w-8 h-8 text-primary" />
                   The Solution
                 </h2>
+                <div className="mb-8 rounded-xl overflow-hidden border border-border/50 shadow-lg">
+                  <img 
+                    src="/images/glint-copilot-dashboard.png" 
+                    alt="Viva Glint Copilot Integration" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed">
                   <p>
                     Sage implemented <strong>Microsoft Viva Glint</strong> and <strong>Viva Insights</strong> to create a comprehensive employee listening strategy.
@@ -108,6 +122,13 @@ export default function CaseStudyGlint() {
                   <BarChart3 className="w-8 h-8 text-primary" />
                   Key Findings & Impact
                 </h2>
+                <div className="mb-8 rounded-xl overflow-hidden border border-border/50 shadow-lg">
+                  <img 
+                    src="/images/viva-insights-dashboard.jpg" 
+                    alt="Viva Insights Dashboard" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 
                 <div className="grid sm:grid-cols-2 gap-6 mb-8">
                   <Card className="bg-primary/5 border-primary/20">
