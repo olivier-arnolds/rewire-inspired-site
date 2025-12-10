@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download } from "lucide-react";
+import { FileText, Download, ExternalLink } from "lucide-react";
 import DownloadGate from "@/components/DownloadGate";
 
 export default function WhitePapers() {
@@ -13,6 +13,16 @@ export default function WhitePapers() {
   };
 
   const whitePapers = [
+    {
+      title: "2025: The Year the Frontier Firm Is Born",
+      description: "2025 will go down as the year the Frontier Firm was born—the moment when companies moved beyond experimenting with AI and began rebuilding around it. Like the digital-native companies of a generation ago, they understand the power of pairing irreplaceable human insight with AI and agents to unlock outsize value.",
+      date: "April 2025",
+      readTime: "25 min read",
+      image: "/images/whitepapers/frontier-firm-cover.webp",
+      fileUrl: "https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born",
+      fileName: "2025-frontier-firm-report.pdf",
+      isExternal: true
+    },
     {
       title: "The Role of the Employee Experience Platform in Enterprise AI Transformation",
       description: "Discover how EX platforms are becoming the critical infrastructure for successful AI adoption and workforce transformation.",
@@ -87,16 +97,28 @@ export default function WhitePapers() {
                   </CardHeader>
                   
                   <CardContent className="mt-auto">
-                    <DownloadGate 
-                      title={paper.title}
-                      fileName={paper.fileName}
-                      fileUrl={paper.fileUrl}
-                      trigger={
-                        <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
-                          Download PDF <Download className="w-4 h-4" />
-                        </Button>
-                      }
-                    />
+                    {paper.isExternal ? (
+                      <Button 
+                        variant="outline" 
+                        className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                        asChild
+                      >
+                        <a href={paper.fileUrl} target="_blank" rel="noopener noreferrer">
+                          Read Report <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <DownloadGate 
+                        title={paper.title}
+                        fileName={paper.fileName}
+                        fileUrl={paper.fileUrl}
+                        trigger={
+                          <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                            Download PDF <Download className="w-4 h-4" />
+                          </Button>
+                        }
+                      />
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>
