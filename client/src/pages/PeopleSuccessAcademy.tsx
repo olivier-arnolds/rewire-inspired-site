@@ -41,7 +41,7 @@ export default function PeopleSuccessAcademy() {
         {/* The Problem Section */}
         <section className="py-20 bg-card/30">
           <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">The Manager Impact</h2>
                 <div className="space-y-6 text-lg text-muted-foreground">
@@ -53,20 +53,29 @@ export default function PeopleSuccessAcademy() {
                   </p>
                 </div>
               </div>
-              <div className="bg-card border border-border/50 rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">A Practical Way to Turn Insight Into Better Performance</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Helps managers move swiftly towards meaningful actions.",
-                    "Gives managers the support they need to have a positive impact.",
-                    "Brings together People Science and manager development."
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                      <span className="text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-8">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/50">
+                  <img 
+                    src="/images/webinar-session.jpg" 
+                    alt="Interactive online webinar session with happy participants" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <div className="bg-card border border-border/50 rounded-2xl p-8 shadow-lg">
+                  <h3 className="text-2xl font-bold mb-6">A Practical Way to Turn Insight Into Better Performance</h3>
+                  <ul className="space-y-4">
+                    {[
+                      "Helps managers move swiftly towards meaningful actions.",
+                      "Gives managers the support they need to have a positive impact.",
+                      "Brings together People Science and manager development."
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
