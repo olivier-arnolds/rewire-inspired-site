@@ -5,8 +5,56 @@ import Layout from "@/components/Layout";
 import { ArrowRight, Linkedin, Instagram, Youtube, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { trpc } from "@/lib/trpc";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+    consent: false,
+  });
+
+  const submitMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+        consent: false,
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to send message. Please try again.");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.consent) {
+      toast.error("Please agree to the terms and conditions");
+      return;
+    }
+
+    submitMutation.mutate({
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      company: formData.company,
+      message: formData.message || "No message provided",
+    });
+  };
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -52,7 +100,7 @@ export default function Contact() {
                 Leave your contact details and a message behind and we will contact you soon.
               </p>
 
-              <form className="space-y-8 mb-16">
+              <form onSubmit={handleSubmit} className="space-y-8 mb-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label htmlFor="firstName" className="text-sm font-medium text-muted-foreground">
@@ -62,6 +110,9 @@ export default function Contact() {
                       type="text" 
                       id="firstName" 
                       placeholder="John" 
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      required
                       className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                     />
                   </div>
@@ -73,6 +124,9 @@ export default function Contact() {
                       type="text" 
                       id="lastName" 
                       placeholder="Doe" 
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      required
                       className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                     />
                   </div>
@@ -86,6 +140,9 @@ export default function Contact() {
                     type="text" 
                     id="company" 
                     placeholder="Your Company Ltd." 
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    required
                     className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                   />
                 </div>
@@ -99,6 +156,9 @@ export default function Contact() {
                       type="email" 
                       id="email" 
                       placeholder="john@company.com" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
                       className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                     />
                   </div>
@@ -110,6 +170,8 @@ export default function Contact() {
                       type="tel" 
                       id="phone" 
                       placeholder="+1 (555) 000-0000" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
                     />
                   </div>
@@ -123,12 +185,19 @@ export default function Contact() {
                     id="message" 
                     rows={4}
                     placeholder="How can we help you accelerate your AI transformation?" 
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors resize-none focus:outline-none text-white placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <div className="flex items-start gap-3 pt-4">
-                  <Checkbox id="consent" className="mt-1 border-white/20 data-[state=checked]:bg-primary data-[state=checked]:border-primary" />
+                  <Checkbox 
+                    id="consent" 
+                    checked={formData.consent}
+                    onCheckedChange={(checked) => setFormData({ ...formData, consent: checked as boolean })}
+                    className="mt-1 border-white/20 data-[state=checked]:bg-primary data-[state=checked]:border-primary" 
+                  />
                   <div className="grid gap-1.5 leading-none">
                     <label
                       htmlFor="consent"
@@ -146,9 +215,10 @@ export default function Contact() {
                   <Button 
                     type="submit" 
                     size="lg"
+                    disabled={submitMutation.isPending}
                     className="bg-primary hover:bg-primary/90 text-background font-bold px-8 rounded-full"
                   >
-                    Send Message <ArrowRight className="ml-2 w-4 h-4" />
+                    {submitMutation.isPending ? "Sending..." : "Send Message"} <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
               </form>

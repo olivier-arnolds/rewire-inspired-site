@@ -1,7 +1,10 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { createContactSubmission, getAllContactSubmissions } from "./db";
+import { z } from "zod";
+import { notifyOwner } from "./_core/notification";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -17,12 +20,41 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  contact: router({
+    submit: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1, "Name is required"),
+          email: z.string().email("Invalid email address"),
+          company: z.string().optional(),
+          message: z.string().min(1, "Message is required"),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // Save to database
+        await createContactSubmission({
+          name: input.name,
+          email: input.email,
+          company: input.company || null,
+          message: input.message,
+        });
+
+        // Notify owner about new submission
+        await notifyOwner({
+          title: "New Contact Form Submission",
+          content: `Name: ${input.name}\nEmail: ${input.email}\nCompany: ${input.company || "N/A"}\nMessage: ${input.message}`,
+        });
+
+        return { success: true };
+      }),
+    list: protectedProcedure.query(async ({ ctx }) => {
+      // Only allow admin users to view submissions
+      if (ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
+      }
+      return await getAllContactSubmissions();
+    }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
