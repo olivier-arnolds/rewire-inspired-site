@@ -63,6 +63,14 @@ export default function AboutUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-2 font-heading">
+                  <span className="text-primary">We Are</span>: A Boutique Consultancy
+                </h3>
+                <p className="text-lg text-muted-foreground italic">
+                  Specialized expertise with a personal touch.
+                </p>
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Eclectik empowers organizations to build thriving, people-centered workplaces through exceptional employee listening solutions. We work across industries globally to spark conversations that shift mindsets and improve employee wellbeing.
@@ -99,10 +107,7 @@ export default function AboutUs() {
                     className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <div className="text-2xl font-bold text-white mb-2">Boutique Consultancy</div>
-                    <p className="text-white/80">Specialized expertise with a personal touch.</p>
-                  </div>
+                  
                 </div>
               </div>
             </motion.div>
