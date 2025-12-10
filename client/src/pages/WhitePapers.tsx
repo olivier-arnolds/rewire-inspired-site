@@ -97,28 +97,21 @@ export default function WhitePapers() {
                   </CardHeader>
                   
                   <CardContent className="mt-auto">
-                    {paper.isExternal ? (
-                      <Button 
-                        variant="outline" 
-                        className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-                        asChild
-                      >
-                        <a href={paper.fileUrl} target="_blank" rel="noopener noreferrer">
-                          Read Report <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    ) : (
-                      <DownloadGate 
-                        title={paper.title}
-                        fileName={paper.fileName}
-                        fileUrl={paper.fileUrl}
-                        trigger={
-                          <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
-                            Download PDF <Download className="w-4 h-4" />
-                          </Button>
-                        }
-                      />
-                    )}
+                    <DownloadGate 
+                      title={paper.title}
+                      fileName={paper.fileName}
+                      fileUrl={paper.fileUrl}
+                      isExternal={paper.isExternal}
+                      trigger={
+                        <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                          {paper.isExternal ? (
+                            <>Read Report <ExternalLink className="w-4 h-4" /></>
+                          ) : (
+                            <>Download PDF <Download className="w-4 h-4" /></>
+                          )}
+                        </Button>
+                      }
+                    />
                   </CardContent>
                 </Card>
               </motion.div>
