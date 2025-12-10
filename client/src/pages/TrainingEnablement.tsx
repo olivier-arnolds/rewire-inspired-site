@@ -45,7 +45,7 @@ export default function TrainingEnablement() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Hands-On Guidance</h2>
                 <div className="space-y-6 text-lg text-muted-foreground">
                   <p>
-                    Whether you’re launching your first survey, refining a mature engagement strategy, or reimagining your approach amid AI-driven change, our experts provide hands-on guidance every step of the way—with clarity, care, and a genuine commitment to your success.
+                    Whether you’re launching your first survey, refining a mature engagement strategy, or reimagining your approach amid AI-driven change, our experts provide hands-on guidance every step of the way with clarity, care, and a genuine commitment to your success.
                   </p>
                   <p>
                     We also offer dedicated training on the pillars of Customer Success ensuring your teams have the knowledge and confidence to build lasting, trusted relationships that drive real results.
