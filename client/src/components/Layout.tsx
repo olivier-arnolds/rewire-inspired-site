@@ -55,15 +55,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-          isScrolled ? "bg-background/80 backdrop-blur-md border-white/10 py-4" : "bg-transparent py-6"
+          isScrolled ? "bg-background/80 backdrop-blur-md border-white/10 py-6" : "bg-transparent py-8"
         )}
       >
         <div className="container flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <img src="/images/logo-icon.svg" alt="Eclectik Icon" className="h-10 w-auto" />
+          <Link href="/" className="flex items-center gap-4 group">
+            <img src="/images/logo-icon.svg" alt="Eclectik Icon" className="h-14 w-auto" />
             <div className="flex flex-col justify-center">
-              <span className="text-2xl font-bold tracking-tight text-white leading-none mb-1">Eclectik</span>
-              <span className="text-[10px] text-muted-foreground tracking-wide uppercase font-medium">Insights that accelerate AI Transformation</span>
+              <span className="text-4xl font-bold tracking-tight text-white leading-none mb-1 w-full">Eclectik</span>
+              <span className="text-[11px] text-muted-foreground tracking-wide uppercase font-medium w-full text-justify">Insights that accelerate AI Transformation</span>
             </div>
           </Link>
 
