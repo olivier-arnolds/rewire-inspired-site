@@ -27,8 +27,8 @@ import Sectors from "./pages/Sectors";
 import WhitePapers from "./pages/WhitePapers";
 import Careers from "./pages/Careers";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
