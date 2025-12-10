@@ -14,6 +14,16 @@ export default function WhitePapers() {
 
   const whitePapers = [
     {
+      title: "State of AI in Business 2025",
+      description: "A comprehensive analysis of the GenAI divide and the state of AI adoption in business for 2025. This report explores how organizations are moving from experimentation to value realization, highlighting key trends, challenges, and opportunities in the enterprise AI landscape.",
+      date: "2025",
+      readTime: "20 min read",
+      image: "/images/whitepapers/state-of-ai-2025-cover.png",
+      fileUrl: "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      fileName: "state-of-ai-business-2025.pdf",
+      isExternal: true
+    },
+    {
       title: "2025: The Year the Frontier Firm Is Born",
       description: "2025 will go down as the year the Frontier Firm was born—the moment when companies moved beyond experimenting with AI and began rebuilding around it. Like the digital-native companies of a generation ago, they understand the power of pairing irreplaceable human insight with AI and agents to unlock outsize value.",
       date: "April 2025",
