@@ -28,6 +28,16 @@ export default function WhitePapers() {
       isExternal: true
     },
     {
+      title: "Beyond AI Optimism",
+      description: "Five ways to move your business from saving time to sparking innovation. As organizations race to adopt AI, there’s a clear gap between aspiration and achievement. This report explores how to bridge that gap.",
+      date: "2025",
+      readTime: "15 min read",
+      image: "/images/whitepapers/beyond-ai-optimism-cover.webp",
+      fileUrl: "https://workspace.google.com/learning/report/content/beyond-ai-optimism",
+      fileName: "beyond-ai-optimism-report.pdf",
+      isExternal: true
+    },
+    {
       title: "State of AI in Business 2025",
       description: "A comprehensive analysis of the GenAI divide and the state of AI adoption in business for 2025. This report explores how organizations are moving from experimentation to value realization, highlighting key trends, challenges, and opportunities in the enterprise AI landscape.",
       date: "2025",
@@ -91,7 +101,7 @@ export default function WhitePapers() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {whitePapers.map((paper, index) => (
               <motion.div
                 key={index}
@@ -100,7 +110,7 @@ export default function WhitePapers() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Card className="h-full bg-card/50 backdrop-blur-sm border-white/10 hover:border-primary/50 transition-all duration-300 group flex flex-col overflow-hidden">
-                  <div className="relative h-64 w-full overflow-hidden bg-black/20">
+                  <div className="relative h-48 w-full overflow-hidden bg-black/20">
                     <img 
                       src={paper.image} 
                       alt={paper.title}
@@ -109,24 +119,24 @@ export default function WhitePapers() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
                   </div>
                   
-                  <CardHeader className="flex-grow relative z-10 -mt-12">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors backdrop-blur-md border border-white/10">
-                      <FileText className="w-6 h-6 text-primary" />
+                  <CardHeader className="flex-grow relative z-10 -mt-8 p-4 pt-0">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors backdrop-blur-md border border-white/10">
+                      <FileText className="w-5 h-5 text-primary" />
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
                       <span>{paper.date}</span>
                       <span>•</span>
                       <span>{paper.readTime}</span>
                     </div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    <CardTitle className="text-lg mb-2 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                       {paper.title}
                     </CardTitle>
-                    <CardDescription className="text-base line-clamp-3">
+                    <CardDescription className="text-sm line-clamp-3">
                       {paper.description}
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="mt-auto">
+                  <CardContent className="mt-auto p-4 pt-0">
                     <DownloadGate 
                       title={paper.title}
                       fileName={paper.fileName}
@@ -145,11 +155,11 @@ export default function WhitePapers() {
                         } : undefined
                       }
                       trigger={
-                        <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                        <Button variant="outline" size="sm" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 text-xs h-9">
                           {paper.isExternal ? (
-                            <>Read Report <ExternalLink className="w-4 h-4" /></>
+                            <>Read Report <ExternalLink className="w-3 h-3" /></>
                           ) : (
-                            <>Download PDF <Download className="w-4 h-4" /></>
+                            <>Download PDF <Download className="w-3 h-3" /></>
                           )}
                         </Button>
                       }
