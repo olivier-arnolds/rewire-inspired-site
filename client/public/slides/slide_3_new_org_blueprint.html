@@ -14,10 +14,9 @@
             min-height: 720px;
             background-color: #F2F2F2;
             color: #1A1A1A;
-            padding: 60px 80px; /* keep top padding unchanged for title consistency */
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
@@ -40,19 +39,20 @@
             display: flex;
             flex-direction: column;
             z-index: 1;
+            height: 100%;
         }
 
         .header {
-            margin-bottom: 28px; /* reduced from 40px: -12px */
+            margin-bottom: 40px;
         }
 
         .eyebrow {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             color: #0052CC;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -77,15 +77,16 @@
         .blueprint-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px; /* reduced from 25px: -7px vertical gap */
-            margin-bottom: 20px; /* reduced from 30px: -10px */
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .blueprint-item {
             background-color: #FFFFFF;
             border: 1px solid #E0E0E0;
-            padding: 14px; /* reduced from 20px: -12px per item height */
+            padding: 25px;
             border-top: 4px solid #1A1A1A;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .item-title {
@@ -107,8 +108,8 @@
         .cta-box {
             background-color: #0052CC;
             color: #FFFFFF;
-            padding: 16px; /* reduced from 25px: -18px total */
-            margin-top: auto; /* keep for alignment to bottom within available space */
+            padding: 30px;
+            margin-top: auto;
         }
 
         .cta-label {
@@ -169,7 +170,7 @@
         
         <div class="content-col">
             <div class="header">
-                <div class="eyebrow">Organizational Redesign</div>
+                <div class="eyebrow">Key message - Takeaways</div>
                 <h2>The New Organizational Blueprint</h2>
             </div>
 
@@ -198,13 +199,6 @@
             <div class="cta-box">
                 <div class="cta-label">Strategic Imperative</div>
                 <div class="cta-text">Leaders must redesign business processes now to harness the increasing capabilities of AI agents.</div>
-            </div>
-        </div>
-
-        <div class="visual-col">
-            <div class="image-container">
-                <div class="overlay-tag">Frontier Firm Model</div>
-                <img src="/home/ubuntu/rewire-inspired-site/client/public/images/slides/new-org-blueprint.png" alt="New Organizational Blueprint Visualization">
             </div>
         </div>
     </div>
