@@ -179,26 +179,18 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Sector Navigation Bar */}
-      <div className="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-x-auto">
-        <div className="container">
-          <div className="flex whitespace-nowrap">
-            {sectors.map((sector, index) => (
-              <a 
-                key={index} 
-                href="#" 
-                className="px-6 py-4 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/5 transition-colors border-r border-white/5 last:border-r-0"
-              >
-                {sector}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       {/* Dynamic What If Carousel Section */}
       <section className="py-32 relative overflow-hidden bg-white/5">
-        <div className="absolute inset-0 bg-[url('/images/bg-texture.jpg')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero-abstract-ai.png" 
+            alt="AI Neural Network Background" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
