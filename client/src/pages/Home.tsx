@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import ServicePillars from "@/components/ServicePillars";
 
 export default function Home() {
   const fadeIn = {
@@ -442,59 +443,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 relative">
-        <div className="container">
-          <div className="mb-20 max-w-3xl">
-            <span className="text-primary font-medium tracking-wider uppercase text-sm block mb-4">Data & AI Services</span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Create exponential value through new, AI-powered revenue streams and business models.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Service Navigation */}
-            <div className="lg:col-span-4 space-y-2">
-              {services.map((service, index) => (
-                <div 
-                  key={index}
-                  className={`p-6 rounded-xl cursor-pointer transition-all duration-300 border ${index === 0 ? 'bg-white/10 border-primary/50 shadow-[0_0_30px_rgba(76,201,240,0.1)]' : 'bg-transparent border-transparent hover:bg-white/5'}`}
-                >
-                  <div className="flex items-center gap-4">
-                    {index === 0 && <div className="text-primary">{service.icon}</div>}
-                    <h3 className={`text-xl font-bold ${index === 0 ? 'text-white' : 'text-muted-foreground'}`}>{service.title}</h3>
-                    {index === 0 && <ArrowRight className="ml-auto w-5 h-5 text-primary" />}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Active Service Content */}
-            <div className="lg:col-span-8">
-              <div className="relative rounded-3xl overflow-hidden aspect-video group">
-                <img 
-                  src={services[0].image} 
-                  alt={services[0].title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-                
-                <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
-                  <div className="mb-6 p-4 bg-background/30 backdrop-blur-md rounded-2xl inline-block border border-white/10">
-                    {services[0].icon}
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-6">{services[0].title}</h3>
-                  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                    {services[0].description}
-                  </p>
-                  <Button className="rounded-full bg-white text-black hover:bg-white/90 font-bold px-8">
-                    More about {services[0].title} <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicePillars />
 
       {/* Case Study / Impact Section */}
       <section className="py-32 relative overflow-hidden">
