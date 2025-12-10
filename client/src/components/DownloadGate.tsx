@@ -13,6 +13,7 @@ interface DownloadGateProps {
   trigger?: React.ReactNode;
   onDownloadStart?: () => void;
   isExternal?: boolean;
+  onComplete?: () => void; // New prop for custom completion logic
 }
 
 export default function DownloadGate({ 
@@ -21,7 +22,8 @@ export default function DownloadGate({
   fileUrl, 
   trigger,
   onDownloadStart,
-  isExternal = false
+  isExternal = false,
+  onComplete
 }: DownloadGateProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<'prompt' | 'form' | 'downloading'>('prompt');
@@ -56,6 +58,11 @@ export default function DownloadGate({
   const startDownload = () => {
     if (onDownloadStart) onDownloadStart();
     
+    if (onComplete) {
+      onComplete();
+      return;
+    }
+
     if (isExternal) {
       window.open(fileUrl, '_blank', 'noopener,noreferrer');
     } else {

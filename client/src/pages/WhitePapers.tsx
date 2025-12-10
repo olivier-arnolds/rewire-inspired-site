@@ -4,8 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { FileText, Download, ExternalLink } from "lucide-react";
 import DownloadGate from "@/components/DownloadGate";
+import PresentationViewer from "@/components/PresentationViewer";
+import { useState } from "react";
 
 export default function WhitePapers() {
+  const [presentationOpen, setPresentationOpen] = useState(false);
+  const [activePresentation, setActivePresentation] = useState<{title: string, slides: string[], reportUrl: string} | null>(null);
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -31,7 +35,13 @@ export default function WhitePapers() {
       image: "/images/whitepapers/frontier-firm-cover.webp",
       fileUrl: "https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born",
       fileName: "2025-frontier-firm-report.pdf",
-      isExternal: true
+      isExternal: true,
+      hasPresentation: true,
+      slides: [
+        "/images/slides/slide_1_rise_of_frontier_firm.png",
+        "/images/slides/slide_2_three_phases_ai.png",
+        "/images/slides/slide_3_new_org_blueprint.png"
+      ]
     },
     {
       title: "The Role of the Employee Experience Platform in Enterprise AI Transformation",
@@ -112,6 +122,18 @@ export default function WhitePapers() {
                       fileName={paper.fileName}
                       fileUrl={paper.fileUrl}
                       isExternal={paper.isExternal}
+                      onComplete={
+                        // @ts-ignore
+                        paper.hasPresentation ? () => {
+                          setActivePresentation({
+                            title: paper.title,
+                            // @ts-ignore
+                            slides: paper.slides,
+                            reportUrl: paper.fileUrl
+                          });
+                          setPresentationOpen(true);
+                        } : undefined
+                      }
                       trigger={
                         <Button variant="outline" className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
                           {paper.isExternal ? (
@@ -126,8 +148,18 @@ export default function WhitePapers() {
                 </Card>
               </motion.div>
             ))}
-          </div>
         </div>
+      </div>
+
+      {activePresentation && (
+        <PresentationViewer
+          isOpen={presentationOpen}
+          onClose={() => setPresentationOpen(false)}
+          title={activePresentation.title}
+          slides={activePresentation.slides}
+          reportUrl={activePresentation.reportUrl}
+        />
+      )}
       </div>
     </Layout>
   );
