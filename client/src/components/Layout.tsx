@@ -59,8 +59,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container flex items-center justify-between">
-          <Link href="/" className="flex items-center group">
-            <img src="/images/logo-combined.png" alt="Eclectik - Insights that accelerate AI Transformation" className="h-12 w-auto" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <img src="/images/logo-icon.svg" alt="Eclectik Icon" className="h-10 w-auto" />
+            <div className="flex flex-col justify-center">
+              <span className="text-2xl font-bold tracking-tight text-white leading-none mb-1">Eclectik</span>
+              <span className="text-[10px] text-muted-foreground tracking-wide uppercase font-medium">Insights that accelerate AI Transformation</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -135,8 +139,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
-              <div className="flex items-center">
-                <img src="/images/logo-combined.png" alt="Eclectik" className="h-10 w-auto" />
+              <div className="flex items-center gap-3">
+                <img src="/images/logo-icon.svg" alt="Eclectik Icon" className="h-8 w-auto" />
+                <div className="flex flex-col justify-center">
+                  <span className="text-xl font-bold tracking-tight text-white leading-none mb-0.5">Eclectik</span>
+                  <span className="text-[9px] text-muted-foreground tracking-wide uppercase font-medium">Insights that accelerate AI Transformation</span>
+                </div>
               </div>
               <p className="text-muted-foreground max-w-xs">
                 We operationalize every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
