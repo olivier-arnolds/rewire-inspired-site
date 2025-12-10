@@ -7,7 +7,7 @@ import Layout from "@/components/Layout";
 export default function CaseStudyGlint() {
   return (
     <Layout>
-    <div className="min-h-screen bg-background text-foreground pt-20">
+    <div className="min-h-screen bg-background text-foreground pt-32 lg:pt-40">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />

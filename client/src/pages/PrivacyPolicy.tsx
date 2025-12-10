@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
         <meta name="description" content="Privacy Policy for Eclectik BV. Learn how we collect, use, store, and protect your personal data." />
       </Helmet>
       
-      <div className="bg-background pt-32 pb-20">
+      <div className="bg-background pt-40 lg:pt-48 pb-20">
         <div className="container max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-8 text-white">Privacy Policy</h1>
           

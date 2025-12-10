@@ -54,7 +54,7 @@ export default function Training() {
         <meta name="description" content="Upskill leaders, managers, and HR teams to interpret signals confidently. Training in Glint results conversations, narrative intelligence, and smart alerts operations." />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-32 lg:pt-40">
         <div className="absolute inset-0 z-0 bg-background/50">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>

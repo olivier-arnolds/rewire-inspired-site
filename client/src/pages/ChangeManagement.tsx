@@ -57,7 +57,7 @@ export default function ChangeManagement() {
     <Layout>
       <div className="min-h-screen bg-background text-foreground">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-40 lg:pt-48 pb-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background" />
             <img 

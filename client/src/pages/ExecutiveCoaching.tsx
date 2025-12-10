@@ -13,7 +13,7 @@ export default function ExecutiveCoaching() {
       </Helmet>
       
       {/* Hero Section */}
-      <div className="relative bg-background pt-32 pb-20 overflow-hidden">
+      <div className="relative bg-background pt-40 lg:pt-48 pb-20 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-100 pointer-events-none hidden lg:block">
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/20 to-background z-10"></div>

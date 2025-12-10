@@ -11,7 +11,7 @@ export default function Careers() {
         <meta name="description" content="Join Our Talent Pool at Eclectik. We empower organizations to build thriving, people-centered workplaces through exceptional employee listening solutions." />
       </Helmet>
       
-      <div className="bg-background pt-32 pb-20">
+      <div className="bg-background pt-40 lg:pt-48 pb-20">
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white">Join Our Talent Pool</h1>

@@ -80,7 +80,7 @@ export default function Solutions() {
         <meta name="description" content="Accelerate your transformation with ARR-ready licenses and packaged solutions. Glint Engage Fast-Track, Copilot Impact Kit, and AI Readiness Audit." />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-32 lg:pt-40">
         <div className="absolute inset-0 z-0 bg-background/50">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>

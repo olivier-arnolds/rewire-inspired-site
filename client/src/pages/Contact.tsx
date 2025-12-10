@@ -20,7 +20,7 @@ export default function Contact() {
         <meta name="description" content="Get in touch with Eclectik. Subscribe to our newsletter for insights that matter or contact us directly to start your AI transformation." />
       </Helmet>
 
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-32 lg:pt-40 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />

@@ -54,7 +54,7 @@ export default function Consulting() {
         <meta name="description" content="Operationalize Workplace Signals to answer 'what if?' with 'we can'. Our consulting services include AI ROI modelling, value pockets mapping, and change architecture." />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-32 lg:pt-40">
         <div className="absolute inset-0 z-0 bg-background/50">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         </div>
