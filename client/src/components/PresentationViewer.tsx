@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ChevronLeft, ChevronRight, X } from "lucide-react";
-
+import { ChevronLeft, ChevronRight, X, FileText, ExternalLink } from "lucide-react";
+import { useState, useEffect } from "react";
 interface PresentationViewerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -19,6 +18,37 @@ export default function PresentationViewer({
   reportUrl
 }: PresentationViewerProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [dimensions, setDimensions] = useState({ width: 1280, height: 720 });
+
+  // Calculate optimal dimensions to fit 16:9 slide within viewport
+  useEffect(() => {
+    const calculateDimensions = () => {
+      const maxWidth = window.innerWidth * 0.95;
+      const maxHeight = window.innerHeight * 0.90;
+      const chromeHeight = 140; // Header + Footer + Padding approx
+      
+      const availableSlideHeight = maxHeight - chromeHeight;
+      const availableSlideWidth = maxWidth;
+      
+      let slideWidth, slideHeight;
+      
+      if (availableSlideWidth / availableSlideHeight > 16/9) {
+        // Height is limiting
+        slideHeight = availableSlideHeight;
+        slideWidth = slideHeight * (16/9);
+      } else {
+        // Width is limiting
+        slideWidth = availableSlideWidth;
+        slideHeight = slideWidth / (16/9);
+      }
+      
+      setDimensions({ width: slideWidth, height: slideHeight });
+    };
+
+    calculateDimensions();
+    window.addEventListener('resize', calculateDimensions);
+    return () => window.removeEventListener('resize', calculateDimensions);
+  }, []);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -34,8 +64,16 @@ export default function PresentationViewer({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-[95vw] w-[95vw] h-[90vh] flex flex-col p-0 gap-0 sm:max-w-[95vw]">
-        <div className="flex items-center justify-between p-4 border-b">
+      <DialogContent 
+        className="flex flex-col p-0 gap-0 transition-all duration-200 ease-in-out"
+        style={{ 
+          width: `${dimensions.width}px`, 
+          maxWidth: '95vw',
+          height: 'auto',
+          maxHeight: '95vh'
+        }}
+      >
+        <div className="flex items-center justify-between p-4 border-b shrink-0">
           <DialogTitle className="text-xl font-bold truncate flex-1 mr-4">{title}</DialogTitle>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" asChild className="gap-2 hidden sm:flex">
@@ -49,50 +87,21 @@ export default function PresentationViewer({
           </div>
         </div>
 
-        <div className="flex-1 bg-black/5 relative overflow-hidden flex items-center justify-center p-4">
-          <div className="relative w-full h-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+        <div className="bg-black/5 relative overflow-hidden flex items-center justify-center p-0">
+          <div 
+            className="relative bg-white shadow-lg overflow-hidden flex flex-col"
+            style={{ width: dimensions.width, height: dimensions.height }}
+          >
             <div className="w-full h-full relative">
               <iframe 
                 src={slides[currentSlide]} 
                 className="w-[1280px] h-[720px] border-0 absolute top-0 left-0 origin-top-left"
                 style={{ 
-                  transform: 'scale(var(--scale-factor, 1))',
+                  transform: `scale(${dimensions.width / 1280})`,
                   width: '1280px',
                   height: '720px'
                 }}
                 title={`Slide ${currentSlide + 1}`}
-                onLoad={(e) => {
-                  const iframe = e.currentTarget;
-                  const container = iframe.parentElement;
-                  if (container) {
-                    const updateScale = () => {
-                      const containerWidth = container.clientWidth;
-                      const containerHeight = container.clientHeight;
-                      const scaleX = containerWidth / 1280;
-                      const scaleY = containerHeight / 720;
-                      // Use the smaller scale to ensure it fits, but since we want to fill the frame
-                      // and we know the frame is large, this logic is correct for "contain".
-                      // If the user wants it BIGGER, we rely on the container being bigger.
-                      const scale = Math.min(scaleX, scaleY);
-                      container.style.setProperty('--scale-factor', scale.toString());
-                      
-                      // Center the iframe
-                      const scaledWidth = 1280 * scale;
-                      const scaledHeight = 720 * scale;
-                      const left = (containerWidth - scaledWidth) / 2;
-                      const top = (containerHeight - scaledHeight) / 2;
-                      iframe.style.left = `${left}px`;
-                      iframe.style.top = `${top}px`;
-                    };
-                    
-                    updateScale();
-                    window.addEventListener('resize', updateScale);
-                    // Cleanup listener on unmount/change is tricky here without a ref/effect, 
-                    // but for this simple component it's acceptable or we can refactor to useResizeObserver
-                    const observer = new ResizeObserver(updateScale);
-                    observer.observe(container);
-                  }
-                }}
               />
             </div>
             
