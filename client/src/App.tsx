@@ -11,6 +11,7 @@ import Training from "./pages/Training";
 import Solutions from "@/pages/Solutions";
 import Contact from "@/pages/Contact";
 import TermsOfService from "@/pages/TermsOfService";
+import CookieSettings from "@/pages/CookieSettings";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CaseStudyGlint from "./pages/CaseStudyGlint";
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/solutions" component={Solutions} />
       <Route path="/contact" component={Contact} />
       <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/cookie-settings" component={CookieSettings} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/case-studies/copilot-impact" component={CaseStudyCopilot} />
       <Route path="/case-studies/glint-insights" component={CaseStudyGlint} />
