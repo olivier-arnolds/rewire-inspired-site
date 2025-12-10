@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight, LineChart, Target, Zap, Users } from "lucide-react";
+import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight, LineChart, Target, Zap, Users, Mail, Linkedin, Instagram, Youtube } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Home() {
   const fadeIn = {
@@ -248,6 +250,168 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter & Partners Section */}
+      <section className="relative py-20 overflow-hidden bg-background">
+        {/* Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-background" />
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+          {/* Abstract shapes/beacon effect */}
+          <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10">
+            <div className="absolute inset-0 border-[40px] border-primary rounded-full animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute inset-[100px] border-[40px] border-secondary rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+            <div className="absolute inset-[200px] border-[40px] border-accent rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '2s' }} />
+          </div>
+        </div>
+
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Column: Content & Form */}
+            <div className="max-w-xl">
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">
+                The information to <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">accelerate transformation.</span>
+              </h2>
+              
+              <p className="text-xl text-muted-foreground mb-12">
+                Subscribe to Eclectik's newsletter and get the insights that matter.
+              </p>
+
+              <form className="space-y-8 mb-16">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
+                    Email*
+                  </label>
+                  <div className="relative">
+                    <Input 
+                      type="email" 
+                      id="email" 
+                      placeholder="your@email.com" 
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-6 text-lg focus-visible:ring-0 focus-visible:border-primary transition-colors"
+                    />
+                    <Button 
+                      type="submit" 
+                      variant="ghost" 
+                      className="absolute right-0 top-1/2 -translate-y-1/2 hover:bg-transparent hover:text-primary p-0 flex items-center gap-2 font-medium"
+                    >
+                      Submit <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox id="consent" className="mt-1 border-white/20 data-[state=checked]:bg-primary data-[state=checked]:border-primary" />
+                  <div className="grid gap-1.5 leading-none">
+                    <label
+                      htmlFor="consent"
+                      className="text-sm text-muted-foreground leading-relaxed peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      I agree to receiving news from Eclectik and consent to Eclectik storing and processing my submitted information to provide said news.*
+                    </label>
+                  </div>
+                </div>
+
+                <p className="text-xs text-muted-foreground/60 leading-relaxed">
+                  You can unsubscribe from these communications at any time. For more information on how we are committed to protecting your privacy, please review our <a href="#" className="underline hover:text-primary">Privacy Policy</a>.
+                </p>
+              </form>
+
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-white">Get in touch.</h2>
+                
+                <div className="flex flex-col gap-4">
+                  <a href="mailto:info@eclectik.com" className="text-xl text-primary hover:text-white transition-colors inline-flex items-center gap-2 border-b border-primary/30 pb-1 w-fit">
+                    <Mail className="w-5 h-5" /> info@eclectik.com
+                  </a>
+                  
+                  <div className="flex gap-6 mt-4">
+                    <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-all">
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-secondary transition-all">
+                      <Instagram className="w-6 h-6" />
+                    </a>
+                    <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-accent transition-all">
+                      <Youtube className="w-6 h-6" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Certifications & Partners (Visual Balance) */}
+            <div className="hidden lg:flex flex-col justify-end h-full min-h-[600px] pb-20 pl-20 border-l border-white/5">
+              <div className="space-y-12 opacity-70">
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
+                  <div className="flex gap-8 items-center flex-wrap">
+                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Partners</h3>
+                  <div className="flex gap-6 items-center flex-wrap">
+                    <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+
+                    <img src="/images/ipsos-grey.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/softwareone-grey.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/hibob-grey.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Software/Platforms</h3>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/copilot.png" alt="Copilot" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Copilot</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/fabric.png" alt="Fabric" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Fabric</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/viva-insights.svg" alt="Viva Insights" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Insights</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/viva-engage.svg" alt="Viva Engage" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Engage</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/glint.svg" alt="Viva Glint" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Glint</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/pulse.png" alt="Viva Pulse" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Viva Pulse</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/onelake.png" alt="OneLake" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">OneLake</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/data-factory.png" alt="Data Factory" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Data Factory</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group">
+                      <img src="/images/databases.png" alt="Databases" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-muted-foreground text-center">Databases</span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
