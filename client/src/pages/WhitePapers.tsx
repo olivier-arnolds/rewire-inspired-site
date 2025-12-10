@@ -18,6 +18,16 @@ export default function WhitePapers() {
 
   const whitePapers = [
     {
+      title: "The State of Enterprise AI 2025 Report",
+      description: "This report brings together evidence from de-identified and aggregated enterprise usage data and a variety of other sources to provide a grounded view of how AI is being deployed inside organizations today.",
+      date: "2025",
+      readTime: "25 min read",
+      image: "/images/whitepapers/openai-enterprise-ai-2025-cover.png",
+      fileUrl: "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
+      fileName: "the-state-of-enterprise-ai-2025-report.pdf",
+      isExternal: true
+    },
+    {
       title: "State of AI in Business 2025",
       description: "A comprehensive analysis of the GenAI divide and the state of AI adoption in business for 2025. This report explores how organizations are moving from experimentation to value realization, highlighting key trends, challenges, and opportunities in the enterprise AI landscape.",
       date: "2025",
