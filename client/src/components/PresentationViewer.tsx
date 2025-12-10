@@ -34,7 +34,7 @@ export default function PresentationViewer({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-[95vw] w-[95vw] h-[90vh] flex flex-col p-0 gap-0">
+      <DialogContent className="max-w-[95vw] w-[95vw] h-[90vh] flex flex-col p-0 gap-0 sm:max-w-[95vw]">
         <div className="flex items-center justify-between p-4 border-b">
           <DialogTitle className="text-xl font-bold truncate flex-1 mr-4">{title}</DialogTitle>
           <div className="flex items-center gap-2">
@@ -70,6 +70,9 @@ export default function PresentationViewer({
                       const containerHeight = container.clientHeight;
                       const scaleX = containerWidth / 1280;
                       const scaleY = containerHeight / 720;
+                      // Use the smaller scale to ensure it fits, but since we want to fill the frame
+                      // and we know the frame is large, this logic is correct for "contain".
+                      // If the user wants it BIGGER, we rely on the container being bigger.
                       const scale = Math.min(scaleX, scaleY);
                       container.style.setProperty('--scale-factor', scale.toString());
                       
