@@ -3,6 +3,7 @@ import type { Express, Request, Response } from "express";
 import * as db from "../db";
 import { getSessionCookieOptions } from "./cookies";
 import { sdk } from "./sdk";
+import { ENV } from "./env";
 
 function getQueryParam(req: Request, key: string): string | undefined {
   const value = req.query[key];
@@ -13,7 +14,10 @@ export function registerOAuthRoutes(app: Express) {
   // Login route - redirect to OAuth portal
   app.get("/api/auth/login", (req: Request, res: Response) => {
     const redirect = getQueryParam(req, "redirect") || "/";
-    const loginUrl = sdk.getLoginUrl(redirect);
+    const oauthPortalUrl = process.env.VITE_OAUTH_PORTAL_URL || "https://portal.manus.im";
+    const callbackUrl = `${req.protocol}://${req.get('host')}/api/oauth/callback`;
+    const state = Buffer.from(callbackUrl).toString('base64');
+    const loginUrl = `${oauthPortalUrl}/oauth/authorize?client_id=${ENV.appId}&response_type=code&redirect_uri=${encodeURIComponent(callbackUrl)}&state=${state}`;
     res.redirect(302, loginUrl);
   });
 
