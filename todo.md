@@ -25,3 +25,9 @@
 - [x] Replace Dentsu, Jazz Pharmaceuticals, and Syngenta logos with new client logos
 - [x] Add 4 additional client logos (Boston Red Sox, Liberty Global, EFTA, Almirall, TD Industries, Draper, Pepkor)
 - [x] Replace existing Sage and Breitling logos with new versions
+- [x] Upgrade Boston Red Sox logo to higher resolution (currently showing as grey circle)
+- [x] Upgrade Liberty Global logo to higher resolution (currently showing as grey circle)
+- [x] Reorganize client logos into 3 rows: 6 logos + 6 logos + 4 logos (centered)
+- [x] Replace current Draper logo with new SVG version
+- [x] Replace Boston Red Sox logo with new version (BostonRedSox2.png)
+- [x] Replace Liberty Global logo with new version (LibertyGlobal2.png)
