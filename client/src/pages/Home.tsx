@@ -430,7 +430,7 @@ export default function Home() {
               { name: "Alex Lee", src: "/images/clients/alex-lee.png" },
               { name: "Boston Red Sox", src: "/images/clients/BostonRedSox.png" },
               { name: "First Rand", src: "/images/clients/first-rand.png" },
-              { name: "Liberty Global", src: "/images/clients/LibertyGloabl.png" },
+              { name: "Liberty Global", src: "/images/clients/LibertyGloabl.png", className: "scale-200" },
               { name: "EFTA", src: "/images/clients/EFTA.png" },
               { name: "IMC", src: "/images/clients/imc.png" }
             ].map((client, i) => (

@@ -33,3 +33,4 @@
 - [x] Replace Liberty Global logo with new version (LibertyGlobal2.png)
 - [x] Fix Liberty Global logo - replaced with white version that works with CSS invert filter
 - [x] Replace Liberty Global logo with LibertyGlobal3.png (light grey version)
+- [x] Make Liberty Global logo twice as large as other client logos
