@@ -32,3 +32,4 @@
 - [x] Replace Boston Red Sox logo with new version (BostonRedSox2.png)
 - [x] Replace Liberty Global logo with new version (LibertyGlobal2.png)
 - [x] Fix Liberty Global logo - replaced with white version that works with CSS invert filter
+- [x] Replace Liberty Global logo with LibertyGlobal3.png (light grey version)
