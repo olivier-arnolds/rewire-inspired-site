@@ -19,3 +19,4 @@
 - [x] Remove 'Download Full Report' button from Copilot Impact Analysis page
 - [x] Add Layout component (header/footer) to Case Study: Copilot Adoption page
 - [x] Remove 'Read the original story' button from Case Study: Glint & Insights page
+- [x] Fix OAuth callback redirect: Users not redirected back after successful login

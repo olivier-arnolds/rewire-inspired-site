@@ -42,18 +42,8 @@ export function useAuth(): AuthState {
   };
 
   const getLoginUrl = () => {
-    const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-    const appId = import.meta.env.VITE_APP_ID;
-    const redirectUri = `${window.location.origin}/api/oauth/callback`;
-    const state = btoa(window.location.pathname); // Store current path to redirect after login
-
-    const url = new URL(`${oauthPortalUrl}/app-auth`);
-    url.searchParams.set('appId', appId);
-    url.searchParams.set('redirectUri', redirectUri);
-    url.searchParams.set('state', state);
-    url.searchParams.set('type', 'signIn');
-
-    return url.toString();
+    // Use the backend login endpoint which properly handles OAuth flow and redirect
+    return `/api/auth/login?redirect=${encodeURIComponent(window.location.pathname)}`;
   };
 
   const isAdmin = user?.openId === import.meta.env.VITE_OWNER_OPEN_ID;

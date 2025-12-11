@@ -16,7 +16,9 @@ export function registerOAuthRoutes(app: Express) {
     const redirect = getQueryParam(req, "redirect") || "/";
     const oauthPortalUrl = process.env.VITE_OAUTH_PORTAL_URL || "https://portal.manus.im";
     const callbackUrl = `${req.protocol}://${req.get('host')}/api/oauth/callback`;
-    const state = Buffer.from(callbackUrl).toString('base64');
+    // Store the redirect path in state so we can redirect back after login
+    const stateData = JSON.stringify({ callbackUrl, redirect });
+    const state = Buffer.from(stateData).toString('base64');
     const loginUrl = `${oauthPortalUrl}/oauth/authorize?client_id=${ENV.appId}&response_type=code&redirect_uri=${encodeURIComponent(callbackUrl)}&state=${state}`;
     res.redirect(302, loginUrl);
   });
@@ -62,7 +64,16 @@ export function registerOAuthRoutes(app: Express) {
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
 
-      res.redirect(302, "/");
+      // Decode state to get the original redirect path
+      let redirectPath = "/";
+      try {
+        const stateData = JSON.parse(Buffer.from(state, 'base64').toString());
+        redirectPath = stateData.redirect || "/";
+      } catch (e) {
+        console.warn("[OAuth] Failed to parse state for redirect, using default");
+      }
+
+      res.redirect(302, redirectPath);
     } catch (error) {
       console.error("[OAuth] Callback failed", error);
       res.status(500).json({ error: "OAuth callback failed" });
