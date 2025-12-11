@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/lib/auth";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -89,6 +90,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </Link>
               )
             ))}
+            {/* Login/Logout Button */}
+            <AuthButton />
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -124,6 +127,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           )
         ))}
+        {/* Mobile Auth Button */}
+        <AuthButton mobile />
       </div>
 
       {/* Main Content */}
@@ -202,5 +207,48 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
     </div>
+  );
+}
+
+function AuthButton({ mobile = false }: { mobile?: boolean }) {
+  const { user, loading, isAuthenticated, logout, getLoginUrl } = useAuth();
+
+  if (loading) {
+    return null;
+  }
+
+  if (isAuthenticated && user) {
+    return (
+      <div className={cn(
+        "flex items-center gap-4",
+        mobile ? "flex-col" : "flex-row"
+      )}>
+        <span className={cn(
+          "text-muted-foreground",
+          mobile ? "text-xl" : "text-sm"
+        )}>
+          {user.name}
+        </span>
+        <Button
+          onClick={() => logout()}
+          variant="outline"
+          size={mobile ? "lg" : "sm"}
+          className={mobile ? "text-xl" : ""}
+        >
+          Logout
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <Button
+      onClick={() => window.location.href = getLoginUrl()}
+      variant="default"
+      size={mobile ? "lg" : "sm"}
+      className={mobile ? "text-xl" : ""}
+    >
+      Login
+    </Button>
   );
 }
