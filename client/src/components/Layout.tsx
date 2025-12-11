@@ -90,8 +90,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </Link>
               )
             ))}
-            {/* Login/Logout Button */}
-            <AuthButton />
+            {/* Login/Logout Button - Temporarily disabled due to OAuth platform issues */}
+            {/* <AuthButton /> */}
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -127,8 +127,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           )
         ))}
-        {/* Mobile Auth Button */}
-        <AuthButton mobile />
+        {/* Mobile Auth Button - Temporarily disabled due to OAuth platform issues */}
+        {/* <AuthButton mobile /> */}
       </div>
 
       {/* Main Content */}
