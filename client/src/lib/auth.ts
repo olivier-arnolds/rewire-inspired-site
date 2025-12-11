@@ -13,6 +13,7 @@ export interface AuthState {
   loading: boolean;
   error: Error | null;
   isAuthenticated: boolean;
+  isAdmin: boolean;
   logout: () => void;
   getLoginUrl: () => string;
 }
@@ -44,11 +45,14 @@ export function useAuth(): AuthState {
     return `/api/auth/login?redirect=${encodeURIComponent(window.location.pathname)}`;
   };
 
+  const isAdmin = user?.openId === import.meta.env.VITE_OWNER_OPEN_ID;
+
   return {
     user,
     loading,
     error,
     isAuthenticated: !!user,
+    isAdmin,
     logout,
     getLoginUrl,
   };

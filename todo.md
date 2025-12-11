@@ -10,3 +10,6 @@
 - [x] Fix OAuth login authentication flow to resolve 404 error
 - [x] Create custom robots.txt file for SEO optimization
 - [x] Implement rate limiting middleware for API and form protection
+- [x] Add admin dashboard link to navigation (visible only to logged-in admins)
+- [x] Create sitemap.xml for improved search engine indexing
+- [x] Implement email notifications for new contact form submissions

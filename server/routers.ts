@@ -5,6 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { createContactSubmission, getAllContactSubmissions } from "./db";
 import { z } from "zod";
 import { notifyOwner } from "./_core/notification";
+import { sendContactFormNotification } from "./email";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -31,12 +32,23 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ input }) => {
+        const submittedAt = new Date();
+        
         // Save to database
         await createContactSubmission({
           name: input.name,
           email: input.email,
           company: input.company || null,
           message: input.message,
+        });
+
+        // Send email notification
+        await sendContactFormNotification({
+          name: input.name,
+          email: input.email,
+          company: input.company,
+          message: input.message,
+          submittedAt,
         });
 
         // Notify owner about new submission

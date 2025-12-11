@@ -211,7 +211,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function AuthButton({ mobile = false }: { mobile?: boolean }) {
-  const { user, loading, isAuthenticated, logout, getLoginUrl } = useAuth();
+  const { user, loading, isAuthenticated, logout, getLoginUrl, isAdmin } = useAuth();
 
   if (loading) {
     return null;
@@ -223,6 +223,17 @@ function AuthButton({ mobile = false }: { mobile?: boolean }) {
         "flex items-center gap-4",
         mobile ? "flex-col" : "flex-row"
       )}>
+        {isAdmin && (
+          <Link
+            href="/admin/dashboard"
+            className={cn(
+              "text-muted-foreground hover:text-primary transition-colors font-medium",
+              mobile ? "text-xl" : "text-sm"
+            )}
+          >
+            Dashboard
+          </Link>
+        )}
         <span className={cn(
           "text-muted-foreground",
           mobile ? "text-xl" : "text-sm"
