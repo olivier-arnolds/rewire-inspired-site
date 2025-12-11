@@ -2,9 +2,11 @@ import { ArrowRight, CheckCircle2, BarChart3, Users, Clock, Zap } from "lucide-r
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Layout from "@/components/Layout";
 
 export default function CaseStudyAdoption() {
   return (
+    <Layout>
     <div className="min-h-screen bg-background text-foreground pt-32 lg:pt-40">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -241,5 +243,6 @@ export default function CaseStudyAdoption() {
         </div>
       </section>
     </div>
+    </Layout>
   );
 }

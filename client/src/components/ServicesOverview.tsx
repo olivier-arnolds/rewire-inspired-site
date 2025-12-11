@@ -39,7 +39,7 @@ export default function ServicesOverview() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="expertise" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />

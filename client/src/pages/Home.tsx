@@ -150,9 +150,11 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,201,240,0.5)]">
-                Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <a href="#expertise">
+                <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,201,240,0.5)]">
+                  Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </a>
               <Link href="/case-studies/copilot-impact">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all">
                   View Case Studies

@@ -245,11 +245,6 @@ export default function CaseStudyGlint() {
                         Schedule a Consultation <ArrowRight className="w-4 h-4" />
                       </a>
                     </Button>
-                    <Button variant="outline" className="w-full gap-2" asChild>
-                      <a href="https://www.microsoft.com/en/customers/story/1661383762190429405-sage_professional_services_viva_glint" target="_blank" rel="noopener noreferrer">
-                        Read Original Story <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>

@@ -15,3 +15,7 @@
 - [x] Implement email notifications for new contact form submissions
 - [x] Fix contact page error: TypeError Cannot read properties of undefined (reading 'add')
 - [x] Fix OAuth login error: "pretty-print" and "message:null" appearing when clicking Login button
+- [x] Link 'Explore Solutions' button to expertise section on homepage
+- [x] Remove 'Download Full Report' button from Copilot Impact Analysis page
+- [x] Add Layout component (header/footer) to Case Study: Copilot Adoption page
+- [x] Remove 'Read the original story' button from Case Study: Glint & Insights page

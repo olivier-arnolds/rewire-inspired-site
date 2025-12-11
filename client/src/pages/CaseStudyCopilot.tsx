@@ -236,11 +236,6 @@ export default function CaseStudyCopilot() {
                         Schedule a Copilot Consultation <ArrowRight className="w-4 h-4" />
                       </a>
                     </Button>
-                    <Button variant="outline" className="w-full gap-2" asChild>
-                      <a href="/contact">
-                        Download Full Report <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
