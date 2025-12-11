@@ -426,19 +426,21 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {[
               { name: "Alex Lee", src: "/images/clients/alex-lee.png" },
-              { name: "Dentsu", src: "/images/clients/dentsu.png" },
+              { name: "Boston Red Sox", src: "/images/clients/BostonRedSox.png" },
               { name: "First Rand", src: "/images/clients/first-rand.png" },
-              { name: "Client 1", src: "/images/clients/client-logo-1.png" },
-              { name: "Client 2", src: "/images/clients/client-logo-2.png" },
+              { name: "Liberty Global", src: "/images/clients/LibertyGloabl.png" },
+              { name: "EFTA", src: "/images/clients/EFTA.png" },
               { name: "IMC", src: "/images/clients/imc.png" },
-              { name: "Jazz Pharmaceuticals", src: "/images/clients/jazz-pharma.png" },
+              { name: "Almirall", src: "/images/clients/Almirall.png" },
               { name: "Serco", src: "/images/clients/serco.png" },
-              { name: "Syngenta", src: "/images/clients/syngenta.png" },
+              { name: "TD Industries", src: "/images/clients/TDIndustries.png" },
               { name: "Warburtons", src: "/images/clients/warburtons.png" },
               { name: "Westfalen", src: "/images/clients/westfalen.png" },
               { name: "Sage", src: "/images/clients/sage.png", className: "scale-125" },
               { name: "Breitling", src: "/images/clients/breitling.png", className: "scale-125" },
-              { name: "Chugai", src: "/images/clients/chugai.png" }
+              { name: "Chugai", src: "/images/clients/chugai.png" },
+              { name: "Draper", src: "/images/clients/Draper.png" },
+              { name: "Pepkor", src: "/images/clients/Pepkor.png" }
             ].map((client, i) => (
               <div key={i} className="h-20 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
                 <img 

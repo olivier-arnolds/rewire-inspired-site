@@ -22,3 +22,6 @@
 - [x] Fix OAuth callback redirect: Users not redirected back after successful login
 - [x] Fix login button error when clicking the login button
 - [x] Update footer sentence to better reflect Eclectik's unique value proposition around Workplace Signals
+- [x] Replace Dentsu, Jazz Pharmaceuticals, and Syngenta logos with new client logos
+- [x] Add 4 additional client logos (Boston Red Sox, Liberty Global, EFTA, Almirall, TD Industries, Draper, Pepkor)
+- [x] Replace existing Sage and Breitling logos with new versions
