@@ -14,3 +14,4 @@
 - [x] Create sitemap.xml for improved search engine indexing
 - [x] Implement email notifications for new contact form submissions
 - [x] Fix contact page error: TypeError Cannot read properties of undefined (reading 'add')
+- [x] Fix OAuth login error: "pretty-print" and "message:null" appearing when clicking Login button
