@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Ways to Transform with AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F2F2;
+            color: #1A1A1A;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .eyebrow {
+            font-size: 18px;
+            font-weight: 700;
+            color: #34A853;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #34A853;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+        
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .point {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .point-icon {
+            min-width: 40px;
+            height: 40px;
+            background-color: #34A853;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .point-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        
+        .point-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        .stat-box {
+            margin-top: 40px;
+            background-color: #34A853;
+            color: #FFFFFF;
+            padding: 30px;
+            max-width: 700px;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+        }
+        
+        .stat-label {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines"></div>
+        
+        <div class="content-area">
+            <div class="eyebrow">The Path Forward</div>
+            <h1>Five Ways to<br>Transform with AI</h1>
+            
+            <div class="key-points">
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-wrench"></i></div>
+                    <div class="point-content">
+                        <h3>Make Work Easier, Not More Complicated</h3>
+                        <p>Build AI into existing productivity and collaboration tools rather than standalone experiments. Reduce friction, don't add complexity.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="point-content">
+                        <h3>Invest in Strategy, Training, and Roadmap</h3>
+                        <p>Provide top-down strategy, robust training programs, and clear AI roadmap. Organizations see stronger outcomes with structured enablement.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="point-content">
+                        <h3>Transform How Work Gets Done</h3>
+                        <p>Focus on transforming workflows and accelerating idea-to-market pipeline, not just automating existing tasks or chasing adoption metrics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-label">Transforming with AI shouldn't be a code only elite organizations can crack—adopt these practices to accelerate your transformation journey.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -34,3 +34,7 @@
 - [x] Fix Liberty Global logo - replaced with white version that works with CSS invert filter
 - [x] Replace Liberty Global logo with LibertyGlobal3.png (light grey version)
 - [x] Make Liberty Global logo twice as large as other client logos
+- [x] Create interactive slideshow for "State of AI in Business 2025" white paper
+- [x] Create interactive slideshow for "Enterprise AI 2025" white paper
+- [x] Create interactive slideshow for "Beyond AI Optimism" (Google Workspace) white paper
+- [x] Integrate all three slideshows into website with "Read Report" buttons

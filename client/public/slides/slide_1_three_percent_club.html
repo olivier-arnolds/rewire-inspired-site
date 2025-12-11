@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 3% Club: AI Transformation Reality Check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F2F2;
+            color: #1A1A1A;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .eyebrow {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4285F4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #4285F4;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+        
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .point {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .point-icon {
+            min-width: 40px;
+            height: 40px;
+            background-color: #1A1A1A;
+            color: #F2F2F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .point-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        
+        .point-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        .stat-box {
+            margin-top: 40px;
+            background-color: #1A1A1A;
+            color: #F2F2F2;
+            padding: 30px;
+            max-width: 600px;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+            border-left: 6px solid #4285F4;
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #4285F4;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-lines"></div>
+        
+        <div class="content-area">
+            <div class="eyebrow">Key message - Takeaways</div>
+            <h1>The 3% Club:<br>AI Transformation Reality Check</h1>
+            
+            <div class="key-points">
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="point-content">
+                        <h3>The Transformation Gap</h3>
+                        <p>Only 3% of companies have truly transformed with AI. While executives say AI has made significant impact, employees experience it as experimental and fragmented.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-users"></i></div>
+                    <div class="point-content">
+                        <h3>Executive Optimism vs. Employee Reality</h3>
+                        <p>Leaders are more likely to claim AI success, but employees are held back by lack of top-down strategy, robust training, and clear AI roadmap.</p>
+                    </div>
+                </div>
+                
+                <div class="point">
+                    <div class="point-icon"><i class="fas fa-flask"></i></div>
+                    <div class="point-content">
+                        <h3>Stuck in Experimentation</h3>
+                        <p>Most organizations remain in pilot mode with standalone AI experiments rather than integrated, transformative deployments across workflows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">3%</div>
+                <div class="stat-label">of companies have achieved full AI transformation—the gap between aspiration and achievement remains the biggest challenge.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

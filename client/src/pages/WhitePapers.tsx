@@ -25,17 +25,29 @@ export default function WhitePapers() {
       image: "/images/whitepapers/openai-enterprise-ai-2025-cover.png",
       fileUrl: "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
       fileName: "the-state-of-enterprise-ai-2025-report.pdf",
-      isExternal: true
+      isExternal: true,
+      hasPresentation: true,
+      slides: [
+        "/slides/slide_1_enterprise_ai_arrived.html",
+        "/slides/slide_2_productivity_multiplier.html",
+        "/slides/slide_3_new_constraint.html"
+      ]
     },
     {
       title: "Beyond AI Optimism",
-      description: "Five ways to move your business from saving time to sparking innovation. As organizations race to adopt AI, there’s a clear gap between aspiration and achievement. This report explores how to bridge that gap.",
+      description: "Five ways to move your business from saving time to sparking innovation. As organizations race to adopt AI, there's a clear gap between aspiration and achievement. This report explores how to bridge that gap.",
       date: "2025",
       readTime: "15 min read",
       image: "/images/whitepapers/beyond-ai-optimism-cover.webp",
       fileUrl: "https://workspace.google.com/learning/report/content/beyond-ai-optimism",
       fileName: "beyond-ai-optimism-report.pdf",
-      isExternal: true
+      isExternal: true,
+      hasPresentation: true,
+      slides: [
+        "/slides/slide_1_three_percent_club.html",
+        "/slides/slide_2_beyond_time_savings.html",
+        "/slides/slide_3_five_ways_transform.html"
+      ]
     },
     {
       title: "State of AI in Business 2025",
@@ -45,7 +57,13 @@ export default function WhitePapers() {
       image: "/images/whitepapers/state-of-ai-2025-cover.png",
       fileUrl: "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
       fileName: "state-of-ai-business-2025.pdf",
-      isExternal: true
+      isExternal: true,
+      hasPresentation: true,
+      slides: [
+        "/slides/slide_1_genai_divide.html",
+        "/slides/slide_2_root_cause.html",
+        "/slides/slide_3_path_forward.html"
+      ]
     },
     {
       title: "2025: The Year the Frontier Firm Is Born",
