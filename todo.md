@@ -21,3 +21,4 @@
 - [x] Remove 'Read the original story' button from Case Study: Glint & Insights page
 - [x] Fix OAuth callback redirect: Users not redirected back after successful login
 - [x] Fix login button error when clicking the login button
+- [x] Update footer sentence to better reflect Eclectik's unique value proposition around Workplace Signals

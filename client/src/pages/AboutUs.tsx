@@ -26,7 +26,7 @@ export default function AboutUs() {
     {
       icon: <Lightbulb className="w-8 h-8 text-primary" />,
       title: "Innovation-Led",
-      description: "We operationalize every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations."
+      description: "We combine objective workplace telemetry with subjective sentiment analysis to operationalize AI transformation—from Copilot ROI modeling to change activation and sustained adoption."
     }
   ];
 

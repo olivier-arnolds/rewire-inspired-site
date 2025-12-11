@@ -145,7 +145,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <img src="/images/logo-combined.png" alt="Eclectik" className="h-10 w-auto" />
               </div>
               <p className="text-muted-foreground max-w-xs">
-                We operationalize every aspect of Artificial Intelligence, from machine learning to Gen AI, to create AI-native organizations.
+                We combine objective workplace telemetry with subjective sentiment analysis to operationalize AI transformation—from Copilot ROI modeling to change activation and sustained adoption.
               </p>
             </div>
             
