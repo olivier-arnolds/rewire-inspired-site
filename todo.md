@@ -13,3 +13,4 @@
 - [x] Add admin dashboard link to navigation (visible only to logged-in admins)
 - [x] Create sitemap.xml for improved search engine indexing
 - [x] Implement email notifications for new contact form submissions
+- [x] Fix contact page error: TypeError Cannot read properties of undefined (reading 'add')
