@@ -11,6 +11,7 @@ import ServicePillars from "@/components/ServicePillars";
 import ServicesOverview from "@/components/ServicesOverview";
 import AINews from "@/components/AINews";
 import FAQ from "@/components/FAQ";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -114,6 +115,9 @@ export default function Home() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Eclectik AI Transformation | Workplace Signals & AI Consulting</title>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Image with Overlay */}
