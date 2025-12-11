@@ -10,6 +10,20 @@ function getQueryParam(req: Request, key: string): string | undefined {
 }
 
 export function registerOAuthRoutes(app: Express) {
+  // Login route - redirect to OAuth portal
+  app.get("/api/auth/login", (req: Request, res: Response) => {
+    const redirect = getQueryParam(req, "redirect") || "/";
+    const loginUrl = sdk.getLoginUrl(redirect);
+    res.redirect(302, loginUrl);
+  });
+
+  // Logout route - clear session cookie
+  app.get("/api/auth/logout", (req: Request, res: Response) => {
+    const cookieOptions = getSessionCookieOptions(req);
+    res.clearCookie(COOKIE_NAME, cookieOptions);
+    res.redirect(302, "/");
+  });
+
   app.get("/api/oauth/callback", async (req: Request, res: Response) => {
     const code = getQueryParam(req, "code");
     const state = getQueryParam(req, "state");
