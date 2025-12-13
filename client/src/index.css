@@ -104,6 +104,46 @@
   --sidebar-ring: oklch(0.75 0.15 220);
 }
 
+.light {
+  /* Light Theme */
+  --background: oklch(0.98 0.01 265); /* Soft White */
+  --foreground: oklch(0.20 0.05 265); /* Dark Blue Text */
+  
+  --card: oklch(0.95 0.01 265);
+  --card-foreground: oklch(0.20 0.05 265);
+  
+  --popover: oklch(0.98 0.01 265);
+  --popover-foreground: oklch(0.20 0.05 265);
+  
+  --primary: #0891B2; /* Darker cyan for better contrast on light */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #E02406; /* Red/Orange */
+  --secondary-foreground: #ffffff;
+  
+  --muted: oklch(0.92 0.01 265);
+  --muted-foreground: oklch(0.45 0.05 265);
+  
+  --accent: #0D9488; /* Darker teal for better contrast */
+  --accent-foreground: #ffffff;
+  
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  --border: oklch(0.20 0.05 265 / 0.15);
+  --input: oklch(0.20 0.05 265 / 0.15);
+  --ring: oklch(0.45 0.15 220);
+  
+  --sidebar: oklch(0.95 0.01 265);
+  --sidebar-foreground: oklch(0.20 0.05 265);
+  --sidebar-primary: oklch(0.45 0.15 220);
+  --sidebar-primary-foreground: oklch(0.98 0.01 265);
+  --sidebar-accent: oklch(0.92 0.01 265);
+  --sidebar-accent-foreground: oklch(0.20 0.05 265);
+  --sidebar-border: oklch(0.20 0.05 265 / 0.1);
+  --sidebar-ring: oklch(0.45 0.15 220);
+}
+
 .dark {
   /* Same as root since we are dark-first */
   --background: oklch(0.15 0.05 265);
@@ -202,5 +242,24 @@
   
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary;
+  }
+  
+  /* Light theme adjustments */
+  .light .gradient-text {
+    @apply bg-gradient-to-r from-primary via-foreground to-secondary;
+  }
+  
+  .light .glass {
+    @apply bg-card/50 backdrop-blur-md border border-border shadow-lg;
+  }
+  
+  .light .glass-hover {
+    @apply hover:bg-card/70 hover:border-border transition-all duration-300;
+  }
+  
+  /* Partner/certification images in light mode */
+  .light .partner-logo,
+  .light .cert-logo {
+    filter: grayscale(100%) brightness(0.3);
   }
 }
