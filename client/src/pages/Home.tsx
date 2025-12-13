@@ -12,6 +12,7 @@ import ServicesOverview from "@/components/ServicesOverview";
 import AINews from "@/components/AINews";
 import FAQ from "@/components/FAQ";
 import { Helmet } from "react-helmet-async";
+import { trackCTAClick } from "@/lib/tracking";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -246,7 +247,7 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <a href="#expertise">
+              <a href="#expertise" onClick={() => trackCTAClick('Explore Solutions', 'Hero Section')}>
                 <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(76,201,240,0.5)]">
                   Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
