@@ -143,10 +143,10 @@ export default function Home() {
               <span className="text-primary font-medium tracking-wider uppercase text-sm">Workplace Signals & AI Transformation</span>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-foreground" style={{fontSize: '60px'}}>
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 text-white" style={{fontSize: '60px'}}>
               We use Workplace Signals to answer <br />
-              <span className="gradient-text animate-pulse">"what if?"</span> <br />
-              with <span className="text-foreground">"we can".</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-pulse">"what if?"</span> <br />
+              with <span className="text-white">"we can".</span>
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
@@ -357,20 +357,20 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
                   <div className="flex gap-8 items-center flex-wrap">
-                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity cert-logo" />
-                    <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity cert-logo" />
+                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Partners</h3>
                   <div className="flex gap-6 items-center flex-wrap">
-                    <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity partner-logo" />
+                    <img src="/images/microsoft-certified-white.png" alt="Microsoft Certified Partner" className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" />
 
-                    <img src="/images/ipsos-grey.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity partner-logo" />
-                    <img src="/images/softwareone-grey.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity partner-logo" />
-                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity partner-logo" />
-                    <img src="/images/hibob-grey.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity partner-logo" />
+                    <img src="/images/ipsos-grey.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/softwareone-grey.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/hibob-grey.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
 

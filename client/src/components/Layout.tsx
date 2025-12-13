@@ -1,16 +1,14 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth";
-import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,11 +62,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container flex items-center justify-between">
           <Link href="/" className="flex items-center group">
-            <img 
-              src={theme === "dark" ? "/images/logo-combined.png" : "/images/logo-combined-dark.png"} 
-              alt="Eclectik - Insights that accelerate AI Transformation" 
-              className="h-16 w-auto" 
-            />
+            <img src="/images/logo-combined.png" alt="Eclectik - Insights that accelerate AI Transformation" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -98,19 +92,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
             {/* Login/Logout Button - Temporarily disabled due to OAuth platform issues */}
             {/* <AuthButton /> */}
-            
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md hover:bg-white/10 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              ) : (
-                <Moon className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              )}
-            </button>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -148,24 +129,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ))}
         {/* Mobile Auth Button - Temporarily disabled due to OAuth platform issues */}
         {/* <AuthButton mobile /> */}
-        
-        {/* Mobile Theme Toggle */}
-        <button
-          onClick={toggleTheme}
-          className="flex items-center gap-2 text-xl font-heading font-medium hover:text-primary transition-colors"
-        >
-          {theme === "dark" ? (
-            <>
-              <Sun className="w-6 h-6" />
-              Light Mode
-            </>
-          ) : (
-            <>
-              <Moon className="w-6 h-6" />
-              Dark Mode
-            </>
-          )}
-        </button>
       </div>
 
       {/* Main Content */}
@@ -174,16 +137,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-black dark:bg-black light:bg-muted border-t border-white/10 light:border-border pt-20 pb-10">
+      <footer className="bg-black border-t border-white/10 pt-20 pb-10">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
             <div className="space-y-6 lg:col-span-1">
               <div className="flex items-center">
-                <img 
-                  src={theme === "dark" ? "/images/logo-combined.png" : "/images/logo-combined-dark.png"} 
-                  alt="Eclectik" 
-                  className="h-10 w-auto" 
-                />
+                <img src="/images/logo-combined.png" alt="Eclectik" className="h-10 w-auto" />
               </div>
               <p className="text-muted-foreground max-w-xs">
                 We combine objective workplace telemetry with subjective sentiment analysis to operationalize AI transformation from Copilot ROI modeling to change activation and sustained adoption.
