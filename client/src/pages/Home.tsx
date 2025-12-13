@@ -117,6 +117,98 @@ export default function Home() {
     <Layout>
       <Helmet>
         <title>Eclectik AI Transformation | Workplace Signals & AI Consulting</title>
+        
+        {/* Organization Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Eclectik",
+            "alternateName": "Eclectik AI Transformation",
+            "url": "https://www.eclectik-insights.co",
+            "logo": "https://www.eclectik-insights.co/images/logo-combined.png",
+            "description": "Eclectik operationalizes Workplace Signals end-to-end, combining objective telemetry with subjective sentiment to build actionable AI transformation roadmaps.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "info@eclectik.com",
+              "contactType": "Customer Service"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/eclectik",
+              "https://www.instagram.com/eclectik",
+              "https://www.youtube.com/@eclectik"
+            ]
+          })}
+        </script>
+        
+        {/* Professional Service Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Eclectik AI Transformation Consulting",
+            "image": "https://www.eclectik-insights.co/images/logo-combined.png",
+            "description": "AI transformation consulting services including Copilot ROI modeling, change activation, and sustained adoption through workplace signals analysis.",
+            "url": "https://www.eclectik-insights.co",
+            "serviceType": [
+              "AI Transformation Consulting",
+              "Microsoft Copilot Implementation",
+              "Workplace Analytics",
+              "Change Management",
+              "AI Training & Enablement"
+            ]
+          })}
+        </script>
+        
+        {/* FAQPage Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is AI transformation and why is it important for organizations?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI transformation is the strategic process of integrating artificial intelligence technologies across an organization to fundamentally change how it operates, delivers value, and competes. Eclectik specializes in operationalizing AI transformation by combining objective telemetry with subjective sentiment through Workplace Signals."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does AI transformation typically take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI transformation timelines vary based on organizational size, complexity, and readiness. Eclectik's VIA™ Framework typically guides organizations through transformation in 6-18 months, with measurable outcomes visible within the first 90 days."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What services does Eclectik provide for AI transformation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Eclectik provides comprehensive AI transformation services including: AI Transformation Consulting, Change Management, Employee Experience Platform implementation, Workplace Analytics, AI Training and Enablement programs, Executive Coaching, and People Science consulting."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are Workplace Signals and how do they help with AI adoption?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Workplace Signals are data points that Eclectik collects and analyzes to understand organizational readiness, employee sentiment, and adoption patterns during AI transformation. By combining objective telemetry with subjective sentiment, we build actionable roadmaps that deliver measurable impact."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What results can organizations expect from working with Eclectik?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Organizations working with Eclectik typically achieve: 40-60% improvement in AI adoption rates, 30-50% increase in employee productivity through AI tools, measurable ROI within 6-12 months, enhanced change readiness scores, and improved employee experience metrics."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
