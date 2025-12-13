@@ -10,7 +10,7 @@ Deze handleiding helpt je om de tracking volledig te configureren in Google Tag 
 De volgende tracking codes zijn al toegevoegd aan je website:
 
 1. **Google Tag Manager** (GTM-KZKSN8CT)
-2. **Google Analytics 4** (G-HKXJDC9W9J)
+2. **Google Analytics 4** (G-LD7EPKT1W2)
 3. **LinkedIn Insight Tag** (Partner ID: 9108033)
 4. **Conversion Tracking Events** (via custom JavaScript)
 
@@ -103,7 +103,7 @@ Als je extra tracking wilt toevoegen via GTM (naast de directe GA4 en LinkedIn t
 
 #### Tag 1: GA4 Event - Contact Form
 - **Tag Type**: Google Analytics: GA4 Event
-- **Measurement ID**: G-HKXJDC9W9J
+- **Measurement ID**: G-LD7EPKT1W2
 - **Event Name**: contact_form_submit
 - **Trigger**: Contact Form Submit
 
@@ -124,7 +124,7 @@ Als je extra tracking wilt toevoegen via GTM (naast de directe GA4 en LinkedIn t
 ### Stap 1: Verifieer GA4 Tracking
 
 1. Ga naar [analytics.google.com](https://analytics.google.com)
-2. Selecteer je property (G-HKXJDC9W9J)
+2. Selecteer je property (G-LD7EPKT1W2)
 3. Ga naar **Reports** → **Realtime**
 4. Open je website in een nieuw tabblad
 5. Controleer of je real-time bezoek ziet
@@ -190,7 +190,7 @@ Voordat je live gaat, test de volgende scenario's:
 ## 📞 Troubleshooting
 
 ### GA4 Events verschijnen niet
-- Controleer of GA4 Measurement ID correct is (G-HKXJDC9W9J)
+- Controleer of GA4 Measurement ID correct is (G-LD7EPKT1W2)
 - Check browser console voor JavaScript errors
 - Verifieer dat ad-blockers zijn uitgeschakeld tijdens testen
 
