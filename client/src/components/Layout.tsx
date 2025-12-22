@@ -33,6 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: "Case Study: Copilot ROI", href: "/case-studies/copilot-impact" },
         { name: "Case Study: Copilot Adoption", href: "/case-studies/copilot-adoption" },
         { name: "Case Study: Glint & Insights", href: "/case-studies/glint-insights" },
+        { name: "Case Study: AKKODiS Power Platform", href: "/case-studies/akkodis-power-platform" },
         { name: "White Papers", href: "/resources/white-papers" },
       ]
     },
@@ -107,22 +108,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-background/95 backdrop-blur-xl transition-transform duration-500 lg:hidden flex flex-col justify-center items-center gap-8",
+          "fixed left-0 right-0 bottom-0 z-40 bg-background backdrop-blur-xl transition-transform duration-500 lg:hidden flex flex-col justify-start items-center gap-4 pt-8 pb-8 overflow-y-auto",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
+        style={{ top: '180px' }}
       >
         {navLinks.map((link) => (
           link.dropdown ? (
-            <div key={link.name} className="flex flex-col items-center gap-4">
-              <span className="text-2xl font-heading font-bold text-muted-foreground">{link.name}</span>
+            <div key={link.name} className="flex flex-col items-center gap-2">
+              <span className="text-xl font-heading font-bold text-muted-foreground">{link.name}</span>
               {link.dropdown.map((item) => (
-                <Link key={item.name} href={item.href} className="text-xl font-heading font-medium hover:text-primary transition-colors">
+                <Link key={item.name} href={item.href} className="text-base font-heading font-medium hover:text-primary transition-colors text-center px-4">
                   {item.name}
                 </Link>
               ))}
             </div>
           ) : (
-            <Link key={link.name} href={link.href} className="text-2xl font-heading font-bold hover:text-primary transition-colors">
+            <Link key={link.name} href={link.href} className="text-xl font-heading font-bold hover:text-primary transition-colors">
               {link.name}
             </Link>
           )
