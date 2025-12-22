@@ -40,3 +40,25 @@ export const contactSubmissions = mysqlTable("contact_submissions", {
 
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = typeof contactSubmissions.$inferInsert;
+
+/**
+ * AI news items table.
+ * Stores curated AI industry news with approval workflow.
+ */
+export const newsItems = mysqlTable("news_items", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 500 }).notNull(),
+  source: varchar("source", { length: 255 }).notNull(),
+  summary: text("summary").notNull(),
+  fullContent: text("fullContent").notNull(),
+  category: varchar("category", { length: 100 }).notNull(),
+  url: text("url").notNull(),
+  publishedDate: timestamp("publishedDate").notNull(),
+  status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
+  feedSource: varchar("feedSource", { length: 255 }), // Which RSS feed this came from
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type NewsItem = typeof newsItems.$inferSelect;
+export type InsertNewsItem = typeof newsItems.$inferInsert;

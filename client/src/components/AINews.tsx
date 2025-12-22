@@ -4,12 +4,20 @@ import { ExternalLink, Calendar, Newspaper } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import NewsModal from "./NewsModal";
+import { trpc } from "@/lib/trpc";
 
 export default function AINews() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const newsItems = [
+  // Fetch approved news from database
+  const { data: newsItems = [], isLoading } = trpc.news.getApproved.useQuery(
+    { limit: 4 },
+    { refetchOnWindowFocus: false }
+  );
+
+  // Fallback hardcoded news items if database is empty
+  const fallbackNewsItems = [
     {
       title: "AI Adoption Surges in Enterprise",
       source: "AWS Research",
@@ -47,6 +55,9 @@ export default function AINews() {
       url: "https://www.microsoft.com/en-us/worklab"
     }
   ];
+
+  // Use database news if available, otherwise use fallback
+  const displayNews = newsItems.length > 0 ? newsItems : fallbackNewsItems;
 
   const handleNewsClick = (item: any) => {
     setSelectedNews(item);
@@ -92,7 +103,17 @@ export default function AINews() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {newsItems.map((item, index) => (
+          {isLoading ? (
+            <div className="col-span-full text-center py-12">
+              <p className="text-muted-foreground">Loading latest news...</p>
+            </div>
+          ) : displayNews.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <Newspaper className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+              <p className="text-muted-foreground">No news available at the moment</p>
+            </div>
+          ) : (
+            displayNews.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -121,16 +142,21 @@ export default function AINews() {
                   </p>
                   
                   <div className="flex justify-between items-center text-xs text-muted-foreground mt-auto pt-4 border-t border-border/50">
-                    <span className="font-medium text-foreground/80">{item.source}</span>
+                      <span className="font-medium text-foreground/80">{item.source}</span>
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      <span>{item.date}</span>
+                      <span>
+                        {item.publishedDate 
+                          ? new Date(item.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                          : item.date}
+                      </span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
-          ))}
+          ))
+          )}
         </div>
       </div>
     </section>
