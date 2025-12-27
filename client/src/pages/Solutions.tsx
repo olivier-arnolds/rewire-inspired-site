@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { ArrowRight, Package, BarChart, Shield, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
 
 export default function Solutions() {
   const fadeIn = {
@@ -179,9 +180,11 @@ export default function Solutions() {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-secondary hover:bg-secondary/90 text-white font-bold transition-all hover:scale-105">
-                  See pricing & inclusions <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-secondary hover:bg-secondary/90 text-white font-bold transition-all hover:scale-105">
+                    Want to learn more about licensing & our offerings? <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
