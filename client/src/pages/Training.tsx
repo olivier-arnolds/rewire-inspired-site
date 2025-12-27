@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { ArrowRight, MessageSquare, Users, Bell, FileText, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
 
 export default function Training() {
   const fadeIn = {
@@ -153,9 +154,11 @@ export default function Training() {
                   </ul>
                 </div>
 
-                <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-chart-4 hover:bg-chart-4/90 text-background font-bold transition-all hover:scale-105">
-                  Book a Glint & Signals training series <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-chart-4 hover:bg-chart-4/90 text-background font-bold transition-all hover:scale-105">
+                    Explore with us how we can help with training <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

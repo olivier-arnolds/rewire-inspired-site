@@ -52,3 +52,4 @@
 
 ## UI/UX Improvements
 - [x] Link "Talk to us about your AI ROI roadmap" button on Consulting page to contact form
+- [x] Rename Training page button to 'Explore with us how we can help with training' and link to contact form
