@@ -49,3 +49,6 @@
 - [x] Update AINews component to fetch from database
 - [x] Write comprehensive vitest tests
 - [x] Test the complete workflow (fetch → approve → display)
+
+## UI/UX Improvements
+- [x] Link "Talk to us about your AI ROI roadmap" button on Consulting page to contact form

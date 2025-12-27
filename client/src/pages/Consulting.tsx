@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { ArrowRight, BarChart3, Users, Zap, Target, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
 
 export default function Consulting() {
   const fadeIn = {
@@ -153,9 +154,11 @@ export default function Consulting() {
                   </ul>
                 </div>
 
-                <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105">
-                  Talk to us about your AI ROI roadmap <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-background font-bold transition-all hover:scale-105">
+                    Talk to us about your AI ROI roadmap <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
