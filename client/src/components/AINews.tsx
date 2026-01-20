@@ -12,7 +12,7 @@ export default function AINews() {
 
   // Fetch approved news from database
   const { data: newsItems = [], isLoading } = trpc.news.getApproved.useQuery(
-    { limit: 4 },
+    { limit: 3 },
     { refetchOnWindowFocus: false }
   );
 
@@ -56,8 +56,8 @@ export default function AINews() {
     }
   ];
 
-  // Use database news if available, otherwise use fallback
-  const displayNews = newsItems.length > 0 ? newsItems : fallbackNewsItems;
+  // Use database news if available, otherwise use fallback (limit to 3 items)
+  const displayNews = newsItems.length > 0 ? newsItems.slice(0, 3) : fallbackNewsItems.slice(0, 3);
 
   const handleNewsClick = (item: any) => {
     setSelectedNews(item);
@@ -102,7 +102,7 @@ export default function AINews() {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="text-muted-foreground">Loading latest news...</p>

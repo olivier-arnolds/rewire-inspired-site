@@ -56,3 +56,4 @@
 - [x] Rename 'See pricing & inclusions' button to 'Want to learn more about licensing & our offerings?' and link to contact form
 - [x] Reorder Infectious Change features to: Write the Script, Build the Cast, Rehearse for Ideas
 - [x] Move "Rehearse for Ideas" box to top right position on Change Management page
+- [x] Update AI Industry Insights section to always display exactly 3 items
