@@ -29,6 +29,7 @@ import WhitePapers from "./pages/WhitePapers";
 import Careers from "./pages/Careers";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminNews from "./pages/AdminNews";
+import News from "./pages/News";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -59,6 +60,7 @@ function Router() {
       <Route path="/careers" component={Careers} />
       <Route path="/admin/dashboard" component={AdminDashboard} />
       <Route path="/admin/news" component={AdminNews} />
+      <Route path="/news" component={News} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

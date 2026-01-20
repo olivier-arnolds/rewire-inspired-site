@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Calendar, Newspaper } from "lucide-react";
+import { ExternalLink, Calendar, Newspaper, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import NewsModal from "./NewsModal";
 import { trpc } from "@/lib/trpc";
+import { Link } from "wouter";
 
 export default function AINews() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
@@ -158,6 +160,23 @@ export default function AINews() {
           ))
           )}
         </div>
+
+        {/* View All Button */}
+        {!isLoading && displayNews.length > 0 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <Link href="/news">
+              <Button size="lg" variant="outline" className="gap-2 hover:gap-3 transition-all">
+                View All Insights <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

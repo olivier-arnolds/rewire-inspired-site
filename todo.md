@@ -57,3 +57,5 @@
 - [x] Reorder Infectious Change features to: Write the Script, Build the Cast, Rehearse for Ideas
 - [x] Move "Rehearse for Ideas" box to top right position on Change Management page
 - [x] Update AI Industry Insights section to always display exactly 3 items
+- [x] Create dedicated news archive page at /news
+- [x] Add 'View All Insights' button to homepage AI Industry Insights section
