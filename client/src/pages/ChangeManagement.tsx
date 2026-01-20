@@ -22,11 +22,6 @@ export default function ChangeManagement() {
 
   const capabilities = [
     {
-      title: "Rehearse for Ideas",
-      description: "Use structured creativity sessions to generate and test behavior-based solutions aligned to the change goal",
-      icon: <Lightbulb className="w-8 h-8 text-primary" />
-    },
-    {
       title: "Write the Script",
       description: "Clarify the desired outcomes, define measurable progress, and analyze which behavioral shifts matter most.",
       icon: <PenTool className="w-8 h-8 text-secondary" />
@@ -35,6 +30,11 @@ export default function ChangeManagement() {
       title: "Build the Cast",
       description: "Identify the early adopters and allies who will form a \"Delta Team\" to champion change within their networks.",
       icon: <Users className="w-8 h-8 text-accent" />
+    },
+    {
+      title: "Rehearse for Ideas",
+      description: "Use structured creativity sessions to generate and test behavior-based solutions aligned to the change goal",
+      icon: <Lightbulb className="w-8 h-8 text-primary" />
     },
     {
       title: "Set the Stage",
