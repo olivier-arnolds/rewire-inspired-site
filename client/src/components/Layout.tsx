@@ -34,6 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: "Case Study: Copilot Adoption", href: "/case-studies/copilot-adoption" },
         { name: "Case Study: Glint & Insights", href: "/case-studies/glint-insights" },
         { name: "Case Study: AKKODiS Power Platform", href: "/case-studies/akkodis-power-platform" },
+        { name: "Case Study: Microsoft Viva Transformation", href: "/case-studies/microsoft-viva-transformation" },
         { name: "White Papers", href: "/resources/white-papers" },
       ]
     },

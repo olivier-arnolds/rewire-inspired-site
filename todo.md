@@ -61,3 +61,4 @@
 - [x] Add Josh Bersin article "The Great Reinvention of Human Resources Has Begun" as AI industry insight
 - [x] Add article "The Future of Work in 2026: 7 AI Trends and the 'Workplace Signals' You Can't Ignore" as AI industry insight
 - [x] Create Microsoft Viva business transformation case study page under Resources
+- [x] Add Microsoft Viva case study to Resources dropdown menu in navigation
