@@ -18,6 +18,7 @@ import CaseStudyCopilot from "@/pages/CaseStudyCopilot";
 import CaseStudyGlint from "./pages/CaseStudyGlint";
 import CaseStudyAdoption from "./pages/CaseStudyAdoption";
 import CaseStudyAkkodis from "./pages/CaseStudyAkkodis";
+import CaseStudyMicrosoftViva from "./pages/CaseStudyMicrosoftViva";
 import CustomerSuccess from "@/pages/CustomerSuccess";
 import PeopleScience from "@/pages/PeopleScience";
 import ChangeManagement from "@/pages/ChangeManagement";
@@ -47,6 +48,7 @@ function Router() {
       <Route path="/case-studies/glint-insights" component={CaseStudyGlint} />
       <Route path="/case-studies/copilot-adoption" component={CaseStudyAdoption} />
       <Route path="/case-studies/akkodis-power-platform" component={CaseStudyAkkodis} />
+      <Route path="/case-studies/microsoft-viva-transformation" component={CaseStudyMicrosoftViva} />
       <Route path="/services/customer-success" component={CustomerSuccess} />
       <Route path="/services/people-science" component={PeopleScience} />
       <Route path="/services/change-management" component={ChangeManagement} />
