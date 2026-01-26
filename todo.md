@@ -63,3 +63,4 @@
 - [x] Create Microsoft Viva business transformation case study page under Resources
 - [x] Add Microsoft Viva case study to Resources dropdown menu in navigation
 - [x] Add WebProNews article "Data Analytics Revolutionizes Employee Engagement and Retention" to news/industry insights
+- [x] Add Appinventiv article "AI in Employee Engagement" to news/industry insights
