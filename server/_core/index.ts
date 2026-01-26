@@ -38,19 +38,39 @@ async function startServer() {
   app.use((req, res, next) => {
     // Prevent MIME type sniffing
     res.setHeader('X-Content-Type-Options', 'nosniff');
+    
     // Control referrer information
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-    // Enforce HTTPS
-    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-    // Content Security Policy
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.manus.im;"
-    );
+    
+    // Enforce HTTPS with preload
+    res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
+    
+    // Content Security Policy - Enhanced for better security
+    const cspDirectives = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://fonts.googleapis.com https://www.googletagmanager.com https://snap.licdn.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com data:",
+      "img-src 'self' data: https: blob:",
+      "connect-src 'self' https://api.manus.im https://www.google-analytics.com https://px.ads.linkedin.com",
+      "frame-src 'self'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'self'",
+      "upgrade-insecure-requests"
+    ].join('; ');
+    res.setHeader('Content-Security-Policy', cspDirectives);
+    
     // X-Frame-Options for clickjacking protection
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-    // XSS Protection
+    
+    // XSS Protection (legacy but still useful for older browsers)
     res.setHeader('X-XSS-Protection', '1; mode=block');
+    
+    // Permissions Policy (formerly Feature-Policy)
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()');
+    
     next();
   });
 
