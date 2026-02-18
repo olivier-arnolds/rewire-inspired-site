@@ -74,3 +74,4 @@
 ## HR Tech Services Page
 - [x] Create new HR Tech Services page at /hrtechservices with content from Word document
 - [x] Update navigation menu to link to new HR Tech Services page
+- [x] Fix hero section overlap with navigation header on HR Tech Services page
