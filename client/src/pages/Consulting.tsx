@@ -69,7 +69,7 @@ export default function Consulting() {
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/20 to-background z-10"></div>
           <img 
-            src="/images/Maincomposite_blue1.png" 
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/WnQSiTvNyCFvWSrH.png" 
             alt="Consulting Visual" 
             className="w-full h-full object-cover object-left"
           />

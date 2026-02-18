@@ -67,3 +67,6 @@
 
 ## Security Improvements
 - [x] Implement security headers (Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, HSTS, Referrer-Policy)
+
+## Logo Update
+- [x] Replace existing logo with new Eclectik logo (Eclectik_logo_organizations_white_transparentbackground.png)

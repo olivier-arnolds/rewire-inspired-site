@@ -16,7 +16,7 @@ export default function ServicePillars() {
       hoverBorder: "group-hover:border-primary",
       bgGradient: "from-primary/10 to-transparent",
       buttonBg: "bg-primary hover:bg-primary/90",
-      image: "/images/Maincomposite_blue1.png"
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/WnQSiTvNyCFvWSrH.png"
     },
     {
       title: "Training",
@@ -29,7 +29,7 @@ export default function ServicePillars() {
       hoverBorder: "group-hover:border-chart-4",
       bgGradient: "from-chart-4/10 to-transparent",
       buttonBg: "bg-chart-4 hover:bg-chart-4/90",
-      image: "/images/Maincomposite_yellow1.png"
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/HdVCgGyRxUqOUDRJ.png"
     },
     {
       title: "Solutions",

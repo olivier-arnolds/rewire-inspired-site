@@ -86,7 +86,7 @@ export default function WhitePapers() {
       description: "Discover how EX platforms are becoming the critical infrastructure for successful AI adoption and workforce transformation.",
       date: "February 2025",
       readTime: "15 min read",
-      image: "/images/whitepapers/ex-platform-ai-cover.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/gZfuznwVYHLWLsYz.png",
       fileUrl: "/documents/ex-platform-ai-report.pdf",
       fileName: "ex-platform-ai-transformation-report.pdf"
     },
