@@ -76,3 +76,4 @@
 - [x] Update navigation menu to link to new HR Tech Services page
 - [x] Fix hero section overlap with navigation header on HR Tech Services page
 - [x] Replace HR Tech Services hero image with Main Composite Green
+- [x] Fix broken hero image on HR Tech Services page with correct Main Composite Green URL
