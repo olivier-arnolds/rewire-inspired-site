@@ -2,12 +2,13 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, ArrowRight, Users, Target, Zap, Shield, TrendingUp, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HRTechServices() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-32">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -36,11 +37,22 @@ export default function HRTechServices() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/EDkJhSloIMfnyxaT.png" 
                 alt="HR Technology Customer Success" 
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+                className="rounded-xl shadow-xl w-full h-auto object-contain opacity-90"
               />
             </div>
           </div>
         </div>
+        
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{ delay: 1, duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2"
+        >
+          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* Why Customer Success Matters */}
