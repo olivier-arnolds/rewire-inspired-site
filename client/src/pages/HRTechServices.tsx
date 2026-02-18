@@ -34,7 +34,7 @@ export default function HRTechServices() {
             
             <div className="relative">
               <img 
-                src="/images/hr-tech-hero.jpg" 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/mQZuYcPFhMuBZAQW.png" 
                 alt="HR Technology Customer Success" 
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
