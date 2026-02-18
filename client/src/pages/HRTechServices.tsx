@@ -35,7 +35,7 @@ export default function HRTechServices() {
             
             <div className="relative">
               <img 
-                src="/images/main-composite-final.png" 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/UTCedLfpcRdbgYYO.png" 
                 alt="Eclectik HR Tech Services" 
                 className="rounded-xl shadow-xl w-full h-auto object-contain opacity-90"
               />
