@@ -35,17 +35,17 @@ export default function HRTechServices() {
           </div>
         </div>
         
-        {/* Hero Image - Positioned from center to right edge with fade-in animation */}
+        {/* Hero Image - Positioned right with bottom aligned to button */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block"
+          className="absolute right-[-10%] top-[15%] w-[55%] h-[70%] hidden lg:block"
         >
           <img 
             src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/UTCedLfpcRdbgYYO.png" 
             alt="Eclectik HR Tech Services" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-contain opacity-60"
           />
         </motion.div>
         
