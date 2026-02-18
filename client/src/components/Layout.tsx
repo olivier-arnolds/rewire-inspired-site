@@ -40,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     },
     { 
       name: "HR Tech Services", 
-      href: "#",
+      href: "/hrtechservices",
       dropdown: [
         { name: "Customer Success", href: "/services/customer-success" },
         { name: "People Science", href: "/services/people-science" },
@@ -72,9 +72,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {navLinks.map((link) => (
               link.dropdown ? (
                 <div key={link.name} className="relative group">
-                  <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1" style={{fontSize: '16px'}}>
+                  <Link href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1" style={{fontSize: '16px'}}>
                     {link.name}
-                  </button>
+                  </Link>
                   <div className="absolute top-full left-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-background/95 backdrop-blur-md border border-white/10 rounded-md shadow-lg overflow-hidden p-2 flex flex-col gap-1">
                       {link.dropdown.map((item) => (

@@ -70,3 +70,7 @@
 
 ## Logo Update
 - [x] Replace existing logo with new Eclectik logo (Eclectik_logo_organizations_white_transparentbackground.png)
+
+## HR Tech Services Page
+- [x] Create new HR Tech Services page at /hrtechservices with content from Word document
+- [x] Update navigation menu to link to new HR Tech Services page

@@ -25,6 +25,7 @@ import ChangeManagement from "@/pages/ChangeManagement";
 import PeopleSuccessAcademy from "@/pages/PeopleSuccessAcademy";
 import TrainingEnablement from "@/pages/TrainingEnablement";
 import ExecutiveCoaching from "@/pages/ExecutiveCoaching";
+import HRTechServices from "@/pages/HRTechServices";
 import Sectors from "./pages/Sectors";
 import WhitePapers from "./pages/WhitePapers";
 import Careers from "./pages/Careers";
@@ -40,6 +41,7 @@ function Router() {
       <Route path={"/consulting"} component={Consulting} />
       <Route path={"/training"} component={Training} />
       <Route path="/solutions" component={Solutions} />
+      <Route path="/hrtechservices" component={HRTechServices} />
       <Route path="/contact" component={Contact} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/cookie-settings" component={CookieSettings} />
