@@ -11,7 +11,7 @@ export default function HRTechServices() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-32">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="max-w-2xl">
               <div className="mb-6 flex items-center gap-3">
                 <div className="h-[1px] w-12 bg-primary" />
                 <span className="text-primary font-medium tracking-wider uppercase text-sm">HR Tech Customer Success</span>
@@ -32,16 +32,22 @@ export default function HRTechServices() {
                 </Button>
               </Link>
             </div>
-            
-            <div className="relative">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/UTCedLfpcRdbgYYO.png" 
-                alt="Eclectik HR Tech Services" 
-                className="rounded-xl shadow-xl w-full h-auto object-contain opacity-90"
-              />
-            </div>
           </div>
         </div>
+        
+        {/* Hero Image - Positioned from center to right edge with fade-in animation */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block"
+        >
+          <img 
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663219425815/UTCedLfpcRdbgYYO.png" 
+            alt="Eclectik HR Tech Services" 
+            className="w-full h-full object-cover opacity-60"
+          />
+        </motion.div>
         
         {/* Scroll Indicator */}
         <motion.div 
