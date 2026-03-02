@@ -89,3 +89,4 @@
 - [x] Add owner notification on new webinar registration
 - [x] Build /webinar registration page with image on right and form on left
 - [x] Add /webinar route to App.tsx (no menu link)
+- [x] Add "Add to Calendar" buttons (Google, Outlook, Apple ICS) to webinar confirmation screen

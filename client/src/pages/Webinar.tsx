@@ -132,6 +132,56 @@ export default function Webinar() {
                   <p className="text-sm text-muted-foreground mt-4">
                     See you on <strong>March 25, 2026</strong> at 4:00 PM CET.
                   </p>
+
+                  {/* Add to Calendar */}
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <p className="text-sm font-medium text-muted-foreground mb-4">Add to your calendar</p>
+                    <div className="flex flex-wrap gap-3 justify-center">
+                      {/* Google Calendar */}
+                      <a
+                        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Webinar%3A+From+Workplace+Data+to+AI+Advantage&dates=20260325T150000Z/20260325T160000Z&details=Join+Eclectik%27s+webinar+on+turning+workplace+signals+into+measurable+AI+ROI.+Hosted+by+Avneeta+Solanki%2C+Marco+van+Gelder+%26+Stephanie+Noack.+Register+at+eclectik.co%2Fwebinar&location=Online"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-primary hover:bg-primary/10 text-sm font-medium transition-all"
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="#4285F4"/>
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="#4285F4" strokeWidth="0"/>
+                        </svg>
+                        Google Calendar
+                      </a>
+
+                      {/* Outlook / Office 365 */}
+                      <a
+                        href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Webinar%3A+From+Workplace+Data+to+AI+Advantage&startdt=2026-03-25T15%3A00%3A00Z&enddt=2026-03-25T16%3A00%3A00Z&body=Join+Eclectik%27s+webinar+on+turning+workplace+signals+into+measurable+AI+ROI.+Register+at+eclectik.co%2Fwebinar&location=Online"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-primary hover:bg-primary/10 text-sm font-medium transition-all"
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="2" y="4" width="20" height="16" rx="2" fill="#0078D4"/>
+                          <path d="M2 8h20" stroke="white" strokeWidth="1.5"/>
+                          <path d="M8 2v4M16 2v4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                        Outlook
+                      </a>
+
+                      {/* Apple / ICS download */}
+                      <a
+                        href={`data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Eclectik//Webinar//EN%0ABEGIN:VEVENT%0ADTSTART:20260325T150000Z%0ADTEND:20260325T160000Z%0ASUMMARY:Webinar%3A+From+Workplace+Data+to+AI+Advantage%0ADESCRIPTION:Join+Eclectik%27s+webinar+on+turning+workplace+signals+into+measurable+AI+ROI.+Hosted+by+Avneeta+Solanki%2C+Marco+van+Gelder+%26+Stephanie+Noack.%0ALOCATION:Online%0AURL:https%3A%2F%2Feclectik.co%2Fwebinar%0AEND:VEVENT%0AEND:VCALENDAR`}
+                        download="eclectik-webinar-25march2026.ics"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-primary hover:bg-primary/10 text-sm font-medium transition-all"
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="3" y="4" width="18" height="17" rx="2" fill="#FF3B30"/>
+                          <path d="M3 9h18" stroke="white" strokeWidth="1.5"/>
+                          <path d="M8 2v4M16 2v4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                          <circle cx="12" cy="15" r="2" fill="white"/>
+                        </svg>
+                        Apple / iCal
+                      </a>
+                    </div>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
