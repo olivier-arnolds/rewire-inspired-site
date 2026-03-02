@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, contactSubmissions, InsertContactSubmission } from "../drizzle/schema";
+import { InsertUser, users, contactSubmissions, InsertContactSubmission, webinarAttendees, InsertWebinarAttendee } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -121,6 +121,42 @@ export async function getAllContactSubmissions() {
     return result;
   } catch (error) {
     console.error("[Database] Failed to get contact submissions:", error);
+    throw error;
+  }
+}
+
+/**
+ * Insert a new webinar attendee registration
+ */
+export async function createWebinarAttendee(attendee: InsertWebinarAttendee) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  try {
+    const result = await db.insert(webinarAttendees).values(attendee);
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to create webinar attendee:", error);
+    throw error;
+  }
+}
+
+/**
+ * Get all webinar attendees (admin only)
+ */
+export async function getAllWebinarAttendees() {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  try {
+    const result = await db.select().from(webinarAttendees).orderBy(webinarAttendees.createdAt);
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get webinar attendees:", error);
     throw error;
   }
 }

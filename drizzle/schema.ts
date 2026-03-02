@@ -62,3 +62,21 @@ export const newsItems = mysqlTable("news_items", {
 
 export type NewsItem = typeof newsItems.$inferSelect;
 export type InsertNewsItem = typeof newsItems.$inferInsert;
+
+/**
+ * Webinar attendees table.
+ * Stores registrations for the "From Workplace Data to AI Advantage" webinar on 25.03.2026.
+ */
+export const webinarAttendees = mysqlTable("webinar_attendees", {
+  id: int("id").autoincrement().primaryKey(),
+  firstName: varchar("firstName", { length: 255 }).notNull(),
+  lastName: varchar("lastName", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  company: varchar("company", { length: 255 }),
+  jobTitle: varchar("jobTitle", { length: 255 }),
+  linkedinUrl: varchar("linkedinUrl", { length: 500 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type WebinarAttendee = typeof webinarAttendees.$inferSelect;
+export type InsertWebinarAttendee = typeof webinarAttendees.$inferInsert;

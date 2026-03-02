@@ -2,7 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
-import { createContactSubmission, getAllContactSubmissions } from "./db";
+import { createContactSubmission, getAllContactSubmissions, createWebinarAttendee, getAllWebinarAttendees } from "./db";
 import { z } from "zod";
 import { notifyOwner } from "./_core/notification";
 import { sendContactFormNotification } from "./email";
@@ -113,6 +113,46 @@ export const appRouter = router({
         throw new Error("Unauthorized");
       }
       return getRSSFeedSources();
+    }),
+  }),
+
+  webinar: router({
+    register: publicProcedure
+      .input(
+        z.object({
+          firstName: z.string().min(1, "First name is required"),
+          lastName: z.string().min(1, "Last name is required"),
+          email: z.string().email("Invalid email address"),
+          company: z.string().optional(),
+          jobTitle: z.string().optional(),
+          linkedinUrl: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // Save to database
+        await createWebinarAttendee({
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email,
+          company: input.company || null,
+          jobTitle: input.jobTitle || null,
+          linkedinUrl: input.linkedinUrl || null,
+        });
+
+        // Notify owner about new webinar registration
+        await notifyOwner({
+          title: "New Webinar Registration",
+          content: `New attendee registered for the webinar "From Workplace Data to AI Advantage" (25.03.2026):\n\nName: ${input.firstName} ${input.lastName}\nEmail: ${input.email}\nCompany: ${input.company || "N/A"}\nJob Title: ${input.jobTitle || "N/A"}\nLinkedIn: ${input.linkedinUrl || "N/A"}`,
+        });
+
+        return { success: true };
+      }),
+
+    list: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
+      }
+      return await getAllWebinarAttendees();
     }),
   }),
 

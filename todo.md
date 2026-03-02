@@ -83,3 +83,9 @@
 - [x] Fix broken hero image on HR Tech Services page by re-uploading Main Composite Green to S3 with working URL
 - [x] Update HR Tech Services hero image styling: larger positioning (center to right edge), lower opacity (0.6-0.7), smooth fade-in animation to match Consulting page
 - [x] Adjust HR Tech Services hero circle: move further right (show complete circle), align bottom with button height
+- [x] Upload webinar LinkedIn ad image to S3 CDN
+- [x] Add webinarAttendees table to database schema
+- [x] Create tRPC procedures for webinar registration (submit + list)
+- [x] Add owner notification on new webinar registration
+- [x] Build /webinar registration page with image on right and form on left
+- [x] Add /webinar route to App.tsx (no menu link)
