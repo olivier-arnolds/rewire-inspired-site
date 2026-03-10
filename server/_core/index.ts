@@ -8,6 +8,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { securityMiddleware } from "../security";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -34,45 +35,9 @@ async function startServer() {
   
   // Trust proxy for rate limiting behind reverse proxy
   app.set('trust proxy', 1);
-  // Security headers middleware
-  app.use((req, res, next) => {
-    // Prevent MIME type sniffing
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    
-    // Control referrer information
-    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-    
-    // Enforce HTTPS with preload
-    res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-    
-    // Content Security Policy - Enhanced for better security
-    const cspDirectives = [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://fonts.googleapis.com https://www.googletagmanager.com https://snap.licdn.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: https: blob:",
-      "connect-src 'self' https://api.manus.im https://www.google-analytics.com https://px.ads.linkedin.com",
-      "frame-src 'self'",
-      "object-src 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-      "frame-ancestors 'self'",
-      "upgrade-insecure-requests"
-    ].join('; ');
-    res.setHeader('Content-Security-Policy', cspDirectives);
-    
-    // X-Frame-Options for clickjacking protection
-    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-    
-    // XSS Protection (legacy but still useful for older browsers)
-    res.setHeader('X-XSS-Protection', '1; mode=block');
-    
-    // Permissions Policy (formerly Feature-Policy)
-    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()');
-    
-    next();
-  });
+
+  // Security headers via helmet.js - registered first, before all routes
+  app.use(securityMiddleware);
 
   // Rate limiting middleware
   const apiLimiter = rateLimit({
