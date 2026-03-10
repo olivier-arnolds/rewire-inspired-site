@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { trpc } from './trpc';
 
 export interface User {
-  id: string;
-  name: string;
-  email: string;
+  id: number;
+  name: string | null;
+  email: string | null;
   openId: string;
+  role: 'user' | 'admin';
 }
 
 export interface AuthState {
@@ -29,10 +30,11 @@ export function useAuth(): AuthState {
     if (!isLoading) {
       setLoading(false);
       if (data) {
-        setUser(data);
+        setUser(data as User);
       }
       if (trpcError) {
-        setError(trpcError as Error);
+        // Cast via unknown to avoid type overlap error
+        setError(trpcError as unknown as Error);
       }
     }
   }, [data, isLoading, trpcError]);
@@ -46,7 +48,7 @@ export function useAuth(): AuthState {
     return `/api/auth/login?redirect=${encodeURIComponent(window.location.pathname)}`;
   };
 
-  const isAdmin = user?.openId === import.meta.env.VITE_OWNER_OPEN_ID;
+  const isAdmin = user?.role === 'admin';
 
   return {
     user,

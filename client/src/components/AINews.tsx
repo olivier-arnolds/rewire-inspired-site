@@ -146,9 +146,9 @@ export default function AINews() {
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       <span>
-                        {item.publishedDate 
+                        {'publishedDate' in item && item.publishedDate
                           ? new Date(item.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-                          : item.date}
+                          : 'date' in item ? item.date : ''}
                       </span>
                     </div>
                   </div>
