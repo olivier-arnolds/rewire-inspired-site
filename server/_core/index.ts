@@ -39,6 +39,16 @@ async function startServer() {
   // Security headers via helmet.js - registered first, before all routes
   app.use(securityMiddleware);
 
+  // 301 redirect: manus.space domain → canonical domain
+  app.use((req, res, next) => {
+    const host = req.hostname || req.headers.host || '';
+    if (host.includes('manus.space')) {
+      const targetUrl = `https://www.eclectik.co${req.originalUrl}`;
+      return res.redirect(301, targetUrl);
+    }
+    next();
+  });
+
   // Rate limiting middleware
   const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes

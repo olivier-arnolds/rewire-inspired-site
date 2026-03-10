@@ -95,3 +95,4 @@
 - [x] Install helmet.js and configure CSP + security headers middleware
 - [x] Create robots.txt in client/public with correct disallow rules and sitemap reference
 - [x] Update sitemap.xml with correct domain (www.eclectik.co) and all current public pages
+- [x] Add 301 redirect from rewireai-2cvjjmcy.manus.space to https://www.eclectik.co
