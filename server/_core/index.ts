@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
+import path from "path";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { rateLimit } from "express-rate-limit";
 import { registerOAuthRoutes } from "./oauth";
@@ -47,6 +48,20 @@ async function startServer() {
       return res.redirect(301, targetUrl);
     }
     next();
+  });
+
+  // Serve curated sitemap.xml explicitly before Vite/static middleware
+  // This prevents the platform from auto-generating a sitemap with admin/private routes
+  app.get('/sitemap.xml', (_req, res) => {
+    const sitemapPath = path.resolve(
+      import.meta.dirname,
+      '../..',
+      'client',
+      'public',
+      'sitemap.xml'
+    );
+    res.setHeader('Content-Type', 'application/xml');
+    res.sendFile(sitemapPath);
   });
 
   // Rate limiting middleware
