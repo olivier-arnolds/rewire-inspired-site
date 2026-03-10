@@ -93,3 +93,5 @@
 - [ ] Upload new Eclectik logo (dark blue + white versions) to S3 CDN
 - [ ] Update website logo to use new version
 - [x] Install helmet.js and configure CSP + security headers middleware
+- [x] Create robots.txt in client/public with correct disallow rules and sitemap reference
+- [x] Update sitemap.xml with correct domain (www.eclectik.co) and all current public pages
