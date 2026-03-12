@@ -97,3 +97,5 @@
 - [x] Update sitemap.xml with correct domain (www.eclectik.co) and all current public pages
 - [x] Add 301 redirect from rewireai-2cvjjmcy.manus.space to https://www.eclectik.co
 - [x] Fix TypeScript errors in client/src/lib/auth.ts (id type mismatch, TRPCClientError cast)
+- [ ] Debug why ZAP scanner doesn't detect helmet.js security headers (HSTS, CSP, X-Content-Type-Options, X-Frame-Options)
+- [ ] Fix helmet middleware to ensure headers are applied to all routes including static files

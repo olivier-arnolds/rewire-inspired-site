@@ -19,7 +19,8 @@ export const securityMiddleware = helmet({
         "https://www.google-analytics.com",
         "https://px.ads.linkedin.com",
         "https://www.linkedin.com",
-        "https://d2xsxph8kpxj0f.cloudfront.net"
+        "https://d2xsxph8kpxj0f.cloudfront.net",
+        "https://files.manuscdn.com"
       ],
       connectSrc: [
         "'self'",
