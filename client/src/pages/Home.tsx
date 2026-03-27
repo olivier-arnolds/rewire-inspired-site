@@ -212,6 +212,42 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* ISO Stamp Animation - Top Right, below navbar */}
+        <motion.div
+          initial={{ opacity: 0, y: -120, scale: 1.4, rotate: -15 }}
+          animate={{ opacity: 1, y: 0, scale: 1, rotate: -8 }}
+          transition={{
+            delay: 1.2,
+            duration: 0.35,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute top-24 right-8 z-20 hidden lg:block"
+        >
+          {/* Impact flash ring */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: [0, 0.6, 0], scale: [0.6, 1.5, 1.8] }}
+            transition={{ delay: 1.55, duration: 0.5, ease: "easeOut" }}
+            className="absolute inset-0 rounded-full border-2 border-primary/60"
+          />
+          {/* Second impact ring */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: [0, 0.4, 0], scale: [0.6, 1.8, 2.2] }}
+            transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
+            className="absolute inset-0 rounded-full border border-primary/30"
+          />
+          {/* The stamp image with bounce */}
+          <motion.img
+            src="/images/iso-logo-final.png"
+            alt="ISO 27001 Certified"
+            className="h-20 w-auto object-contain"
+            initial={{ scale: 1.4 }}
+            animate={{ scale: [1.4, 0.88, 1.04, 0.97, 1] }}
+            transition={{ delay: 1.2, duration: 0.55, times: [0, 0.4, 0.65, 0.82, 1], ease: "easeOut" }}
+          />
+        </motion.div>
+
         {/* Main Composite Image - Bottom Right */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
