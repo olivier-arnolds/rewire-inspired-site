@@ -4,6 +4,9 @@ import Layout from "@/components/Layout";
 import { ArrowRight, Brain, Database, Cpu, Network, Code, BarChart3, ChevronRight, LineChart, Target, Zap, Users, Mail, Linkedin, Instagram, Youtube } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,10 +17,62 @@ import FAQ from "@/components/FAQ";
 import { Helmet } from "react-helmet-async";
 import { trackCTAClick } from "@/lib/tracking";
 
+// Use local worker served from public directory to avoid CSP issues
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
+const ISO_CERT_URL = "/api/iso-certificate";
+
+function IsoCertModal({ onClose }: { onClose: () => void }) {
+  const [numPages, setNumPages] = useState<number>(0);
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-[#1a1f2e] rounded-xl shadow-2xl w-[90vw] max-w-3xl flex flex-col overflow-hidden"
+        style={{ maxHeight: '90vh' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 flex-shrink-0">
+          <h2 className="text-base font-semibold text-white">ISO 27001 Certificaat — Eclectik B.V.</h2>
+          <button
+            onClick={onClose}
+            className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none ml-4"
+            aria-label="Sluiten"
+          >
+            ×
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto flex flex-col items-center py-4 px-4">
+          <Document
+            file={ISO_CERT_URL}
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            loading={<div className="text-white/50 py-20">Certificaat laden...</div>}
+            error={<div className="text-red-400 py-20">Kon het certificaat niet laden.</div>}
+          >
+            {Array.from(new Array(numPages), (_, i) => (
+              <Page
+                key={i + 1}
+                pageNumber={i + 1}
+                width={Math.min(window.innerWidth * 0.8, 750)}
+                className="mb-4 shadow-lg"
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+              />
+            ))}
+          </Document>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const [showIsoCert, setShowIsoCert] = useState(false);
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -237,15 +292,22 @@ export default function Home() {
             transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
             className="absolute inset-0 rounded-full border border-primary/30"
           />
-          {/* The stamp image with bounce */}
-          <motion.img
-            src="/images/iso-logo-final.png"
-            alt="ISO 27001 Certified"
-            className="h-20 w-auto object-contain"
-            initial={{ scale: 1.4 }}
-            animate={{ scale: [1.4, 0.88, 1.04, 0.97, 1] }}
-            transition={{ delay: 1.2, duration: 0.55, times: [0, 0.4, 0.65, 0.82, 1], ease: "easeOut" }}
-          />
+          {/* The stamp image with bounce - clickable */}
+          <button
+            onClick={() => setShowIsoCert(true)}
+            className="focus:outline-none flex flex-col items-center gap-1 group cursor-pointer"
+            title="Bekijk ISO 27001 certificaat"
+          >
+            <motion.img
+              src="/images/iso-logo-final.png"
+              alt="ISO 27001 Certified"
+              className="h-20 w-auto object-contain group-hover:scale-105 transition-transform"
+              initial={{ scale: 1.4 }}
+              animate={{ scale: [1.4, 0.88, 1.04, 0.97, 1] }}
+              transition={{ delay: 1.2, duration: 0.55, times: [0, 0.4, 0.65, 0.82, 1], ease: "easeOut" }}
+            />
+            <span className="text-[10px] text-white/50 group-hover:text-primary transition-colors tracking-wide">Click to see certificate</span>
+          </button>
         </motion.div>
 
         {/* Main Composite Image - Bottom Right */}
@@ -580,6 +642,9 @@ export default function Home() {
 
       {/* Section 8: FAQ */}
       <FAQ />
+
+      {/* ISO Certificate Modal */}
+      {showIsoCert && <IsoCertModal onClose={() => setShowIsoCert(false)} />}
     </Layout>
   );
 }
