@@ -22,24 +22,15 @@ function IsoCertModal({ onClose }: { onClose: () => void }) {
         className="relative bg-background rounded-xl shadow-2xl w-[90vw] max-w-4xl h-[90vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
           <h2 className="text-lg font-semibold text-white">ISO 27001 Certificaat — Eclectik B.V.</h2>
-          <div className="flex items-center gap-3">
-            <a
-              href={ISO_CERT_URL}
-              download="ISO27001_Certificate_EclectikBV.pdf"
-              className="text-sm text-primary hover:underline"
-            >
-              Download PDF
-            </a>
-            <button
-              onClick={onClose}
-              className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none"
-              aria-label="Sluiten"
-            >
-              ×
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none"
+            aria-label="Sluiten"
+          >
+            ×
+          </button>
         </div>
         <div className="flex-1 overflow-hidden">
           <iframe
