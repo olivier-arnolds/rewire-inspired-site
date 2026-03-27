@@ -292,21 +292,36 @@ export default function Home() {
             transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
             className="absolute inset-0 rounded-full border border-primary/30"
           />
-          {/* The stamp image with bounce - clickable */}
+          {/* The stamp image with bounce - clickable with shiny flare */}
           <button
             onClick={() => setShowIsoCert(true)}
-            className="focus:outline-none flex flex-col items-center gap-1 group cursor-pointer"
-            title="Bekijk ISO 27001 certificaat"
+            className="focus:outline-none relative group cursor-pointer"
+            title="View ISO 27001 certificate"
           >
+            {/* Subtle rotating shiny ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-[-4px] rounded-full"
+              style={{
+                background: "conic-gradient(from 0deg, transparent 0%, transparent 60%, rgba(76,201,240,0.4) 75%, rgba(255,255,255,0.6) 80%, rgba(76,201,240,0.4) 85%, transparent 100%)",
+              }}
+            />
+            {/* Gentle pulse glow */}
+            <motion.div
+              animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.08, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 rounded-full"
+              style={{ background: "radial-gradient(circle, rgba(76,201,240,0.25) 0%, transparent 70%)" }}
+            />
             <motion.img
               src="/images/iso-logo-final.png"
               alt="ISO 27001 Certified"
-              className="h-20 w-auto object-contain group-hover:scale-105 transition-transform"
+              className="relative h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
               initial={{ scale: 1.4 }}
               animate={{ scale: [1.4, 0.88, 1.04, 0.97, 1] }}
               transition={{ delay: 1.2, duration: 0.55, times: [0, 0.4, 0.65, 0.82, 1], ease: "easeOut" }}
             />
-            <span className="text-[10px] text-white/50 group-hover:text-primary transition-colors tracking-wide">Click to see certificate</span>
           </button>
         </motion.div>
 
