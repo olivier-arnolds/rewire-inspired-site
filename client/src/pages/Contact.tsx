@@ -9,7 +9,52 @@ import { trpc } from "@/lib/trpc";
 import { useState } from "react";
 import { toast } from "sonner";
 
+const ISO_CERT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663219425815/2CVJJmcYxQipBBghkzRACY/ISO27001_Certificate_EclectikB.V_3b13e40b.pdf";
+
+// ISO Certificate Modal
+function IsoCertModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-background rounded-xl shadow-2xl w-[90vw] max-w-4xl h-[90vh] flex flex-col overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+          <h2 className="text-lg font-semibold text-white">ISO 27001 Certificaat — Eclectik B.V.</h2>
+          <div className="flex items-center gap-3">
+            <a
+              href={ISO_CERT_URL}
+              download="ISO27001_Certificate_EclectikBV.pdf"
+              className="text-sm text-primary hover:underline"
+            >
+              Download PDF
+            </a>
+            <button
+              onClick={onClose}
+              className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none"
+              aria-label="Sluiten"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+        <div className="flex-1 overflow-hidden">
+          <iframe
+            src={`${ISO_CERT_URL}#toolbar=0&navpanes=0`}
+            className="w-full h-full"
+            title="ISO 27001 Certificaat"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Contact() {
+  const [showIsoCert, setShowIsoCert] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -252,7 +297,9 @@ export default function Contact() {
                 <div className="space-y-4">
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
                   <div className="flex gap-8 items-center flex-wrap">
-                    <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+                    <button onClick={() => setShowIsoCert(true)} className="focus:outline-none" title="Bekijk ISO 27001 certificaat">
+                      <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity cursor-pointer" />
+                    </button>
                     <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
@@ -319,6 +366,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      {showIsoCert && <IsoCertModal onClose={() => setShowIsoCert(false)} />}
     </Layout>
   );
 }
