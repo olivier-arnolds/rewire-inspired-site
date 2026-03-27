@@ -8,36 +8,60 @@ import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
-const ISO_CERT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663219425815/2CVJJmcYxQipBBghkzRACY/ISO27001_Certificate_EclectikB.V_3b13e40b.pdf";
+// Use local worker served from public directory to avoid CSP issues
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
+const ISO_CERT_URL = "/api/iso-certificate";
 
 // ISO Certificate Modal
 function IsoCertModal({ onClose }: { onClose: () => void }) {
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState(1);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative bg-background rounded-xl shadow-2xl w-[90vw] max-w-4xl h-[90vh] flex flex-col overflow-hidden"
+        className="relative bg-[#1a1f2e] rounded-xl shadow-2xl w-[90vw] max-w-3xl flex flex-col overflow-hidden"
+        style={{ maxHeight: '90vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-          <h2 className="text-lg font-semibold text-white">ISO 27001 Certificaat — Eclectik B.V.</h2>
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 flex-shrink-0">
+          <h2 className="text-base font-semibold text-white">ISO 27001 Certificaat — Eclectik B.V.</h2>
           <button
             onClick={onClose}
-            className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none"
+            className="text-muted-foreground hover:text-white transition-colors text-2xl leading-none ml-4"
             aria-label="Sluiten"
           >
             ×
           </button>
         </div>
-        <div className="flex-1 overflow-hidden">
-          <iframe
-            src={`${ISO_CERT_URL}#toolbar=0&navpanes=0`}
-            className="w-full h-full"
-            title="ISO 27001 Certificaat"
-          />
+        {/* PDF Viewer */}
+        <div className="flex-1 overflow-y-auto flex flex-col items-center py-4 px-4">
+          <Document
+            file={ISO_CERT_URL}
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            loading={<div className="text-white/50 py-20">Certificaat laden...</div>}
+            error={<div className="text-red-400 py-20">Kon het certificaat niet laden.</div>}
+          >
+            {Array.from(new Array(numPages), (_, i) => (
+              <Page
+                key={i + 1}
+                pageNumber={i + 1}
+                width={Math.min(window.innerWidth * 0.8, 750)}
+                className="mb-4 shadow-lg"
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+              />
+            ))}
+          </Document>
         </div>
       </div>
     </div>

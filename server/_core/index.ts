@@ -50,6 +50,21 @@ async function startServer() {
     next();
   });
 
+  // Proxy route for ISO certificate PDF (avoids CORS/download issues with CDN)
+  app.get('/api/iso-certificate', async (_req, res) => {
+    try {
+      const pdfUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663219425815/2CVJJmcYxQipBBghkzRACY/ISO27001_Certificate_EclectikB.V_3b13e40b.pdf';
+      const response = await fetch(pdfUrl);
+      if (!response.ok) throw new Error('Failed to fetch PDF');
+      const buffer = await response.arrayBuffer();
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'inline');
+      res.send(Buffer.from(buffer));
+    } catch (err) {
+      res.status(500).send('Could not load certificate');
+    }
+  });
+
   // Serve curated sitemap.xml explicitly before Vite/static middleware
   // This prevents the platform from auto-generating a sitemap with admin/private routes
   app.get('/sitemap.xml', (_req, res) => {

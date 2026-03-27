@@ -7,10 +7,12 @@ export const securityMiddleware = helmet({
       scriptSrc: [
         "'self'",
         "'unsafe-inline'",
+        "blob:",
         "https://www.googletagmanager.com",
         "https://www.google-analytics.com",
         "https://snap.licdn.com"
       ],
+      workerSrc: ["'self'", "blob:"],
       styleSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: [
         "'self'",
