@@ -585,35 +585,14 @@ export default function Home() {
         <div className="container">
           <p className="text-center text-xl font-medium mb-12 text-white/80">We are proud Workplace & AI Transformation partner for</p>
           <div className="flex flex-col gap-8 items-center">
-            {/* Row 1: 6 logos */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 w-full max-w-6xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* Row 1: 5 logos */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full max-w-5xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {[
               { name: "Alex Lee", src: "/images/clients/alex-lee.png" },
-              { name: "Boston Red Sox", src: "/images/clients/BostonRedSox.png" },
-              { name: "First Rand", src: "/images/clients/first-rand.png" },
-              { name: "Liberty Global", src: "/images/clients/LibertyGloabl.png", className: "scale-200" },
               { name: "EFTA", src: "/images/clients/EFTA.png" },
-              { name: "IMC", src: "/images/clients/imc.png" }
-            ].map((client, i) => (
-              <div key={i} className="h-20 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
-                <img 
-                  src={client.src} 
-                  alt={client.name} 
-                  className={`max-w-full max-h-full object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 ${(client as any).className || ''}`}
-                />
-              </div>
-            ))}
-            </div>
-            
-            {/* Row 2: 6 logos */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 w-full max-w-6xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {[
+              { name: "IMC", src: "/images/clients/imc.png" },
               { name: "Almirall", src: "/images/clients/Almirall.png" },
-              { name: "Serco", src: "/images/clients/serco.png" },
-              { name: "TD Industries", src: "/images/clients/TDIndustries.png" },
-              { name: "Warburtons", src: "/images/clients/warburtons.png" },
-              { name: "Westfalen", src: "/images/clients/westfalen.png" },
-              { name: "Sage", src: "/images/clients/sage.png", className: "scale-125" }
+              { name: "TD Industries", src: "/images/clients/TDIndustries.png" }
             ].map((client, i) => (
               <div key={i} className="h-20 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
                 <img 
@@ -625,12 +604,12 @@ export default function Home() {
             ))}
             </div>
             
-            {/* Row 3: 4 logos (centered) */}
+            {/* Row 2: 4 logos */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {[
+              { name: "Warburtons", src: "/images/clients/warburtons.png" },
+              { name: "Westfalen", src: "/images/clients/westfalen.png" },
               { name: "Breitling", src: "/images/clients/breitling.png", className: "scale-125" },
-              { name: "Chugai", src: "/images/clients/chugai.png" },
-              { name: "Draper", src: "/images/clients/Draper.svg" },
               { name: "Pepkor", src: "/images/clients/Pepkor.png" }
             ].map((client, i) => (
               <div key={i} className="h-20 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-pointer group">
