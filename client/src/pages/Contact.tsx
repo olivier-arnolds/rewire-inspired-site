@@ -313,7 +313,7 @@ export default function Contact() {
                   <h3 className="text-sm uppercase tracking-widest text-muted-foreground">Certifications</h3>
                   <div className="flex gap-8 items-center flex-wrap">
                     <button onClick={() => setShowIsoCert(true)} className="focus:outline-none flex flex-col items-center gap-2 group" title="Bekijk ISO 27001 certificaat">
-                       <img src="/images/iso-logo-final.png" alt="ISO Certified" className="h-24 w-auto opacity-90 group-hover:opacity-100 transition-opacity cursor-pointer" />
+                       <img src="/manus-storage/bc-certified-logo_iso-27001-2022-rva_eng_27482391.webp" alt="ISO 27001:2022 Certified by Brand Compliance" className="h-24 w-auto opacity-90 group-hover:opacity-100 transition-opacity cursor-pointer" />
                        <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors tracking-wide">Click to see certificate</span>
                      </button>
                     <img src="/images/white-microsoft-startups-logo-final.png" alt="Microsoft for Startups Founders Hub" className="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity" />
@@ -327,7 +327,7 @@ export default function Contact() {
 
                     <img src="/images/ipsos-grey.png" alt="Ipsos" className="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                     <img src="/images/softwareone-grey.png" alt="SoftwareOne" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
-                    <img src="/images/brand-compliance-logo-final.png" alt="Brand Compliance" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+
                     <img src="/images/hibob-grey.png" alt="HiBob" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
 
 
